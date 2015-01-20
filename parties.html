@@ -1,0 +1,198 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Building Bridges @ UofA - Home</title>
+    <link rel="shortcut icon" href="Assets/favicon.ico" />
+    <meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" />
+    <meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="css/metro-bootstrap.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        body {
+            background-color: #3CB6CE;
+            color: #FFFFFF;
+        }
+    </style>
+
+    <link href="css/metro-bootstrap.css" rel="stylesheet">
+    <link href="css/metro-bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/iconFont.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="js/prettify/prettify.css" rel="stylesheet">
+
+    <!-- Load JavaScript Libraries -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/jquery/jquery.widget.min.js"></script>
+    <script src="js/jquery/jquery.mousewheel.js"></script>
+    <script src="js/prettify/prettify.js"></script>
+    <script src="js/holder/holder.js"></script>
+    <script src="js/page_scripts/HERE_utilities.js"></script>
+
+    <!-- Metro UI CSS JavaScript plugins -->
+    <script src="js/load-metro.js"></script>
+
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/github.info.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+
+
+    <!-- Load script specific for party page-->
+    <script src="js/page_scripts/party/parties_script.js"></script>
+</head>
+<body class="metro">
+
+    <div class="grid">
+        <div id="row0" class="row">
+            <div class="span4 offset_special">
+                <a href="index.html">
+                    <img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
+            </div>
+        </div>
+
+        <div id="row1" class="row">
+            <div class="span_navbar_special">
+            </div>
+            <div class="span11 offset_special">
+                <nav class="navigation-bar light">
+                    <div class="navigation-bar-content">
+                        <a href="stories.html" class="element">Story </a>
+                        <span class="element-divider"></span>
+                        <a href="parties.html" class="element">Party </a>
+                        <span class="element-divider"></span>
+                        <a href="#" class="element">Groups </a>
+                        <span class="element-divider"></span>
+                        <a href="#" class="element">Post </a>
+                        <span class="element-divider"></span>
+                        <a href="#" class="element">About Us </a>
+                        <span class="element-divider"></span>
+                        <div class="element input-element">
+                            <form>
+                                <div class="input-control text">
+                                    <input type="text" placeholder="Search...">
+                                    <button class="btn-search"></button>
+                                </div>
+                            </form>
+                        </div>
+                        <span class="element-divider"></span>
+                        <div class="element place-right">
+                            <a class="dropdown-toggle" href="#">
+                                <span class="icon-cog"></span>
+                            </a>
+                            <ul class="dropdown-menu place-right" data-role="dropdown">
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Edit Profile</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
+                        <span class="element-divider place-right"></span>
+                        <button id="login" class="element image-button image-left place-right">
+                            Log In / Sign Up
+                                <img src="Assets/default_user.png" />
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+            <div id="row2" class="row">
+                <div class="span2">
+                </div>
+                <div class="span3">
+                    <nav class="vertical-menu">
+                        <ul>
+                            <li><a href="index.html"><i class="icon-arrow-left-3 fg-white"></i></a></li>
+                            <li class="title" style="color: white;">Party</li>
+                            <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                    <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
+                                </svg></a></li>
+                            <li><a style="color: white;" onclick="display_fun()" id="fun" href="#fun">Fun
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                    <rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" />
+                                </svg></a></li>
+                            <li><a style="color: white;" onclick="display_custom()" id="custom" href="#custom">Custom
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                    <rect stroke="white" fill="#ba00ff" x="1" y="1" width="22" height="22" />
+                                </svg></a></li>
+                            <li><a style="color: white;" onclick="display_own()" id="own" href="#add">+Your Own</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="span9" id="map" style="width: 100%; height: 400px; background: grey" />
+
+            </div>
+        </div>
+    </div>
+
+
+        <script type="text/javascript" charset="UTF-8">
+            //intialize all script operation,defined in parties_script.js
+            //mappackage = map+ui
+            var mappackage = setupbasicmap();
+
+            var map = mappackage.map;
+            var ui = mappackage.ui;
+
+            var groupfun = groupfactory(ui);
+            var groupstudy = groupfactory(ui);
+            var groupcustom = groupfactory(ui);
+            var currentgroup = groupfun;
+            var edit = false;
+            //a blue square for study
+            var studymark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" /></svg>';
+            //a green square for fun
+            var funmark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" /></svg>';
+            //a cyan square for custom
+            var custommark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#00ffff" x="1" y="1" width="22" height="22" /></svg>';
+
+            var currenticon = funmark;
+
+            main();
+
+
+        </script>
+
+        <script type="text/javascript" charset="UTF-8">
+
+            $(function () {
+                $("#login").on('click', function () {
+                    $.Dialog({
+                        shadow: true,
+                        overlay: false,
+                        draggable: true,
+                        icon: '<img src="Assets/default_user.png">',
+                        title: 'Draggable window',
+                        width: 'auto',
+                        padding: 10,
+                        content: 'This Window is draggable by caption.',
+                        onShow: function () {
+                            var content = '<form id="login-form-1">' +
+                                    '<p>Login</p>' +
+                                    '<div class="input-control text"><input type="text" name="login"><button class="btn-clear"></button></div>' +
+                                    '<p>Password</p>' +
+                                    '<div class="input-control password"><input type="password" name="password"><button class="btn-reveal"></button></div>' +
+                                    '<div class="input-control checkbox"><p>Remember Me <input type="checkbox" name="c1" checked/><span class="check"></span></p></div>' +
+                                    '<div class="form-actions">' +
+                                    '<button class="button primary">Login to...</button>&nbsp;' +
+                                    '<button class="button" type="button" onclick="$.Dialog.close()">Cancel</button> ' +
+                                    '</div>' +
+                                    '</form>';
+
+                            $.Dialog.title("User login");
+                            $.Dialog.content(content);
+                        }
+
+                    });
+                });
+            });
+
+        </script>
+</body>
+</html>
+
