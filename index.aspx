@@ -205,7 +205,7 @@ body {
                         padding: 10,
                         content: 'This Window is draggable by caption.',
                         onShow: function () {
-                            var content = '<form id="login-form-1" action="account/login.php/" method ="POST">' +
+                            var content = '<form id="login-form-1" action="account/login.php" method ="POST">' +
                                     '<p>Login</p>' +
                                     '<div class="input-control text"><input type="text" name="login"><button class="btn-clear"></button></div>' +
                                     '<p>Password</p>' +
