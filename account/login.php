@@ -3,7 +3,7 @@
 session_start();
 
 $username = $_POST['login'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 
 if($username&&$password)
 {
@@ -23,7 +23,9 @@ if($username&&$password)
        if($username==$dbusername&&$password==$dbpassword)
        {
            
-           echo"Login successful";
+           echo "Login successful,heading back to homepage";
+           header( "refresh:5; url=/index.php" ); 
+
            $_SESSION['username']=$dbusername;
            
        }
