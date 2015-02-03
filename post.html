@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Building Bridges @ UofA - Home</title>
+<title>Building Bridges @ UofA - Groups</title>
 <link rel="shortcut icon" href="Assets/favicon.ico" />
 <meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" />
 <meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
@@ -19,8 +19,6 @@ body {
     <link href="css/metro-bootstrap-responsive.css" rel="stylesheet">
     <link href="css/iconFont.css" rel="stylesheet">
     <link href="css/docs.css" rel="stylesheet">
-    
-
     <link href="js/prettify/prettify.css" rel="stylesheet">
 
     <!-- Load JavaScript Libraries -->
@@ -44,32 +42,32 @@ body {
     <script type="text/javascript" charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script type="text/javascript"  charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
-    <!-- Load script specific for stories page-->
-    <script src="js/page_scripts/stories/stories_script.js"></script>
+    <!-- Load script specific for index page-->
+    <script src="js/page_scripts/index/index_script.js"></script>
     
 </head>
 	<body class="metro">
         <div class="grid">
-            <div id="row0" class="row">
+            <div id="row0" class="row" >
                 <div class="span4 offset_special">
-                    <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
+                        <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
             <div id="row1" class="row" >
                 <div class="span_navbar_special">
                 </div>
-                <div class="span12 offset_special_for_maps">
+                <div class="span11 offset_special">
                     <nav class="navigation-bar light">
                         <div class="navigation-bar-content">
                             <a href="index.html" class="element"> Home </a>
                             <span class="element-divider"></span>
-                            <a href="stories.html" class="element">Story </a>
+                            <a href="stories.html" class="element"> Story </a>
                             <span class="element-divider"></span>
-                            <a href="parties.html" class="element">Party </a>
+                            <a href="parties.html" class="element"> Party </a>
                             <span class="element-divider"></span>
                             <a href="#" class="element"> Groups </a>
                             <span class="element-divider"></span>
-                            <a href="post.html" class="element">Post </a>
+                            <a href="post.html" class="element"> Post </a>
                             <span class="element-divider"></span>
                             <a href="#" class="element"> About Us </a>
                             <span class="element-divider"></span>     
@@ -100,60 +98,53 @@ body {
                         </div>
                     </nav>
                 </div>
-            </div>
-            <div id="row2" class="row">
-                <div class="span2"></div>
-                <div class="span3">
-                    <nav class="vertical-menu white">
-                        <ul>
-                            <li><a href="index.html"><i class="icon-arrow-left-3 fg-white"></i></a></li>
-                            <li style="color: white;" class="title">Stories　</li>
-                            <li><a style="color: white;" onclick="display_written()" href="#Written">Written <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12" stroke="white" fill="#eaff00"/></svg></a></li>
-                            <li><a style="color: white;" onclick="display_podcasts()" href="#Podcasts">Podcasts <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#ffba00"/></svg></a></li>
-                            <li><a style="color: white;" onclick="display_video()" href="#Video">Video <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#ff6600"/></svg></a></li>
-                            <li><a style="color: white;" onclick="display_pictures()" href="#Pictures">Pictures <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#663399"/></svg></a></li>
-                            <li><a style="color: white;" onclick="display_own()"href="#Own">+Your Own</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="span9" id="map" style="width: 100%; height: 400px; background: grey" />
 
+                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                    <div class="grid fluid show-grid">
+                        <div id="featured_row1" class="row" >
+                            <div class="spanspecial"> 
+                                </div>
+                            <div id ="post_story_column" class="span4">
+                                
+                                <div class="tile triple quadro-vertical bg-violet">
+                                        <div class="tile-content icon">
+                                            <i class="icon-pencil"></i>
+
+                                        </div>
+                                    <div class="tile-status">
+                                        <span class="name" >Write a Story</span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            
+                            <div id="post_event_column" class="span4 offset_livefeed_column">
+
+                                <div class="tile triple quadro-vertical">
+
+                                    <div class="tile triple quadro-vertical bg-yellow">
+                                        <div class="tile-content icon">
+                                            <i class="icon-location"></i>
+
+                                        </div>
+                                    <div class="tile-status">
+                                        <span class="name" >Post an Activity</span>
+
+                                    </div>
+
+                                </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
 
-        
-        <script  type="text/javascript" charset="UTF-8" >
-            //initialize all global variables
-            var mappackage = setupbasicmap();
-
-            var map = mappackage.map;
-            var ui = mappackage.ui;
-
-            //initialize the marker group for each types of stories
-            var groupwritten = groupfactory(ui);
-            var grouppodcasts = groupfactory(ui);
-            var groupvideo = groupfactory(ui);
-            var grouppictures = groupfactory(ui);
-
-            var currentgroup = groupwritten;
-            //user are not in adding new story mode by defualt
-            var edit = false;
-
-            //a yellow circle for written
-            var writtenmark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12" stroke="white" fill="#eaff00"/></svg>';
-            //an orange circle for podcast
-            var podcastsmark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#ffba00"/></svg>';
-
-            //a red circle for video
-            var videomark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#ff6600"/></svg>';
-            //a purple circle for picture
-            var picturemark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#663399"/></svg>';
-           
-            // set the default icon(future plans, package icon and groups into objects)
-            var currenticon = writtenmark;
-           
-            main();
-        </script>
         <script  type="text/javascript" charset="UTF-8" >
             $(function () {
                 $("#login").on('click', function () {
