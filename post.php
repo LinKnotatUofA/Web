@@ -114,96 +114,50 @@ body {
                     </nav>
                 </div>
 
-                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
-                    <div class="grid fluid show-grid">
-                        <div id="featured_row1" class="row" >
-                            <div class="spanspecial"> 
-                                </div>
-                            <div id ="content_column" class="span4">
-                                
-                                <div class="tile triple double-vertical">
-                                    <div class="carousel" id="carousel1">
-                                            <div class="slide">
-                                                <img src="Assets/1.png" class="cover1" />
-                                            </div>
-                                
-                                            <div class="slide">
-                                                <img src="Assets/2.png" class="cover1" />
-                                            </div>
-                                
-                                            <div class="slide">
-                                                <img src="Assets/3.png" class="cover1"/>
-                                            </div>
-                                
-                                            <a class="controls left"><i class="icon-arrow-left-3"></i></a>
-                                            <a class="controls right"><i class="icon-arrow-right-3"></i></a>
-                                    </div>
-                                    <div class="brand bg-black">
-                                        <div class="label fg-white place-right">Featured</div>
-                                
-                                
-                                    </div>
-                                        <script>
-                                            $(function () {
-                                                $("#carousel1").carousel({
-                                                    height: 250
-                                                });
-                                            })
-                                        </script>
-                                </div>
+                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                     <div class="grid fluid show-grid">
+                         <div id="featured_row1" class="row" >
+                             <div class="spanspecial"> 
+                                 </div>
+                             <div id ="post_story_column" class="span4">
+                                 
+                                 <div class="tile triple quadro-vertical bg-violet">
+                                         <div class="tile-content icon">
+                                             <i class="icon-pencil"></i>
+                
+                                         </div>
+                                     <div class="tile-status">
+                                         <span class="name" >Write a Story</span>
+                
+                                     </div>
+                
+                                 </div>
+                
+                             </div>
+                
+                             
+                             <div id="post_event_column" class="span4 offset_livefeed_column">
+                
+                                 <div class="tile triple quadro-vertical">
+                
+                                     <div class="tile triple quadro-vertical bg-yellow">
+                                         <div class="tile-content icon">
+                                             <i class="icon-location"></i>
+                
+                                         </div>
+                                     <div class="tile-status">
+                                         <span class="name" >Post an Activity</span>
+                
+                                     </div>
+                
+                                 </div>
+                
+                                 </div>
+                
+                             </div>
+                         </div>
+                     </div>
 
-                                <div class="tile triple double-vertical">
-                                   <div class="carousel" id="carousel2">
-                                           <div class="slide">
-                                               <img src="Assets/1.png" class="cover1" />
-                                           </div>
-                                
-                                           <div class="slide">
-                                               <img src="Assets/2.png" class="cover1" />
-                                           </div>
-                                
-                                           <div class="slide">
-                                               <img src="Assets/3.png" class="cover1"/>
-                                           </div>
-                                
-                                           <a class="controls left"><i class="icon-arrow-left-3"></i></a>
-                                           <a class="controls right"><i class="icon-arrow-right-3"></i></a>
-                                   </div>
-                                   <div class="brand bg-black">
-                                       <div class="label fg-white place-right">Recent</div>
-                                   </div>
-                                   <script>
-                                       $(function (){
-                                               $("#carousel2").carousel({
-                                                   height: 250
-                                               });
-                                           })
-                                       </script>
-                                </div>
-                            </div>
-
-                            
-                            <div id="livefeed_column" class="span4 offset_livefeed_column">
-
-                                <div class="tile triple">
-                                    <h2><a href="?id=1_">"Event #1"</a></h2>
-                                </div>
-
-                                <div class="tile triple">
-                                    <h2><a href="?id=1_">"Event #2"</a></h2>
-                                </div>
-
-                                <div class="tile triple">
-                                    <h2><a href="?id=1_">"Event #3"</a></h2>
-                                </div>
-
-                                <div class="tile triple">
-                                    <h2><a href="?id=1_">"Event #4"</a></h2>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
             </div>
         </div>
 

@@ -20,8 +20,7 @@ function setupbasicmap() {
     var defaultLayers = platform.createDefaultLayers();
 
     //Step 2: initialize a map  - not specificing a location will give a whole world view.
-    var map = new H.Map(document.getElementById('map'),
-      defaultLayers.normal.map);
+    var map = new H.Map(document.getElementById('map'),defaultLayers.normal.map);
 
     //Step 3: make the map interactive
     // MapEvents enables the event system

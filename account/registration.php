@@ -12,6 +12,19 @@ $submit = @$_POST['submit'];
 $encpassword = md5($password);
 $ID = 100;
 
+$mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+
+//attempt to include a new ID 
+$query = mysqli_query($mysqli,"SELECT ID FROM user WHERE ID=$ID");
+
+$numrows = mysqli_num_rows($query);
+
+while($numrows > 0)
+{
+    $ID = rand(1,10000);
+    $query = mysqli_query($mysqli,"SELECT ID FROM user WHERE ID=$ID");
+    $numrows = mysqli_num_rows($query);
+}
 
 
 
@@ -45,6 +58,7 @@ if($submit){
                     {
                         
                         $insert=mysqli_query($mysqli,"INSERT INTO user VALUES ('$ID','$username','$encpassword','')");
+                        echo "registration successful";
                         if ( false===$insert ) {
                             printf("error: %s\n", mysqli_error($mysqli));
                         }
@@ -80,10 +94,10 @@ if($submit){
 
 <body>
     <form id="form1" method ="post">   
-        Username: <input name ="user_name" type="text" />
-        Password: <input name ="password" type="password" />
-        Repeat Password: <input name ="repeatpassword" type="password" />
-        <input name ="submit" type="submit"/>
+       <p>Username: <input name ="user_name" type="text" /></p> 
+        <p>Password: <input name ="password" type="password" /></p>
+        <p>Repeat Password: <input name ="repeatpassword" type="password" /></p>
+        <p><input name ="submit" type="submit"/></p>
     </form>
 </body>
 </html>
