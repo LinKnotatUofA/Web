@@ -94,10 +94,10 @@ if($submit){
 
 <body>
     <form id="form1" method ="post">   
-       <p>Username: <input name ="user_name" type="text" /></p> 
+       	<p>Username: <input name ="user_name" type="text" /></p> 
         <p>Password: <input name ="password" type="password" /></p>
         <p>Repeat Password: <input name ="repeatpassword" type="password" /></p>
-        <p><input name ="submit" type="submit"/></p>
+        <p><input name ="submit" type="submit"/> <INPUT Type="button" VALUE="Cancel and go back" onClick="history.go(-1);return true;"></p>		
     </form>
 </body>
 </html>

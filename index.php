@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    require "/events/load_events.php";
     
     ?>
 
@@ -186,7 +187,7 @@ body {
                             <div id="livefeed_column" class="span4 offset_livefeed_column">
 
                                 <div class="tile triple">
-                                    <h2><a href="?id=1_">"Event #1"</a></h2>
+                                    <h2><a href="?id=1_"><?php print_r($eventlist[0]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[0]['TIME']); echo" - "; printusername($eventlist[0]['authID']); ?></a></h2>
                                 </div>
 
                                 <div class="tile triple">

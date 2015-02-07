@@ -139,12 +139,11 @@ body {
                              <div id="post_event_column" class="span4 offset_livefeed_column">
                 
                                  <div class="tile triple quadro-vertical">
-                
-                                     <div class="tile triple quadro-vertical bg-yellow">
-                                         <div class="tile-content icon">
+                                     <div class="tile triple quadro-vertical bg-yellow" >
+                                         <a href="/events/upload_events.php" class="tile-content icon">
                                              <i class="icon-location"></i>
                 
-                                         </div>
+                                         </a>
                                      <div class="tile-status">
                                          <span class="name" >Post an Activity</span>
                 
