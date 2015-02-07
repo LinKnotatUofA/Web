@@ -1,4 +1,10 @@
-﻿<!doctype html>
+<?php 
+    session_start();
+    
+    ?>
+
+
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -42,78 +48,79 @@ body {
     <script type="text/javascript" charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script type="text/javascript"  charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
-    <!-- Load script specific for stories page-->
-    <script src="js/page_scripts/stories/stories_script.js"></script>
+    <!-- Load script specific for index page-->
+    <script src="js/page_scripts/index/index_script.js"></script>
     
 </head>
 	<body class="metro">
         <div class="grid">
-            <div id="row1" class="row">
-                <div class="span3">
-                    <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
-                </div>
-                <div class="span1">
-                    	<div id="login" class="tile" data-click="transform">
-                    		<div id="accountimage" class="tile-content image">
-                        		<img src="Assets/default_user.png">
-                        	</div>
-                         	<div class="brand bg-black">
-                         		<span class="label fg-white">Sign in</span>
-							</div>
-                    	</div>
+            <div id="row0" class="row" >
+                <div class="span4 offset_special">
+                        <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
-            <div id="row2" class="row">
-                <div class="span3">
-                    <nav class="vertical-menu white">
-                        <ul>
-                            <li style="color: white;" class="title">Stories</li>
-                            <li><a style="color: white;" onclick="display_written()" href="#Written">Written <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12" stroke="white" fill="#eaff00"/></svg></a></li>
-                            <li><a style="color: white;" onclick="display_podcasts()" href="#Podcasts">Podcasts <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#ffba00"/></svg></a></li>
-                            <li><a style="color: white;" onclick="display_video()" href="#Video">Video <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#ff6600"/></svg></a></li>
-                            <li><a style="color: white;" onclick="display_pictures()" href="#Pictures">Pictures <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#663399"/></svg></a></li>
-                            <li><a style="color: white;" onclick="display_own()"href="#Own">+Your Own</a></li>
-                        </ul>
+            <div id="row1" class="row" >
+                <div class="span_navbar_special">
+                </div>
+                <div class="span11 offset_special">
+                    <nav class="navigation-bar light">
+                        <div class="navigation-bar-content">
+                            <a href="index.php" class="element"> Home </a>
+                            <span class="element-divider"></span>
+                            <a href="stories.php" class="element"> Story </a>
+                            <span class="element-divider"></span>
+                            <a href="parties.php" class="element"> Party </a>
+                            <span class="element-divider"></span>
+                            <a href="groups.php" class="element"> Groups </a>
+                            <span class="element-divider"></span>
+                            <a href="post.php" class="element"> Post </a>
+                            <span class="element-divider"></span>
+                            <a href="about_us.php" class="element"> About Us </a>
+                            <span class="element-divider"></span>     
+                            <div class="element input-element">
+                                <form>
+                                    <div class="input-control text">
+                                        <input type="text" placeholder="Search...">
+                                        <button class="btn-search"></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <span class="element-divider"></span>
+                            <?php
+                            if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
+                                {
+                                    echo "<a class='element'> Welcome! ".$_SESSION['username']." </a>" ;
+                                    echo "<div class='element place-right'>
+                                              <a class='dropdown-toggle' href='#'>
+                                                  <span class='icon-cog'></span>
+                                              </a>
+                                              <ul class='dropdown-menu place-right' data-role='dropdown'>
+                                                  <li><a href='#'>Settings</a></li>
+                                                  <li><a href='#'>Edit Profile</a></li>
+                                                  <li><a href='#'>Contacts</a></li>
+                                                  <li><a href='account/logout.php'>Log Out</a></li>
+                                              </ul>
+                                          </div>";
+                                       
+                                }
+                                else
+                                    echo"<span class='element-divider place-right'></span>
+                                            <button id='login' class='element image-button image-left place-right'>
+                                                Log In / Sign Up
+                                            <img src='Assets/default_user.png'/>
+                                            </button>";
+                            ?>
+                        </div>
                     </nav>
                 </div>
-                <div class="span12" id="map" style="width: 100%; height: 400px; background: grey" />
 
+                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                    <div class="grid fluid show-grid">         
+                    
+                    </div>
             </div>
         </div>
 
-        
-        <script  type="text/javascript" charset="UTF-8" >
-            //initialize all global variables
-            var mappackage = setupbasicmap();
-
-            var map = mappackage.map;
-            var ui = mappackage.ui;
-
-            //initialize the marker group for each types of stories
-            var groupwritten = groupfactory(ui);
-            var grouppodcasts = groupfactory(ui);
-            var groupvideo = groupfactory(ui);
-            var grouppictures = groupfactory(ui);
-
-            var currentgroup = groupwritten;
-            //user are not in adding new story mode by defualt
-            var edit = false;
-
-            //a yellow circle for written
-            var writtenmark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12" stroke="white" fill="#eaff00"/></svg>';
-            //an orange circle for podcast
-            var podcastsmark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#ffba00"/></svg>';
-
-            //a red circle for video
-            var videomark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#ff6600"/></svg>';
-            //a purple circle for picture
-            var picturemark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><circle xmlns="http://www.w3.org/2000/svg" cx="13" cy="13" r="12"  stroke="white" fill="#663399"/></svg>';
-           
-            // set the default icon(future plans, package icon and groups into objects)
-            var currenticon = writtenmark;
-           
-            main();
-        </script>
         <script  type="text/javascript" charset="UTF-8" >
             $(function () {
                 $("#login").on('click', function () {
@@ -127,7 +134,7 @@ body {
                         padding: 10,
                         content: 'This Window is draggable by caption.',
                         onShow: function () {
-                            var content = '<form id="login-form-1">' +
+                            var content = '<form id="login-form-1" action="account/login.php/" method ="POST">' +
                                     '<p>Login</p>' +
                                     '<div class="input-control text"><input type="text" name="login"><button class="btn-clear"></button></div>' +
                                     '<p>Password</p>' +
@@ -135,6 +142,7 @@ body {
                                     '<div class="input-control checkbox"><p>Remember Me <input type="checkbox" name="c1" checked/><span class="check"></span></p></div>' +
                                     '<div class="form-actions">' +
                                     '<button class="button primary">Login to...</button>&nbsp;' +
+                                    '<button class="button warning" type="button"><a href="account/registration.php">Register</a></button>&nbsp;' +
                                     '<button class="button" type="button" onclick="$.Dialog.close()">Cancel</button> ' +
                                     '</div>' +
                                     '</form>';
