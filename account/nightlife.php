@@ -50,7 +50,7 @@ body {
     <script type="text/javascript"  charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
     <!-- Load script specific for index page-->
-    <script src="js/page_scripts/party/parties_script.js"></script>
+    <script src="js/page_scripts/index/index_script.js"></script>
     
 </head>
 	<body class="metro">
@@ -68,7 +68,7 @@ body {
                         <div class="navigation-bar-content">
                             <a href="index.php" class="element"> Home </a>
                             <span class="element-divider"></span>
-                            <a href="stories.php" class="element"> Story </a>
+                            <a href="nightlife.php" class="element"> Night Life </a>
                             <span class="element-divider"></span>
                             <a href="parties.php" class="element"> Party </a>
                             <span class="element-divider"></span>
@@ -115,71 +115,8 @@ body {
                     </nav>
                 </div>
 
-                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
-                    <div class="grid fluid show-grid">
-                        <div id="featured_row1" class="row" >
-                            <div class="spanspecial"> 
-                            </div>
-                            <div id="content_colum" class="span11">
-                              
-                               
-                                
-                              <div class="span7" id="map" style="width: 200%; height: 400px; background: grey" />
+             
 
-                              
-                            </div>
-                          
-
-                            
-                            <div id="livefeed_column" class="span4">
-
-                                <div class="tile doublefive">
-                                    <h2><a href="?id=1_"><?php print_r($eventlist[0]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[0]['TIME']); echo" - "; printusername($eventlist[0]['authID']); ?></a></h2>
-                                </div>
-
-                                <div class="tile doublefive">
-                                    <h2><a href="?id=1_">"Event #2"</a></h2>
-                                </div>
-
-                                <div class="tile doublefive">
-                                    <h2><a href="?id=1_">"Event #3"</a></h2>
-                                </div>
-
-                                <div class="tile doublefive">
-                                    <h2><a href="?id=1_">"Event #4"</a></h2>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-        <script type="text/javascript" charset="UTF-8">
-            //intialize all script operation,defined in parties_script.js
-            //mappackage = map+ui
-            var mappackage = setupbasicmap();
-
-            var map = mappackage.map;
-            var ui = mappackage.ui;
-
-            var groupfun = groupfactory(ui);
-            var groupstudy = groupfactory(ui);
-            var groupcustom = groupfactory(ui);
-            var currentgroup = groupfun;
-            var edit = false;
-            //a blue square for study
-            var studymark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" /></svg>';
-            //a green square for fun
-            var funmark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" /></svg>';
-            //a cyan square for custom
-            var custommark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#00ffff" x="1" y="1" width="22" height="22" /></svg>';
-
-            var currenticon = funmark;
-
-            main();
-
-
-        </script>
         <script  type="text/javascript" charset="UTF-8" >
             $(function () {
                 $("#login").on('click', function () {
@@ -193,7 +130,7 @@ body {
                         padding: 10,
                         content: 'This Window is draggable by caption.',
                         onShow: function () {
-                            var content = '<form id="login-form-1" action="account/login.php" method ="POST">' +
+                            var content = '<form id="login-form-1" action="account/login.php/" method ="POST">' +
                                     '<p>Login</p>' +
                                     '<div class="input-control text"><input type="text" name="login"><button class="btn-clear"></button></div>' +
                                     '<p>Password</p>' +
