@@ -1,0 +1,47 @@
+Home page
+8 scrollable blocks (rows) for updates
+  - smaller fonts
+  - display on lefthand side should be     bigger 6:4 (leftside to right side)
+
+For bars at top want:
+- home
+- messages/inbox
+- academia
+  - courses
+  - groups
+  - forums 
+- map
+- freebies
+  - food
+  - entertainment
+  - books
+  - others
+- events
+  - nightlife (drop down)
+  - volunteer
+- account
+  - profile
+  - privacy
+
+messages/inbox
+- contact list somewhere
+- email format
+- indication of mail from known contacts
+
+academia
+- courses
+	select courses (category into 		        courses)
+  
+map
+- bigger popup box
+- smaller font in popup box
+- box should show:
+   event name, time of event/date, icon 	   should indicate if any friends are    going (when clicked, shows which       friends are going)	
+- create your own event should have some calander-like function //maybe transparency?
+
+freebies
+- links to free stuff
+profile
+- standard profile junk
+- status that links to a place on the map
+
