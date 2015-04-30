@@ -60,7 +60,7 @@ body {
     <script type="text/javascript" charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script type="text/javascript"  charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
-    <!-- Load script specific for index page-->
+    <!-- Load script specific for parties page-->
     <?php 
     echo"<script  type='text/javascript' charset='UTF-8'>
 
