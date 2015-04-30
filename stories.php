@@ -56,7 +56,7 @@ body {
         <div class="grid">
             <div id="row0" class="row" >
                 <div class="span4 offset_special">
-                        <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
+                        <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
             <div id="row1" class="row" >
@@ -120,7 +120,15 @@ body {
                     
                     </div>
             </div>
-        </div>
+            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
+                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
+                <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
+                <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
 
         <script  type="text/javascript" charset="UTF-8" >
             $(function () {

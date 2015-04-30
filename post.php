@@ -34,7 +34,9 @@ body {
     <script src="js/prettify/prettify.js"></script>
     <script src="js/holder/holder.js"></script>
     <script src="js/page_scripts/HERE_utilities.js"></script>
-
+    <!-- Load Calendar -->
+    <script src="js/metro/metro-calendar.js"></script>
+    <script src="js/metro/metro-datepicker.js"></script>
     <!-- Metro UI CSS JavaScript plugins -->
     <script src="js/load-metro.js"></script>
 
@@ -56,7 +58,7 @@ body {
         <div class="grid">
             <div id="row0" class="row" >
                 <div class="span4 offset_special">
-                        <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
+                        <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
             <div id="row1" class="row" >
@@ -119,45 +121,54 @@ body {
                          <div id="featured_row1" class="row" >
                              <div class="spanspecial"> 
                                  </div>
-                             <div id ="post_story_column" class="span4">
+                             <div id ="post_story_column" class="span4 offset_events">
                                  
-                                 <div class="tile triple quadro-vertical bg-violet">
-                                         <div class="tile-content icon">
-                                             <i class="icon-pencil"></i>
+                                 <div class="tile triple ">
+                                     <div class="tile-content icon button bg-violet">
+                                        <i class="icon-pencil"></i>
                 
+                                         
+                                        <div class="tile-status">
+                                            <span class="name" >Write a Story</span>
+                
+                                        </div>
+                                     
+                                     </div>
+                                 </div>
+                                 
+                                 
+                                 <div class="tile triple">
+                                     
+                                     <div class="tile-content icon button bg-yellow" id="event">
+                                         <i class="icon-location"></i>
+                                                 
+                                 
+                                         <div class="tile-status">
+                                             <span class="name" >Post an Activity</span>
+                                 
                                          </div>
-                                     <div class="tile-status">
-                                         <span class="name" >Write a Story</span>
-                
+                                 
                                      </div>
-                
-                                 </div>
+                                 
+                                  </div>
                 
                              </div>
-                
-                             
-                             <div id="post_event_column" class="span4 offset_livefeed_column">
-                
-                                 <div class="tile triple quadro-vertical">
-                                     <div class="tile triple quadro-vertical bg-yellow" >
-                                         <a href="/events/upload_events.php" class="tile-content icon">
-                                             <i class="icon-location"></i>
-                
-                                         </a>
-                                     <div class="tile-status">
-                                         <span class="name" >Post an Activity</span>
-                
-                                     </div>
-                
-                                 </div>
-                
-                                 </div>
-                
-                             </div>
-                         </div>
-                     </div>
 
+                       
+                             </div>
+                             
+                         </div>
+                         
+                     </div>
             </div>
+            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
+                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.<p>
+                <P><a href="mailto:bsquared@gmail.com" class="fg-white">Email Us</a> </P>
+                <p><a href="https://github.com/orgs/BsquaredatUofA/" class="fg-white">Visit Us On GitHub</a></p>
+            </div>
+        </div>
+        </div>
+        </div>
         </div>
 
         <script  type="text/javascript" charset="UTF-8" >
@@ -198,7 +209,44 @@ body {
             
       
         </script>
+        <script  type="text/javascript" charset="UTF-8" >
+           $(function () {
+               
+               $("#event").on('click', function () {
+                   $.Dialog({
+                       shadow: true,
+                       overlay: false,
+                       draggable: true,
+                       icon: '<img src="Assets/default_user.png">',
+                       title: 'Draggable window',
+                       width: 'auto',
+                       padding: 10,
+                       content: 'This Window is draggable by caption.',
+                       onShow: function () {
+                           $("#datepicker").datepicker();
+                           var strVar="";
+                                strVar += "<form id=\"form1\" method =\"post\" action=\"events\/upload_events.php\">  ";
+                                strVar += "    <p>Is it for fun or academic?<\/p> <p><input name =\"type\" type=\"text\" \/><\/p> ";
+                                strVar += "   	<p>Describe what you're gonna do: <input name =\"description\" type=\"text\" \/><\/p> ";
+                                strVar += "     <p>At what time (YYYY-MM-DD): <input name =\"date\" type=\"datetime-local\" \/><\/p>";
+                                strVar += "    <p>lat:<\/p> <p><input name =\"lat\" type=\"number\" step=\"any\"\/><\/p> <p>long:<\/p><p><input name =\"long\" type=\"number\" step=\"any\"\/><\/p>";
+                                strVar += "    <p><input name =\"submit\" type=\"submit\"\/> <\/p>";
+                                strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
 
+                                strVar += "<\/form>";
+                                strVar += "";
+                           
+
+                           $.Dialog.title("Create Event");
+                           $.Dialog.content(strVar);
+                       }
+
+                   });
+               });
+
+               
+           });
+        </script>
         
     </body>
 </html>

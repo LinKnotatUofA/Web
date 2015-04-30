@@ -13,7 +13,7 @@ $lat = @$_POST['lat'];
 $long = @$_POST['long'];
 $type = @$_POST['type'];
 $submit = @$_POST['submit'];
-$userID= $_SESSION('ID');
+$userID= $_SESSION['id'];
 $ID = 100;
 
 $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
@@ -67,7 +67,8 @@ if($submit){
         printf("error: %s\n", mysqli_error($mysqli));
     }
     else    
-        echo "registration successful";
+        echo "registration successful,sending you back to home page";
+        header( "refresh:3; url=/index.php" ); 
     
 }
 
@@ -77,7 +78,7 @@ if($submit){
 
 
 <body>
-    <form id="form1" method ="post">  
+    <form id="form1" method ="post" >  
         <p>Is it for fun or academic? <input name ="type" type="text" /></p> 
        	<p>Describe what you're gonna do: <input name ="description" type="text" /></p> 
         <p>At what time: <input name ="date" type="datetime-local" /></p>

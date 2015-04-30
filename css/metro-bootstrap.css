@@ -1340,6 +1340,10 @@ a {
   margin-left: 18% !important;
 }
 
+.metro .offset_events {
+  margin-left: 25% !important;
+}
+
 .metro .offset1 {
   margin-left: 80px !important;
 }
@@ -4879,9 +4883,6 @@ a {
 }
 .metro .tile.double {
   width: 250px;
-}
-.metro .tile.doublefive {
-  width: 305px;
 }
 .metro .tile.double-vertical {
   height: 250px;

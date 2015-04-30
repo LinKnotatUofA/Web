@@ -1,6 +1,17 @@
 
 <?php 
     session_start();
+    //we need to:
+    //retrieve *all events* from database
+    //grab geo coordinates
+    //write javascript to display events through HERE maps
+    require "events/load_events.php";
+    
+    
+    
+
+   
+    
     
     ?>
 
@@ -9,7 +20,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Building Bridges @ UofA - Home</title>
+<title>Building Bridges @ UofA - Parties</title>
 <link rel="shortcut icon" href="Assets/favicon.ico" />
 <meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" />
 <meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
@@ -50,14 +61,99 @@ body {
     <script type="text/javascript"  charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
     <!-- Load script specific for index page-->
-    <script src="js/page_scripts/party/parties_script.js"></script>
+    <?php 
+    echo"<script  type='text/javascript' charset='UTF-8'>
+
+    function display_fun() {
+        if (edit == true) {
+            removeClickListener();
+            edit = false;
+        }
+    
+        //we need to somehow delete the existing group in the map object and load the right group
+        map.removeObject(currentgroup);
+        currentgroup = groupfun;
+        currenticon = funmark;
+        map.addObject(currentgroup);";?> 
+        <?php 
+        
+        for($x = 0;$x<count($eventlist);$x++)
+        {
+            if($eventlist[$x]['TYPE']=='0')
+            {
+                echo "addMarkerToGroup(groupfun, { lat: ";
+                print_r($eventlist[$x]['LAT']);
+                echo", lng:";
+                print_r($eventlist[$x]['LONGt']);
+                echo"},'<div><a>";
+                print_r($eventlist[$x]['DESCRIPTION']);
+                echo"</a></div><div >";
+                print_r($eventlist[$x]['TIME']);
+                echo"</div>');";
+                echo"\r\n";
+                }
+        }
+        echo
+        "
+        
+        return false;
+    }
+    
+     function main() {
+        // by defualt page will load all fun parties
+        map.addObject(currentgroup);
+        display_fun();
+        //setupown();
+    }
+    
+    function display_study() {
+            if (edit == true) {
+                removeClickListener();
+                edit = false;
+            }
+    
+            map.removeObject(currentgroup);
+            currentgroup = groupstudy;
+            currenticon = studymark;
+            map.addObject(currentgroup);
+            addMarkerToGroup(currentgroup, { lat: 53.528200, lng: -113.525439 },
+          '<div ><a>Stats 151 Study Group</a>' +
+          '</div><div >@ CCIS L2-220<br>Tommrow @ 12:00 AM</div>');
+            return false;
+        }
+    function display_custom() {
+            if (edit == true) {
+                removeClickListener();
+                edit = false;
+            }
+            map.removeObject(currentgroup);
+            currentgroup = groupcustom;
+            currenticon = custommark;
+            map.addObject(currentgroup);
+            addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
+          '<div ><a>Workout Session</a>' +
+          '</div><div >@ PAW<br>Today @ 4:00 PM</div>');
+            return false;
+        }
+     function display_own() {
+            if (edit == false) {
+    
+                setUpClickListener();
+                edit = true;
+            }
+            return false;
+        }
+        
+   </script>";
+   
+   ?>
     
 </head>
 	<body class="metro">
         <div class="grid">
             <div id="row0" class="row" >
                 <div class="span4 offset_special">
-                        <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
+                        <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
             <div id="row1" class="row" >
@@ -140,8 +236,16 @@ body {
                     </div>
                     <div class="span9" id="map" style="width: 100%; height: 400px; background: grey" />   
                                
-                </div>   
-            </div>
+                </div>  
+                <div class="span12 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
+                    Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
+                    <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
+                    <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>             
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
 
 
 
