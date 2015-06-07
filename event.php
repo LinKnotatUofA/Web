@@ -99,6 +99,9 @@ body {
                             </div>
                             <span class="element-divider"></span>
                             <?php
+                            //event name
+                            $event_id = $_GET['event'];
+                            //grab all the shit providing this ID, like dates, description and shit.
                             if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
                                 {
                                     echo "<a class='element'> Welcome! ".$_SESSION['username']." </a>" ;
