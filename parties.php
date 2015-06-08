@@ -85,7 +85,9 @@ body {
                 print_r($eventlist[$x]['LAT']);
                 echo", lng:";
                 print_r($eventlist[$x]['LONGt']);
-                echo"},'<div><a>";
+                echo"},'<div><a href=event.php?id=";
+                print_r($eventlist[$x]['EVENTID']);
+                echo ">";
                 print_r($eventlist[$x]['DESCRIPTION']);
                 echo"</a></div><div >";
                 print_r($eventlist[$x]['TIME']);

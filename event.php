@@ -1,6 +1,10 @@
 <?php 
     session_start();
     //1.we will need to grab the event ID
+    if (isset($_GET['ID']))
+    {
+        $eventID = $_GET['ID'];
+    }
     //2.query our database for that event -
     //3.fill in all info based on the database
     // reminder - use POST method (youtube style - url/event?=(insert id here))
@@ -20,7 +24,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Building Bridges @ UofA - Event(*Farhan insert title here)</title>
+<title>Building Bridges @ UofA - <?php ?></title>
 <link rel="shortcut icon" href="Assets/favicon.ico" />
 <meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" />
 <meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
@@ -99,8 +103,6 @@ body {
                             </div>
                             <span class="element-divider"></span>
                             <?php
-                            //event name
-                            $event_id = $_GET['event'];
                             //grab all the shit providing this ID, like dates, description and shit.
                             if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
                                 {
