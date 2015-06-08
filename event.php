@@ -1,9 +1,9 @@
 <?php 
     session_start();
     //1.we will need to grab the event ID
-    if (isset($_GET['ID']))
+    if (isset($_GET["id"]))
     {
-        $eventID = $_GET['ID'];
+        $eventID = $_GET["id"];
     }
     //2.query our database for that event -
     //3.fill in all info based on the database
@@ -24,7 +24,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Building Bridges @ UofA - <?php ?></title>
+<title>Building Bridges @ UofA - <?php echo "Jian Insert Description here for now"; ?></title>
 <link rel="shortcut icon" href="Assets/favicon.ico" />
 <meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" />
 <meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
@@ -138,11 +138,13 @@ body {
                             <ul>
                                 <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
                                 <li class="title" style="color: white;">Options</li>
-                                <li><a style="color: white;" onclick="join()" id="study" href="#Join">Join
+                                <li><a style="color: white;"><?php echo "Event ID:".$eventID;?>
+                                    </a></li>
+                                <li><a style="color: white;" onclick="join()" id="join" href="#Join">Join
                                     <i class="icon-plus-2 on-right"></i></a></li>
-                                <li><a style="color: white;" onclick="leave()" id="fun" href="#Leave">Leave
+                                <li><a style="color: white;" onclick="leave()" id="leave" href="#Leave">Leave
                                     <i class="icon-cancel-2 on-right"></i></a></li>
-                                <li><a style="color: white;" onclick="share()" id="own" href="#Share">Share
+                                <li><a style="color: white;" onclick="share()" id="share" href="#Share">Share
                                     <i class="icon-share-2 on-right"></i></a></li>
                             </ul>
                         </nav>
@@ -153,7 +155,7 @@ body {
                                 <div class="tile-status">
                                     <div class="brand bg-black">
                                         
-                                        <span class="name fg-white">Created By: (*Sam Insert Author Name And Profile Pic Here)</span>
+                                        <span class="name fg-white">Created By: (*Dennis Insert Author Name And Profile Pic Here)</span>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +163,7 @@ body {
                                 <div class="tile-status">
                                     <div class="brand bg-black">
                                         
-                                        <span class="name fg-white">Date: (*Sam Insert Date/Time here)</span>
+                                        <span class="name fg-white">Date: (*Michael Insert Date/Time here)</span>
                                     </div>
                                 </div>
                             </div>

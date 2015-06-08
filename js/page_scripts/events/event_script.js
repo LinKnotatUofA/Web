@@ -20,6 +20,6 @@ function display_event() {
     currenticon = funmark;
     map.addObject(currentgroup);
     addMarkerToGroup(groupfun, { lat: 53.526296, lng: -113.525600 },
-      '<div><a>Location:(*Farhan load the lat/long from our database)</a>');
+      '<div><a>Location:(*Sam load the lat/long from our database)</a>');
     return false;
 }
