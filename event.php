@@ -1,6 +1,7 @@
 <?php 
     session_start();
     //1.we will need to grab the event ID
+    global $eventID;
     if (isset($_GET["id"]))
     {
         $eventID = $_GET["id"];
@@ -155,7 +156,8 @@ body {
                                 <div class="tile-status">
                                     <div class="brand bg-black">
                                         
-                                        <span class="name fg-white">Created By: (*Dennis Insert Author Name And Profile Pic Here)</span>
+                                        <span class="name fg-white"><img src='Assets/default_user.png'/><br>Created By:
+                                        <?php echo "<a class='element'>John Doe</a>";?></span>
                                     </div>
                                 </div>
                             </div>
