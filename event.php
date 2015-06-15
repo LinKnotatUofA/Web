@@ -99,6 +99,14 @@ body {
     <script src="js/page_scripts/events/event_script.js"></script>
 </head>
 	<body class="metro">
+	    <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
         <div class="grid">
             <div id="row0" class="row" >
                 <div class="span4 offset_special">
@@ -174,8 +182,7 @@ body {
                                     <i class="icon-plus-2 on-right"></i></a></li>
                                 <li><a style="color: white;" onclick="leave()" id="leave" href="#Leave">Leave
                                     <i class="icon-cancel-2 on-right"></i></a></li>
-                                <li><a style="color: white;" onclick="share()" id="share" href="#Share">Share
-                                    <i class="icon-share-2 on-right"></i></a></li>
+                                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
                             </ul>
                         </nav>
                     </div>
