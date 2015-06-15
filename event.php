@@ -199,7 +199,7 @@ body {
                                         //grab the latest 4 events from database
                                         $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");
                                         $stuff = resultToArray($query);
-                                        print_r($stuff['username']);
+                                        print_r($stuff[0]['username']);
                                         ?></span>
                                     </div>
                                 </div>
