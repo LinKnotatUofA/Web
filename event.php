@@ -191,7 +191,8 @@ body {
                                         $authid = $singleventproperty[0]['authID'];
                                         //grab the latest 4 events from database
                                         $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");
-                                        print_r($query[0]);
+                                        $stuff = resultToArray($query);
+                                        print_r(stuff[0]);
                                         ?></span>
                                     </div>
                                 </div>
