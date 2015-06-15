@@ -1,5 +1,6 @@
 <?php
     
+
 $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
 
 //grab the latest 4 events from database
@@ -13,6 +14,14 @@ function resultToArray($result) {
     return $rows;
 }
 $eventlist = resultToArray($query);
+
+function geteventinfo($eID)
+{
+    $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+    $singleventquery = mysqli_query($mysqli,"SELECT * FROM event WHERE EVENTID = '$eID'");
+    $singleventproperty = resultToArray($singleventquery);
+    return $singleventproperty;
+}
 
 //print_r($eventlist[0]['EVENTID']);
 

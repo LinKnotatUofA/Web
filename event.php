@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    require "/events/load_events.php";
     //1.we will need to grab the event ID
     global $eventID;
     if (isset($_GET["id"]))
@@ -7,6 +8,8 @@
         $eventID = $_GET["id"];
     }
     //2.query our database for that event -
+    $singleventproperty = geteventinfo($eventID);
+    
     //3.fill in all info based on the database
     // reminder - use POST method (youtube style - url/event?=(insert id here))
     //which will include:
@@ -66,8 +69,34 @@ body {
     <script type="text/javascript"  charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
     <!-- Load script specific for index page-->
-    <script src="js/page_scripts/events/event_script.js"></script>
     
+    <?php
+        echo
+        "<script  type='text/javascript' charset='UTF-8'>";
+        echo
+        "function display_event() {
+    if (edit == true) {
+        removeClickListener();
+        edit = false;
+    }
+
+    //we need to somehow delete the existing group in the map object and load the right group
+    map.removeObject(currentgroup);
+    currentgroup = groupfun;
+    currenticon = funmark;
+    map.addObject(currentgroup);
+    addMarkerToGroup(groupfun, { lat:";
+    print_r($singleventproperty[0]['LAT']);
+    
+    echo", lng: ";print_r($singleventproperty[0]['LONGt']); 
+    
+    echo"},
+      '<div><a>Location:(*Is this shit loaded?)</a>');
+    return false;
+}";
+    echo"</script>";
+?>
+    <script src="js/page_scripts/events/event_script.js"></script>
 </head>
 	<body class="metro">
         <div class="grid">
@@ -172,9 +201,11 @@ body {
                         </div> 
                         <div id ="info_row_2" class = "row"> 
                             <div class="tile bg-red">
-                                <div class="tile-status">
-                                    <div class="brand bg-black">
-                                        <span class="name fg-white">Promo Pic: (*Sam Insert Promo Pic Here)</span>
+                                <div class="tile-content image-container">
+                                    <div class="image-container">
+                                        <div class="frame">
+                                            <?php   echo '<img src="data:image/jpeg;base64,'.base64_encode($singleventproperty[0]['thumbnail'] ).'"/>';  ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
