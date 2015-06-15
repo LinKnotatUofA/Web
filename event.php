@@ -186,7 +186,7 @@ body {
                                     <div class="brand bg-black">
                                         
                                         <span class="name fg-white"><img src='Assets/default_user.png'/><br>Created By:
-                                        <?php echo "<a class='element'>John Doe</a>";?></span>
+                                        <?php print_r($singleventproperty[0]['authID']); ?></span>
                                     </div>
                                 </div>
                             </div>
