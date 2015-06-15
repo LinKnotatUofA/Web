@@ -186,7 +186,13 @@ body {
                                     <div class="brand bg-black">
                                         
                                         <span class="name fg-white"><img src='Assets/default_user.png'/><br>Created By:
-                                        <?php print_r($singleventproperty[0]['authID']); ?></span>
+                                        <?php 
+                                        $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+                                        $authid = $singleventproperty[0]['authID'];
+                                        //grab the latest 4 events from database
+                                        $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");
+                                        print_r($query[0]);
+                                        ?></span>
                                     </div>
                                 </div>
                             </div>
