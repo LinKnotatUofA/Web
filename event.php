@@ -208,7 +208,7 @@ body {
                                 <div class="tile-status">
                                     <div class="brand bg-black">
                                         
-                                        <span class="name fg-white">Date: (*Michael Insert Date/Time here)</span>
+                                        <span class="name fg-white"> <?php print_r($singleventproperty[0]['TIME']); ?></span>
                                     </div>
                                 </div>
                             </div>
