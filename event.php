@@ -97,6 +97,7 @@ body {
     echo"</script>";
 ?>
     <script src="js/page_scripts/events/event_script.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 	<body class="metro">
 	    <div id="fb-root"></div>
@@ -183,6 +184,8 @@ body {
                                 <li><a style="color: white;" onclick="leave()" id="leave" href="#Leave">Leave
                                     <i class="icon-cancel-2 on-right"></i></a></li>
                                 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
+                                <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+                                <a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
                             </ul>
                         </nav>
                     </div>
@@ -276,7 +279,7 @@ body {
         
         
         </script>
-
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         <script  type="text/javascript" charset="UTF-8" >
             $(function () {
                 $("#login").on('click', function () {
