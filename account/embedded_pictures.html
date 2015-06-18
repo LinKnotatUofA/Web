@@ -1,0 +1,119 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Building Bridges @ UofA - Home</title>
+<link rel="shortcut icon" href="Assets/favicon.ico" />
+<meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" />
+<meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link href="css/metro-bootstrap.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+	background-color: #3CB6CE;
+    color: #FFFFFF;
+}
+</style>
+
+	<link href="css/metro-bootstrap.css" rel="stylesheet">
+    <link href="css/metro-bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/iconFont.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="js/prettify/prettify.css" rel="stylesheet">
+
+    <!-- Load JavaScript Libraries -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/jquery/jquery.widget.min.js"></script>
+    <script src="js/jquery/jquery.mousewheel.js"></script>
+    <script src="js/prettify/prettify.js"></script>
+    <script src="js/holder/holder.js"></script>
+
+    <!-- Metro UI CSS JavaScript plugins -->
+    <script src="js/load-metro.js"></script>
+
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/github.info.js"></script>
+    <script src="js/herescript.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <script type="text/javascript" charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <script type="text/javascript"  charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+
+    <!-- Load script specific for stories page-->
+    
+    
+</head>
+	<body class="metro">
+        <div class="grid">
+            <div id="row1" class="row">
+                <div class="span3">
+                    <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
+                </div>
+                <div class="span1">
+                    	<div id="login" class="tile" data-click="transform">
+                    		<div id="accountimage" class="tile-content image">
+                        		<img src="Assets/default_user.png">
+                        	</div>
+                         	<div class="brand bg-black">
+                         		<span class="label fg-white">Sign in</span>
+							</div>
+                    	</div>
+                </div>
+            </div>
+            <div id="row2" class="row">
+                <div class="span3">
+                    <nav class="vertical-menu white">
+                        <ul>
+                            <li style="color: white;" class="title">Stories</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="span12" id="map" style="width: 100%; height: 400px; background: grey" />
+                    <iframe width=100% height=100%; src="//www.youtube.com/embed/IIAhXlo5jBQ" frameborder="0" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+        <script  type="text/javascript" charset="UTF-8" >
+            $(function () {
+                $("#login").on('click', function () {
+                    $.Dialog({
+                        shadow: true,
+                        overlay: false,
+                        draggable: true,
+                        icon: '<img src="Assets/default_user.png">',
+                        title: 'Draggable window',
+                        width: 'auto',
+                        padding: 10,
+                        content: 'This Window is draggable by caption.',
+                        onShow: function () {
+                            var content = '<form id="login-form-1">' +
+                                    '<p>Login</p>' +
+                                    '<div class="input-control text"><input type="text" name="login"><button class="btn-clear"></button></div>' +
+                                    '<p>Password</p>' +
+                                    '<div class="input-control password"><input type="password" name="password"><button class="btn-reveal"></button></div>' +
+                                    '<div class="input-control checkbox"><p>Remember Me <input type="checkbox" name="c1" checked/><span class="check"></span></p></div>' +
+                                    '<div class="form-actions">' +
+                                    '<button class="button primary">Login to...</button>&nbsp;' +
+                                    '<button class="button" type="button" onclick="$.Dialog.close()">Cancel</button> ' +
+                                    '</div>' +
+                                    '</form>';
+
+                            $.Dialog.title("User login");
+                            $.Dialog.content(content);
+                        }
+
+                    });
+                });
+
+                
+            });
+            
+      
+        </script>
+
+        
+    </body>
+</html>
+
+ 
