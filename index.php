@@ -187,6 +187,7 @@ body {
                             <div id="livefeed_column" class="span4 offset_livefeed_column">
 
                                 <div class="tile triple">
+
                                     <h3><a href="?id=1_"><?php print_r($eventlist[0]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[0]['TIME']); echo" - "; printusername($eventlist[0]['authID']); echo"<p> </p>"; print_r($eventlist[0]['EVENTID']); ?></a></h3>
                                 </div>
 
