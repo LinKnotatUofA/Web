@@ -95,17 +95,17 @@ body {
                 echo"\r\n";
                 }
         }
-        echo
+        ?>
         
-        
-    
+        <?php
+    echo "    
      function main() {
         // by defualt page will load all fun parties
         map.addObject(currentgroup);
         display_fun();
         //setupown();
-    }
-    
+    }";?> 
+    <?php echo"
     function display_study() {
             if (edit == true) {
                 removeClickListener();
@@ -115,12 +115,19 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupstudy;
             currenticon = studymark;
-            map.addObject(currentgroup);
+            map.addObject(currentgroup);"; ?>
+            <?php
+   for($x = 0;$x<count($eventlist);$x++)
+        {
+            if($eventlist[$x]['TYPE']=='1')
+            {
             addMarkerToGroup(currentgroup, { lat: $eventlist[$x]['LAT'], lng: $eventlist[$x]['LONGt'] },
           '<div ><a>'+print_r($eventlist[$x]['DESCRIPTION'])+'</a>' +
           '</div><div >@ CCIS L2-220<br>'+print_r($eventlist[$x]['TIME'])+'</div>');
             return false;
-        }
+            }
+        } ?>
+        <?php echo"
     function display_custom() {
             if (edit == true) {
                 removeClickListener();
@@ -129,12 +136,19 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupcustom;
             currenticon = custommark;
-            map.addObject(currentgroup);
+            map.addObject(currentgroup);"; ?>
+            <?php
+    for($x = 0;$x<count($eventlist);$x++)
+        {
+            if($eventlist[$x]['TYPE']=='0')
+            {
             addMarkerToGroup(currentgroup, { lat: $eventlist[$x]['LAT'], lng: $eventlist[$x]['LONGt'] },
           '<div ><a>'+print_r($eventlist[$x]['DESCRIPTION'])+'</a>' +
           '</div><div >@ PAW<br>'+print_r($eventlist[$x]['TIME'])+'</div>');
             return false;
-        }
+            }
+        } ?>
+        <?php echo"
      function display_own() {
             if (edit == false) {
     
@@ -142,8 +156,8 @@ body {
                 edit = true;
             }
             return false;
-        }
-        
+        }";
+        ?>
    </script>;
    
    ?>
