@@ -98,8 +98,6 @@ body {
         echo
         
         
-        return false;
-    }
     
      function main() {
         // by defualt page will load all fun parties
