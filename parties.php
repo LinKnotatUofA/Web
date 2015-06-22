@@ -222,7 +222,7 @@ body {
              //a green square for fun
              var funmark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" /></svg>';
              //a cyan square for custom
-             var custommark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#00ffff" x="1" y="1" width="22" height="22" /></svg>';
+             var custommark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#ba00ff" x="1" y="1" width="22" height="22" /></svg>';
 
              var currenticon = funmark;
 
