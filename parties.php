@@ -95,17 +95,19 @@ body {
                 echo"\r\n";
                 }
         }
-        ?>
+        echo
+        "
         
-        <?php
-    echo "    
+        return false;
+    }
+    
      function main() {
         // by defualt page will load all fun parties
         map.addObject(currentgroup);
         display_fun();
         //setupown();
-    }";?> 
-    <?php echo"
+    }
+    
     function display_study() {
             if (edit == true) {
                 removeClickListener();
@@ -115,19 +117,12 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupstudy;
             currenticon = studymark;
-            map.addObject(currentgroup);"; ?>
-            <?php
-   for($x = 0;$x<count($eventlist);$x++)
-        {
-            if($eventlist[$x]['TYPE']=='1')
-            {
-            addMarkerToGroup(currentgroup, { lat: $eventlist[$x]['LAT'], lng: $eventlist[$x]['LONGt'] },
-          '<div ><a>'+print_r($eventlist[$x]['DESCRIPTION'])+'</a>' +
-          '</div><div >@ CCIS L2-220<br>'+print_r($eventlist[$x]['TIME'])+'</div>');
+            map.addObject(currentgroup);
+            addMarkerToGroup(currentgroup, { lat: 53.528200, lng: -113.525439 },
+          '<div ><a>Stats 151 Study Group</a>' +
+          '</div><div >@ CCIS L2-220<br>Tommrow @ 12:00 AM</div>');
             return false;
-            }
-        } ?>
-        <?php echo"
+        }
     function display_custom() {
             if (edit == true) {
                 removeClickListener();
@@ -136,19 +131,12 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupcustom;
             currenticon = custommark;
-            map.addObject(currentgroup);"; ?>
-            <?php
-    for($x = 0;$x<count($eventlist);$x++)
-        {
-            if($eventlist[$x]['TYPE']=='0')
-            {
-            addMarkerToGroup(currentgroup, { lat: $eventlist[$x]['LAT'], lng: $eventlist[$x]['LONGt'] },
-          '<div ><a>'+print_r($eventlist[$x]['DESCRIPTION'])+'</a>' +
-          '</div><div >@ PAW<br>'+print_r($eventlist[$x]['TIME'])+'</div>');
+            map.addObject(currentgroup);
+            addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
+          '<div ><a>Workout Session</a>' +
+          '</div><div >@ PAW<br>Today @ 4:00 PM</div>');
             return false;
-            }
-        } ?>
-        <?php echo"
+        }
      function display_own() {
             if (edit == false) {
     
@@ -156,9 +144,9 @@ body {
                 edit = true;
             }
             return false;
-        }";
-        ?>
-   </script>;
+        }
+        
+   </script>";
    
    ?>
     
@@ -184,7 +172,7 @@ body {
                         <nav class="vertical-menu">
                             <ul>
                                 <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
-                               <li class="title" style="color: white;">Party</li>
+                                <li class="title" style="color: white;">Party</li>
                                 <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
                                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                                         <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
