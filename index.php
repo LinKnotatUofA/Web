@@ -139,19 +139,19 @@ body {
                             
                             <div id="livefeed_column" class="span4 offset_livefeed_column"> 
                                 <div class="tile triple">
-                                    <h3><a href=<?php print_r("\"event.php?id=");print_r($eventlist[0]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[0]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[0]['TIME']); echo" - "; printusername($eventlist[0]['authID']); echo"<p> </p>"; ?></a></h3>
+                                    <h3><a href=<?php print_r("\"event.php?id=");print_r($eventlist[0]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[0]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[0]['TIME']); echo" - "; printusername($eventlist[0]['authID']);?></a></h3>
                                 </div>
 
                                 <div class="tile triple">
-                                    <h3><a href=<?php print_r("\"event.php?id=");print_r($eventlist[1]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[1]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[1]['TIME']); echo" - "; printusername($eventlist[1]['authID']);echo"<p> </p>"; print_r($eventlist[1]['EVENTID']); ?></a></h3>
+                                    <h3><a href=<?php print_r("\"event.php?id=");print_r($eventlist[1]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[1]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[1]['TIME']); echo" - "; printusername($eventlist[1]['authID']);?></a></h3>
                                 </div>
 
                                 <div class="tile triple">
-                                    <h3><a href=<?php print_r("\"event.php?id=");print_r($eventlist[2]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[2]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[2]['TIME']); echo" - "; printusername($eventlist[2]['authID']); echo"<p> </p>"; print_r($eventlist[2]['EVENTID']);?></a></h3>
+                                    <h3><a href=<?php print_r("\"event.php?id=");print_r($eventlist[2]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[2]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[2]['TIME']); echo" - "; printusername($eventlist[2]['authID']);?></a></h3>
                                 </div>
 
                                 <div class="tile triple">
-                                    <h3><a href=<?php print_r("\"event.php?id=");print_r($eventlist[3]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[3]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[3]['TIME']); echo" - "; printusername($eventlist[3]['authID']); echo"<p> </p>"; print_r($eventlist[3]['EVENTID']);?></a></h3>
+                                    <h3><a href=<?php print_r("\"event.php?id=");print_r($eventlist[3]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[3]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[3]['TIME']); echo" - "; printusername($eventlist[3]['authID']);?></a></h3>
                                 </div> 
 
                             </div>
@@ -171,44 +171,7 @@ body {
           
 
 
-        <script type="text/javascript" charset="UTF-8" >
-            $(function () {
-                $("#login").on('click', function () {
-                    $.Dialog({
-                        shadow: true,
-                        overlay: false,
-                        draggable: true,
-                        icon: '<img src="Assets/default_user.png">',
-                        title: 'Draggable window',
-                        width: 'auto',
-                        padding: 10,
-                        content: 'This Window is draggable by caption.',
-                        onShow: function () {
-                            var content = '<form id="login-form-1" action="account/login.php/" method ="POST">' +
-                                    '<p>Login</p>' +
-                                    '<div class="input-control text"><input type="text" name="login"><button class="btn-clear"></button></div>' +
-                                    '<p>Password</p>' +
-                                    '<div class="input-control password"><input type="password" name="password"><button class="btn-reveal"></button></div>' +
-                                    '<div class="input-control checkbox"><p>Remember Me <input type="checkbox" name="c1" checked/><span class="check"></span></p></div>' +
-                                    '<div class="form-actions">' +
-                                    '<button class="button primary">Login to...</button>&nbsp;' +
-                                    '<button class="button warning" type="button"><a href="account/registration.php">Register</a></button>&nbsp;' +
-                                    '<button class="button" type="button" onclick="$.Dialog.close()">Cancel</button> ' +
-                                    '</div>' +
-                                    '</form>';
-
-                            $.Dialog.title("User login");
-                            $.Dialog.content(content);
-                        }
-
-                    });
-                });
-
-                
-            });
-            
-      
-        </script>
+        
 
         
     </body>

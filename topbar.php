@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="js/login.js"></script>
 </head>
 <body>
     <nav class="navigation-bar light">
@@ -14,7 +15,7 @@
             <span class="element-divider"></span>
             <a href="parties.php" class="element"> Party </a>
             <span class="element-divider"></span>
-            <a href="groups.php" class="element"> Groups </a>
+            <a href="group.php" class="element"> Groups </a>
             <span class="element-divider"></span>
             <a href="post.php" class="element"> Post </a>
             <span class="element-divider"></span>
@@ -48,10 +49,10 @@
             }
             else
             echo"<span class='element-divider place-right'></span>
-            <button id='login' class='element image-button image-left place-right'>
-                Log In / Sign Up
-                <img src='Assets/default_user.png' />
-            </button>";
+                    <button onclick ='login()' id='login' class='element image-button image-left place-right'>
+                        Log In / Sign Up
+                    <img src='Assets/default_user.png' />
+                </button>";
             ?>
         </div>
     </nav>
