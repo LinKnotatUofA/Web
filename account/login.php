@@ -8,7 +8,7 @@ $password = $_POST['password'];
 if($username&&$password)
 {
     
-   $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+   $mysqli = new mysqli("localhost:3306", "root", "goodtogo", "bsquared_user");
    
    $query = mysqli_query($mysqli,"SELECT * FROM user WHERE username='$username'");
    $numrows = mysqli_num_rows($query);
@@ -19,16 +19,15 @@ if($username&&$password)
        {
            $dbusername = $row['username'];
            $dbpassword = $row['password'];
-           $dbid= $row['id'];
+           
        }
        if($username==$dbusername&&$password==$dbpassword)
        {
            
            echo "Login successful,heading back to homepage";
-           header( "refresh:3; url=/index.php" ); 
+           header( "refresh:5; url=/index.php" ); 
 
            $_SESSION['username']=$dbusername;
-           $_SESSION['id']=$dbid;
            
        }
        else

@@ -31,28 +31,29 @@
             </div>
             <span class="element-divider"></span>
             <?php
-            if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
-            {
-            echo "<a class='element'> Welcome! ".$_SESSION['username']." </a>" ;
-            echo "<div class='element place-right'>
-                <a class='dropdown-toggle' href='#'>
-                    <span class='icon-cog'></span>
-                </a>
-                <ul class='dropdown-menu place-right' data-role='dropdown'>
-                    <li><a href='#'>Settings</a></li>
-                    <li><a href='#'>Edit Profile</a></li>
-                    <li><a href='#'>Contacts</a></li>
-                    <li><a href='account/logout.php'>Log Out</a></li>
-                </ul>
-            </div>";
+                session_start();
+                if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
+                {
+                    echo "<a class='element'> Welcome! ".$_SESSION['username']." </a>" ;
+                    echo "<div class='element place-right'>
+                            <a class='dropdown-toggle' href='#'>
+                            <span class='icon-cog'></span>
+                        </a>
+                        <ul class='dropdown-menu place-right' data-role='dropdown'>
+                            <li><a href='#'>Settings</a></li>
+                            <li><a href='#'>Edit Profile</a></li>
+                            <li><a href='#'>Contacts</a></li>
+                            <li><a href='account/logout.php'>Log Out</a></li>
+                        </ul>
+                    </div>";
 
-            }
-            else
-            echo"<span class='element-divider place-right'></span>
-                    <button onclick ='login()' id='login' class='element image-button image-left place-right'>
-                        Log In / Sign Up
-                    <img src='Assets/default_user.png' />
-                </button>";
+                }
+                else
+                    echo"<span class='element-divider place-right'></span>
+                            <button onclick ='login()' id='login' class='element image-button image-left place-right'>
+                                Log In / Sign Up
+                            <img src='Assets/default_user.png' />
+                        </button>";
             ?>
         </div>
     </nav>
