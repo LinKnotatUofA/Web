@@ -119,8 +119,8 @@ body {
             currenticon = studymark;
             map.addObject(currentgroup);
             addMarkerToGroup(currentgroup, { lat: $eventlist[$x]['LAT'], lng: $eventlist[$x]['LONGt'] },
-          '<div ><a>Stats 151 Study Group</a>' +
-          '</div><div >@ CCIS L2-220<br>Tommrow @ 12:00 AM</div>');
+          '<div ><a>'+$eventlist[$x]['DESCRIPTION']+'</a>' +
+          '</div><div >@ CCIS L2-220<br>'+$eventlist[$x]['TIME']+'</div>');
             return false;
         }
     function display_custom() {
@@ -133,8 +133,8 @@ body {
             currenticon = custommark;
             map.addObject(currentgroup);
             addMarkerToGroup(currentgroup, { lat: $eventlist[$x]['LAT'], lng: $eventlist[$x]['LONGt'] },
-          '<div ><a>Workout Session</a>' +
-          '</div><div >@ PAW<br>Today @ 4:00 PM</div>');
+          '<div ><a>'+$eventlist[$x]['DESCRIPTION']+'</a>' +
+          '</div><div >@ PAW<br>'+$eventlist[$x]['TIME']+'</div>');
             return false;
         }
      function display_own() {
