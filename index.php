@@ -184,24 +184,22 @@ body {
                             </div>
 
                             
-                            <div id="livefeed_column" class="span4 offset_livefeed_column">
-
+                            <div id="livefeed_column" class="span4 offset_livefeed_column"> 
                                 <div class="tile triple">
-
-                                    <h3><a href="?id=1_"><?php print_r($eventlist[0]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[0]['TIME']); echo" - "; printusername($eventlist[0]['authID']); echo"<p> </p>"; print_r($eventlist[0]['EVENTID']); ?></a></h3>
+                                    <h3><a href="event.php?id=100"><?php print_r($eventlist[0]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[0]['TIME']); echo" - "; printusername($eventlist[0]['authID']); echo"<p> </p>"; print_r($eventlist[0]['EVENTID']); ?></a></h3>
                                 </div>
 
                                 <div class="tile triple">
-                                    <h3><a href="?id=1_"><?php print_r($eventlist[1]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[1]['TIME']); echo" - "; printusername($eventlist[1]['authID']);echo"<p> </p>"; print_r($eventlist[1]['EVENTID']); ?></a></h3>
+                                    <h3><a href="parties.php#study"><?php print_r($eventlist[1]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[1]['TIME']); echo" - "; printusername($eventlist[1]['authID']);echo"<p> </p>"; print_r($eventlist[1]['EVENTID']); ?></a></h3>
                                 </div>
 
                                 <div class="tile triple">
-                                    <h3><a href="?id=1_"><?php print_r($eventlist[2]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[2]['TIME']); echo" - "; printusername($eventlist[2]['authID']); echo"<p> </p>"; print_r($eventlist[2]['EVENTID']);?></a></h3>
+                                    <h3><a href="parties.php#custom"><?php print_r($eventlist[2]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[2]['TIME']); echo" - "; printusername($eventlist[2]['authID']); echo"<p> </p>"; print_r($eventlist[2]['EVENTID']);?></a></h3>
                                 </div>
 
                                 <div class="tile triple">
-                                    <h3><a href="?id=1_"><?php print_r($eventlist[3]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[3]['TIME']); echo" - "; printusername($eventlist[3]['authID']); echo"<p> </p>"; print_r($eventlist[3]['EVENTID']);?></a></h3>
-                                </div>
+                                    <h3><a href="event.php?id=9330"><?php print_r($eventlist[3]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[3]['TIME']); echo" - "; printusername($eventlist[3]['authID']); echo"<p> </p>"; print_r($eventlist[3]['EVENTID']);?></a></h3>
+                                </div> 
 
                             </div>
                         </div>
