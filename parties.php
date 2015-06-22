@@ -96,7 +96,7 @@ body {
                 }
         }
         echo
-        "
+        
         
         return false;
     }
@@ -118,9 +118,9 @@ body {
             currentgroup = groupstudy;
             currenticon = studymark;
             map.addObject(currentgroup);
-            addMarkerToGroup(currentgroup, { lat: 53.528200, lng: -113.525439 },
-          '<div ><a>Stats 151 Study Group</a>' +
-          '</div><div >@ CCIS L2-220<br>Tommrow @ 12:00 AM</div>');
+            addMarkerToGroup(currentgroup, { lat: $eventlist[$x]['LAT'], lng: $eventlist[$x]['LONGt'] },
+          '<div ><a>'+print_r($eventlist[$x]['DESCRIPTION'])+'</a>' +
+          '</div><div >@ CCIS L2-220<br>'+print_r($eventlist[$x]['TIME'])+'</div>');
             return false;
         }
     function display_custom() {
@@ -132,9 +132,9 @@ body {
             currentgroup = groupcustom;
             currenticon = custommark;
             map.addObject(currentgroup);
-            addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
-          '<div ><a>Workout Session</a>' +
-          '</div><div >@ PAW<br>Today @ 4:00 PM</div>');
+            addMarkerToGroup(currentgroup, { lat: $eventlist[$x]['LAT'], lng: $eventlist[$x]['LONGt'] },
+          '<div ><a>'+print_r($eventlist[$x]['DESCRIPTION'])+'</a>' +
+          '</div><div >@ PAW<br>'+print_r($eventlist[$x]['TIME'])+'</div>');
             return false;
         }
      function display_own() {
@@ -146,7 +146,7 @@ body {
             return false;
         }
         
-   </script>";
+   </script>;
    
    ?>
     
@@ -172,7 +172,7 @@ body {
                         <nav class="vertical-menu">
                             <ul>
                                 <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
-                                <li class="title" style="color: white;">Party</li>
+                               <li class="title" style="color: white;">Party</li>
                                 <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
                                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                                         <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
