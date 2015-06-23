@@ -180,7 +180,7 @@ body {
                             <div class="tile bg-green">
                                 <div class="tile-status">
                                     <div class="brand bg-black">
-                                        <span class="name fg-white">Attendees: (*Elvis Open New Window Here,display all participents)</span>
+                                        <span class="name fg-white">Attendees:</span>
                                     </div>
                                 </div>
                             </div>
@@ -269,8 +269,45 @@ body {
             
       
         </script>
-
+    <?php
+        echo" <script  type='text/javascript' charset='UTF-8' >        
+        $('#attendees').on('click', function(){
+           $.Dialog({
+               overlay: true,
+               shadow: true,
+               flat: true,
+               icon: '<img src='Assets/default_user.png'>',
+               title: 'Attendees',
+               content: '',
+               padding: 10,
+               onShow: function(){
+                    var content =";
+            $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+            $query = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE EVENTID = '$eventID'");
+            $attendeeslist = resultToArray($query);
+            $length = count($attendeeslist);
+            for ($i = 0; $i < $length; $i++) 
+            {
+                $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attendeeslist[0]['name']'");
+                $name = resultToArray($namedata);
+                print_r($name[0]['username']);
+                echo" /n";
+            }
+            
         
+        echo"
+         
+                    $.Dialog.title('Attendees');
+                    $.Dialog.content(content);
+                    $.Metro.initInputs();
+                }
+            });
+        });
+    </script>";
+    ?>
+        
+        
+             
     </body>
 </html>
 
