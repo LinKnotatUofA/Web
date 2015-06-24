@@ -118,56 +118,7 @@ body {
                 <div class="span_navbar_special">
                 </div>
                 <div class="span12 offset_special">
-                    <nav class="navigation-bar light">
-                        <div class="navigation-bar-content">
-                            <a href="index.php" class="element"> Home </a>
-                            <span class="element-divider"></span>
-                            <a href="stories.php" class="element"> Story </a>
-                            <span class="element-divider"></span>
-                            <a href="parties.php" class="element"> Party </a>
-                            <span class="element-divider"></span>
-                            <a href="groups.php" class="element"> Groups </a>
-                            <span class="element-divider"></span>
-                            <a href="post.php" class="element"> Post </a>
-                            <span class="element-divider"></span>
-                            <a href="about_us.php" class="element"> About Us </a>
-                            <span class="element-divider"></span>     
-                            <div class="element input-element">
-                                <form>
-                                    <div class="input-control text">
-                                        <input type="text" placeholder="Search...">
-                                        <button class="btn-search"></button>
-                                    </div>
-                                </form>
-                            </div>
-                            <span class="element-divider"></span>
-                            <?php
-                            //grab all the shit providing this ID, like dates, description and shit.
-                            if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
-                                {
-                                    echo "<a class='element'> Welcome! ".$_SESSION['username']." </a>" ;
-                                    echo "<div class='element place-right'>
-                                              <a class='dropdown-toggle' href='#'>
-                                                  <span class='icon-cog'></span>
-                                              </a>
-                                              <ul class='dropdown-menu place-right' data-role='dropdown'>
-                                                  <li><a href='#'>Settings</a></li>
-                                                  <li><a href='#'>Edit Profile</a></li>
-                                                  <li><a href='#'>Contacts</a></li>
-                                                  <li><a href='account/logout.php'>Log Out</a></li>
-                                              </ul>
-                                          </div>";
-                                       
-                                }
-                                else
-                                    echo"<span class='element-divider place-right'></span>
-                                            <button id='login' class='element image-button image-left place-right'>
-                                                Log In / Sign Up
-                                            <img src='Assets/default_user.png'/>
-                                            </button>";
-                            ?>
-                        </div>
-                    </nav>
+                    <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
                 <div id="row2" class="row">
                     <div class="span3">
@@ -229,7 +180,7 @@ body {
                             <div class="tile bg-green">
                                 <div class="tile-status">
                                     <div class="brand bg-black">
-                                        <span class="name fg-white">Attendees: (*Elvis Open New Window Here,display all participents)</span>
+                                        <span class="name fg-white">Attendees:</span>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +222,7 @@ body {
             //a green square for fun
             var funmark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" /></svg>';
             //a cyan square for custom
-            var custommark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#00ffff" x="1" y="1" width="22" height="22" /></svg>';
+            var custommark = '<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><rect stroke="white" fill="#ba00ff" x="1" y="1" width="22" height="22" /></svg>';
         
             var currenticon = funmark;
         
@@ -318,8 +269,45 @@ body {
             
       
         </script>
-
+    <?php
+        echo" <script  type='text/javascript' charset='UTF-8' >        
+        $('#attendees').on('click', function(){
+           $.Dialog({
+               overlay: true,
+               shadow: true,
+               flat: true,
+               icon: '<img src='Assets/default_user.png'>',
+               title: 'Attendees',
+               content: '',
+               padding: 10,
+               onShow: function(){
+                    var content =";
+            $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+            $query = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE EVENTID = '$eventID'");
+            $attendeeslist = resultToArray($query);
+            $length = count($attendeeslist);
+            for ($i = 0; $i < $length; $i++) 
+            {
+                $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attendeeslist[0]['name']'");
+                $name = resultToArray($namedata);
+                print_r($name[0]['username']);
+                echo" /n";
+            }
+            
         
+        echo"
+         
+                    $.Dialog.title('Attendees');
+                    $.Dialog.content(content);
+                    $.Metro.initInputs();
+                }
+            });
+        });
+    </script>";
+    ?>
+        
+        
+             
     </body>
 </html>
 
