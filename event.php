@@ -183,9 +183,9 @@ body {
                                     <i class="icon-plus-2 on-right"></i></a></li>
                                 <li><a style="color: white;" onclick="leave()" id="leave" href="#Leave">Leave
                                     <i class="icon-cancel-2 on-right"></i></a></li>
-                                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
-                                <div class="g-plusone" data-annotation="inline" data-width="300"></div>
-                                <a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
+                                <div class="fb-share-button" data-href="localhost/event.php?id=$eventID" data-layout="button_count"></div>
+                                <div class="g-plusone"  data-annotation="inline" data-width="300"></div>    <!--- making changes here--->
+                                <a href="http://twitter.com/share?url=http://localhost/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a> <!--- https://twitter.com/twitter--->
                             </ul>
                         </nav>
                     </div>

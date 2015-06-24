@@ -74,11 +74,12 @@ body {
         map.removeObject(currentgroup);
         currentgroup = groupfun;
         currenticon = funmark;
-        map.addObject(currentgroup);";?> 
-        <?php 
-        
+        map.addObject(currentgroup);";?>
+	
+		
+		<?php
         for($x = 0;$x<count($eventlist);$x++)
-        {
+        { 
             if($eventlist[$x]['TYPE']=='0')
             {
                 echo "addMarkerToGroup(groupfun, { lat: ";
@@ -91,6 +92,7 @@ body {
                 print_r($eventlist[$x]['DESCRIPTION']);
                 echo"</a></div><div >";
                 print_r($eventlist[$x]['TIME']);
+			    #making changes here
                 echo"</div>');";
                 echo"\r\n";
                 }
