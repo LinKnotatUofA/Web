@@ -61,7 +61,15 @@ body {
     <script type="text/javascript"  charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
     <!-- Load script specific for parties page-->
+	<?php
+		$typeArray = array();								#Getting all the TYPEs from the database 
+		for($x = 0;$x<count($eventlist);$x++)
+		{
+			array_push($typeArray, $eventlist[$x]['TYPE']);
+		}
+		?>
     <?php 
+	
     echo"<script  type='text/javascript' charset='UTF-8'>
 
     function display_fun() {
@@ -80,7 +88,7 @@ body {
 		<?php
         for($x = 0;$x<count($eventlist);$x++)
         { 
-            if($eventlist[$x]['TYPE']=='0')
+            if($eventlist[$x]['TYPE']==array_search($eventlist[$x]['TYPE'],$typeArray))        #if($eventlist[$x]['TYPE']=='0') originally 
             {
                 echo "addMarkerToGroup(groupfun, { lat: ";
                 print_r($eventlist[$x]['LAT']);
