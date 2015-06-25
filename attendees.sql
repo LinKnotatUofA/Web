@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2015 at 09:34 PM
+-- Generation Time: Jun 25, 2015 at 08:21 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -36,7 +36,8 @@ CREATE TABLE IF NOT EXISTS `attendees` (
 --
 
 INSERT INTO `attendees` (`EVENTID`, `userID`) VALUES
-(6060, 5640);
+(6060, 5640),
+(4634, 100);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
