@@ -88,7 +88,7 @@ body {
 		<?php
         for($x = 0;$x<count($eventlist);$x++)
         { 
-            if($eventlist[$x]['TYPE']==array_search($eventlist[$x]['TYPE'],$typeArray))        #if($eventlist[$x]['TYPE']=='0') originally 
+            if($eventlist[$x]['TYPE']=='0')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
             {
                 echo "addMarkerToGroup(groupfun, { lat: ";
                 print_r($eventlist[$x]['LAT']);
