@@ -5,7 +5,7 @@
     //retrieve *all events* from database
     //grab geo coordinates
     //write javascript to display events through HERE maps
-    require "events/load_events.php";
+    require("events/load_events.php");
     
     
     
@@ -242,6 +242,40 @@ body {
          </script>
 
         <script  type="text/javascript" charset="UTF-8" >
+          var markerz = new H.map.Marker({lat:42.35805, lng:-71.0636});
+        navigator.geolocation.getCurrentPosition(function(pos){
+            var crd = pos.coords;
+           markerz = new H.map.Marker({lat:crd.latitude, lng:crd.longitude}); 
+        });
+          // Ensure that the marker can receive drag events
+          markerz.draggable = true;
+          map.addObject(markerz);
+        var id, target, options;
+        
+        function success(pos) {
+          var crd = pos.coords;
+          var markerz = new H.map.Marker({lat:crd.latitude, lng:crd.longitude});
+          map.addObject(markerz);
+
+          
+        }
+        
+        function error(err) {
+          console.warn('ERROR(' + err.code + '): ' + err.message);
+        }
+        
+        target = {
+          latitude : 0,
+          longitude: 0
+        };
+        
+        options = {
+          enableHighAccuracy: false,
+          timeout: 5000,
+          maximumAge: 0
+        };
+        
+        id = navigator.geolocation.watchPosition(success, error, options);
             $(function () {
                 $("#login").on('click', function () {
                     $.Dialog({
