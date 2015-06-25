@@ -22,7 +22,15 @@
     // I almost forgot - button for apply to join/leave (Sam) - I'll also deal with the functionality as well
     
     ?>
-
+ <?php 
+	$mysqli = new mysqli("localhost:3306", "root", "goodtogo", "bsquared_user");
+	$user = $_SESSION['username'];
+	$query = mysqli_query($mysqli,"SELECT id FROM user WHERE username='$user'");
+	$row = mysqli_fetch_assoc($query);
+	$id = $row['id'];
+	echo ($id);
+	$query = mysqli_query($mysqli, "INSERT INTO attendees VALUES ('$eventID','$id')");
+	?>
 
 <!doctype html>
 <html>
@@ -69,7 +77,7 @@ body {
     <script type="text/javascript"  charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 
     <!-- Load script specific for index page-->
-    
+   
     <?php
         echo
         "<script  type='text/javascript' charset='UTF-8'>";
