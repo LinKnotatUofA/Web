@@ -96,6 +96,45 @@ body {
 }";
     echo"</script>";
 ?>
+<?php
+    echo"<script  type='text/javascript' charset='UTF-8'>       
+        function people() {
+            $.Dialog({
+                        flat: false,
+                        shadow: true,
+                        draggable: true,
+                        resizable:true,
+                        title: 'Attendees',
+                        content: '',
+                        onShow: function(_dialog){
+                           var strVar='';";
+                        $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+                        $query = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE EVENTID = '$eventID'");
+                        $attendeeslist = resultToArray($query);
+                        $length = count($attendeeslist);
+                        for ($i = 0; $i < $length; $i++) 
+                        {
+                            $attending =$attendeeslist[0]['userID'];
+                            $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attending'");
+                            $name = resultToArray($namedata);
+                            echo "strVar +='<p>";    
+                            print_r($name[0]['username']);
+                            echo "</p>';";
+                        }
+                        
+                                
+
+
+       
+       echo"                    $.Dialog.content(strVar);
+                           $.Metro.initInputs();
+                       }
+                        
+                });  
+
+        }
+    </script>";
+?>
     <script src="js/page_scripts/events/event_script.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
@@ -134,9 +173,9 @@ body {
                                     <i class="icon-plus-2 on-right"></i></a></li>
                                 <li><a style="color: white;" onclick="leave()" id="leave" href="#Leave">Leave
                                     <i class="icon-cancel-2 on-right"></i></a></li>
-                                <div class="fb-share-button" data-href="localhost/event.php?id=$eventID" data-layout="button_count"></div>
-                                <div class="g-plusone"  data-annotation="inline" data-width="300"></div>    <!--- making changes here--->
-                                <a href="http://twitter.com/share?url=http://localhost/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a> <!--- https://twitter.com/twitter--->
+                                 <div class="fb-share-button" data-href="localhost/event.php?id=$eventID" data-layout="button_count"></div>
+                                <div class="g-plusone"  data-annotation="inline" data-width="300"></div>
+                                <a href="http://twitter.com/share?url=http://localhost/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
                             </ul>
                         </nav>
                     </div>
@@ -177,13 +216,14 @@ body {
                                     </div>
                                 </div>
                             </div>
-                            <div class="tile bg-green">
-                                <div class="tile-status">
-                                    <div class="brand bg-black">
-                                        <span class="name fg-white">Attendees:</span>
-                                    </div>
-                                </div>
-                            </div>
+                             
+                                 <button class="shortcut bg-darkPink fg-white" onclick="people()"> 
+                                              <i class = "icon-cog">Attendees</i>
+                                                  
+                               
+                                         
+                                       </button>
+
                         </div>
                         
                         
@@ -202,9 +242,13 @@ body {
                 </div>
                 </div>
                 </div>
-                </div>
-                </div>
         <script type="text/javascript" charset="UTF-8">
+            function main() {
+                // by defualt page will load all fun parties
+                map.addObject(currentgroup);
+                display_event();
+                //setupown();
+            }
             //intialize all script operation,defined in parties_script.js
             //mappackage = map+ui
             var mappackage = setupbasicmap();
@@ -269,42 +313,7 @@ body {
             
       
         </script>
-    <?php
-        echo" <script  type='text/javascript' charset='UTF-8' >        
-        $('#attendees').on('click', function(){
-           $.Dialog({
-               overlay: true,
-               shadow: true,
-               flat: true,
-               icon: '<img src='Assets/default_user.png'>',
-               title: 'Attendees',
-               content: '',
-               padding: 10,
-               onShow: function(){
-                    var content =";
-            $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
-            $query = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE EVENTID = '$eventID'");
-            $attendeeslist = resultToArray($query);
-            $length = count($attendeeslist);
-            for ($i = 0; $i < $length; $i++) 
-            {
-                $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attendeeslist[0]['name']'");
-                $name = resultToArray($namedata);
-                print_r($name[0]['username']);
-                echo" /n";
-            }
-            
         
-        echo"
-         
-                    $.Dialog.title('Attendees');
-                    $.Dialog.content(content);
-                    $.Metro.initInputs();
-                }
-            });
-        });
-    </script>";
-    ?>
         
         
              

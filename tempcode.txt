@@ -1,0 +1,11 @@
+$mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+            $query = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE EVENTID = '$eventID'");
+            $attendeeslist = resultToArray($query);
+            $length = count($attendeeslist);
+            for ($i = 0; $i < $length; $i++) 
+            {
+                $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attendeeslist[0]['name']'");
+                $name = resultToArray($namedata);
+                print_r($name[0]['username']);
+                echo" /n";
+            }
