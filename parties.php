@@ -255,7 +255,7 @@ body {
         function success(pos) {
           var crd = pos.coords;
           var markerz = new H.map.Marker({lat:crd.latitude, lng:crd.longitude});
-          maps.addObject(markerz);
+          map.addObject(markerz);
 
           
         }
