@@ -243,6 +243,10 @@ body {
 
         <script  type="text/javascript" charset="UTF-8" >
           var markerz = new H.map.Marker({lat:42.35805, lng:-71.0636});
+        navigator.geolocation.getCurrentPosition(function(pos){
+            var crd = pos.coords;
+           markerz = new H.map.Marker({lat:crd.latitude, lng:crd.longitude}); 
+        });
           // Ensure that the marker can receive drag events
           markerz.draggable = true;
           map.addObject(markerz);
