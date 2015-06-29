@@ -23,13 +23,29 @@
     
     ?>
  <?php 
-	$mysqli = new mysqli("localhost:3306", "root", "goodtogo", "bsquared_user");
-	$user = $_SESSION['username'];
-	$query = mysqli_query($mysqli,"SELECT id FROM user WHERE username='$user'");
-	$row = mysqli_fetch_assoc($query);
-	$id = $row['id'];
-	echo ($id);
-	$query = mysqli_query($mysqli, "INSERT INTO attendees VALUES ('$eventID','$id')");
+if(isset($_POST['join']))
+{   
+    $join = $_POST['join'];
+}
+else
+{
+    $join = null;
+}
+$mysqli = new mysqli("localhost:3306", "root", "goodtogo", "bsquared_user");
+$user = $_SESSION['username'];
+$query = mysqli_query($mysqli,"SELECT id FROM user WHERE username='$user'");
+$row = mysqli_fetch_assoc($query);
+$id = $row['id'];
+if($join)
+{
+    
+    	$query = mysqli_query($mysqli, "INSERT INTO attendees VALUES ('$eventID','$id')");
+    
+}
+else
+{
+        $query = mysqli_query($mysqli, "DELETE FROM attendees WHERE EVENTID = '$eventID' AND userID ='$id'");
+}
 	?>
 
 <!doctype html>
@@ -61,7 +77,8 @@ body {
     <script src="js/jquery/jquery.mousewheel.js"></script>
     <script src="js/prettify/prettify.js"></script>
     <script src="js/holder/holder.js"></script>
-    <script src="js/page_scripts/HERE_utilities.js"></script>
+    <!-- time to ditch the old here maps scripts -->
+    <script src="js/page_scripts/HERE_utilities_new.js"></script>
 
     <!-- Metro UI CSS JavaScript plugins -->
     <script src="js/load-metro.js"></script>
@@ -69,12 +86,21 @@ body {
     <!-- Local JavaScript -->
     <script src="js/docs.js"></script>
     <script src="js/github.info.js"></script>
-    <script src="js/herescript.js"></script>
     <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
     <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
     <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
     <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script type="text/javascript"  charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript"  charset="UTF-8">
+    function submit()
+    {
+        document.getElementById("joinswitch").submit();
+    }
+   
+
+
+
+    </script>
 
     <!-- Load script specific for index page-->
    
@@ -102,6 +128,25 @@ body {
       '<div><a>Location:(*Is this shit loaded?)</a>');
     return false;
 }";
+    echo" function movetoeventcenter(map) {
+    map.setCenter({ lat: "; print_r($singleventproperty[0]['LAT']); echo ", lng: ";print_r($singleventproperty[0]['LONGt']); echo" });
+    map.setZoom(15);}";
+    echo"  
+              function calculateRouteFromAtoB (platform,x,y) {
+              var router = platform.getRoutingService(),
+                routeRequestParams = {
+                  mode: 'shortest;pedestrian',
+                  representation: 'display',
+                  waypoint0: '";print_r($singleventproperty[0]['LAT']);echo",";print_r($singleventproperty[0]['LONGt']);echo"',
+                  waypoint1: ''+x+','+y,  
+                  routeattributes: 'waypoints,summary,shape,legs',
+                  maneuverattributes: 'direction,action'
+                }
+                 router.calculateRoute(
+                routeRequestParams,
+                onSuccess,
+                onError
+              );}";
     echo"</script>";
 ?>
 <?php
@@ -177,10 +222,20 @@ body {
                                 <li class="title" style="color: white;">Options</li>
                                 <li><a style="color: white;"><?php echo "Event ID:".$eventID;?>
                                     </a></li>
-                                <li><a style="color: white;" onclick="join()" id="join" href="#Join">Join
-                                    <i class="icon-plus-2 on-right"></i></a></li>
-                                <li><a style="color: white;" onclick="leave()" id="leave" href="#Leave">Leave
-                                    <i class="icon-cancel-2 on-right"></i></a></li>
+                                <form action="event.php?id=<?php echo"$eventID"; ?>" method = "POST">                                                             
+                                    <div class="input-control switch">
+                                        <label><a style="color: white;">Join</a>
+                                            <input type="checkbox" name="join" onclick="submit()" id="joinswitch" <?php //we gotta check from our database if user already joined this event
+                                                                                                                     $status = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE userID = '$id' AND EVENTID = $eventID");
+                                                                                                                     $numrows = mysqli_num_rows($status);
+                                                                                                                     if($numrows>0)
+                                                                                                                     {
+                                                                                                                        echo "checked";
+                                                                                                                     }?>/>
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>   
+                                </form>
                                  <div class="fb-share-button" data-href="localhost/event.php?id=$eventID" data-layout="button_count"></div>
                                 <div class="g-plusone"  data-annotation="inline" data-width="300"></div>
                                 <a href="http://twitter.com/share?url=http://localhost/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
@@ -279,6 +334,86 @@ body {
             var currenticon = funmark;
         
             main();
+            movetoeventcenter(map);
+            var platform = new H.service.Platform({
+            app_id: 'DemoAppId01082013GAL',
+            app_code: 'AJKnXv84fjrb0KIHawS0Tg',
+            useCIT: true
+        });
+
+             var markerz = new H.map.Marker({lat:42.35805, lng:-71.0636});
+        navigator.geolocation.getCurrentPosition(function(pos){
+            var crd = pos.coords;
+           markerz = new H.map.Marker({lat:crd.latitude, lng:crd.longitude}); 
+        });
+          // Ensure that the marker can receive drag events
+          markerz.draggable = true;
+          map.addObject(markerz);
+        var id, target, options;
+        
+        function success(pos) {
+          var crd = pos.coords;
+          var markerz = new H.map.Marker({lat:crd.latitude, lng:crd.longitude});
+          map.addObject(markerz);
+          calculateRouteFromAtoB (platform,crd.latitude,crd.longitude);
+          
+        }
+        
+        function error(err) {
+          console.warn('ERROR(' + err.code + '): ' + err.message);
+        }
+        
+        target = {
+          latitude : 0,
+          longitude: 0
+        };
+        
+        options = {
+          enableHighAccuracy: false,
+          timeout: 5000,
+          maximumAge: 0
+        };
+        
+        id = navigator.geolocation.watchPosition(success, error, options);
+
+        
+
+          
+            
+            
+             
+            
+            /**
+             * This function will be called once the Routing REST API provides a response
+             * @param  {Object} result          A JSONP object representing the calculated route
+             *
+             * see: http://developer.here.com/rest-apis/documentation/routing/topics/resource-type-calculate-route.html
+             */
+            function onSuccess(result) {
+              var route = result.response.route[0];
+             /*
+              * The styling of the route response on the map is entirely under the developer's control.
+              * A representitive styling can be found the full JS + HTML code of this example
+              * in the functions below:
+              */
+              addRouteShapeToMap(route);
+              addManueversToMap(route);
+            
+              addWaypointsToPanel(route.waypoint);
+              addManueversToPanel(route);
+              addSummaryToPanel(route.summary);
+              // ... etc.
+            }
+            
+            /**
+             * This function will be called if a communication error occurs during the JSON-P request
+             * @param  {Object} error  The error message received.
+             */
+            function onError(error) {
+              alert('Ooops!');
+            }
+            
+
         
         
         </script>
@@ -327,5 +462,3 @@ body {
              
     </body>
 </html>
-
- 

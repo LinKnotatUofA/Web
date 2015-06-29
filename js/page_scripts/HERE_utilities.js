@@ -74,4 +74,3 @@ function add(evt) {
   '<div><a>Placeholder Activity</a>' +
   '</div><div >@ Placeholder Location<br>Placeholder Date @ Placeholder Time</div>');
 }
-
