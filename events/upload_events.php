@@ -149,7 +149,7 @@ if(isset($_POST['submit'])){
         <p>Is it for fun or academic? <input name ="type" type="text" /></p> 
        	<p>Describe what you're gonna do: <input name ="description" type="text" /></p> 
         <p>At what time: <input name ="date" type="date" /></p>
-        <p>lat: <input name ="lat" type="number" step="any"/> long:<input name ="long" type="number" step="any"/></p>
+        <p>lat: <input name ="lat" type="number" step="any" id="la"/> long:<input name ="long" type="number" step="any" id="lo"/></p>
         <p>
             <label>Upload your image</label>
                      <input type="file" name="image"/>       
@@ -173,6 +173,9 @@ function setUpClickListener(map) {
   map.addEventListener('tap', function (evt) {
     var coord = map.screenToGeo(evt.currentPointer.viewportX,
             evt.currentPointer.viewportY);
+   
+    document.getElementById('la').value=coord.lat.toFixed(4);
+    document.getElementById('lo').value=coord.lng.toFixed(4);
     alert('Clicked at ' + Math.abs(coord.lat.toFixed(4)) +
         ((coord.lat > 0) ? 'N' : 'S') +
         ' ' + Math.abs(coord.lng.toFixed(4)) +
