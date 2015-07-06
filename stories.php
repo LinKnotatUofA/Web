@@ -85,11 +85,30 @@ body {
                                 Testing content
                             </span> 
                     </div>
-                    <div class="tile double">
+                    <div class="tile double ribbed-amber">
+                        <div class="tile half bg-violet"></div>
                     </div>
 
-                    <div class="tile">
-                    </div>
+                    <div class="tile bg-darkPink "></div>
+
+                    <div class=" tile double bg-indigo"></div>
+
+                    <div class="tile bg-lime"></div>
+
+                    <div class=" tile double bg-amber"></div>
+
+                    <div class="tile double bg-yellow"></div>
+
+                    <div class="tile double bg-darkCyan"></div>
+
+                    <div class="tile bg-red"></div>
+
+                    <div class="tile bg-pink"></div>
+
+                    <div class="tile"></div>
+
+                    <div class="tile double bg-green"></div>
+
 
                     </div>
             </div>
