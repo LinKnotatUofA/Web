@@ -74,7 +74,7 @@ body {
             
                         <span class="text">
                             <span style="color:black">
-                                <span style="font-size:150%">
+                                <span style="font-weight:bold">
                                     Testing title
                                 </span>
                             </span>
@@ -84,10 +84,11 @@ body {
                             <span style="color:black">
                                 Testing content
                             </span> 
-        
+                    </div>
+                    <div class="tile double">
                     </div>
 
-                    <div class="tile double">
+                    <div class="tile">
                     </div>
 
                     </div>
