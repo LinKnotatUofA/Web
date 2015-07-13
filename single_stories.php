@@ -69,7 +69,7 @@ body {
                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
                     <!-->redo story page pinterest/deviant art style<!-->
-                    <div class="panel" style="width:800px">
+                    <div class="panel" style="width:860px">
                     <div class="panel-header bg-white fg-dark">
                         <span class="text"> Testing </span>
                     </div>
