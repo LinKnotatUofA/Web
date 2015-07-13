@@ -1,6 +1,10 @@
 <?php 
     session_start();
-    
+    $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+	/*$user = $_SESSION['username'];
+	$query = mysqli_query($mysqli,"SELECT * FROM  WHERE username='$user'");
+	$row = mysqli_fetch_assoc($query);
+	$id = $row['id'];*/
     ?>
 
 
@@ -85,9 +89,29 @@ body {
                                 Testing content
                             </span> 
                     </div>
-                    <div class="tile double ribbed-amber">
+					<?php echo '<div class="tile double ribbed-amber">
                         <div class="tile half bg-violet"></div>
-                    </div>
+						<span class="text">
+							<span style="color:black">'?>
+							<?php $query = mysqli_query($mysqli,"SELECT * FROM stories");
+							function resultToArray($result) {
+								$rows = array();
+								while($row = $result->fetch_assoc()) {
+									$rows[] = $row;
+								}
+								return $rows;
+							}
+							$storylist = resultToArray($query);
+							$storylistlen = count($storylist);
+							$x = 0;
+							while( $x <$storylistlen){
+								print_r($storylist[$x]['story_title']);print_r(" "); print_r($storylist[$x]['story_content']); print_r(" ");
+								$x++;
+							}
+							?>
+							
+                    <?php echo'</div>'?>
+                   
 
                     <div class="tile bg-darkPink "></div>
 
