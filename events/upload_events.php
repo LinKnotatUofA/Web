@@ -144,7 +144,6 @@ if(isset($_POST['submit'])){
 
 
 <body>
-    
     <form id="form1" method ="post" enctype="multipart/form-data">  
         <p>Is it for fun or academic? <input name ="type" type="text" /></p> 
        	<p>Describe what you're gonna do: <input name ="description" type="text" /></p> 
@@ -202,7 +201,7 @@ var defaultLayers = platform.createDefaultLayers();
 var map = new H.Map(document.getElementById('map'),
   defaultLayers.normal.map,{
   center: {lat: 53.522, lng: -113.52},
-  zoom: 1
+  zoom: 15
 });
 
 //Step 3: make the map interactive

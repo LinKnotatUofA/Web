@@ -29,6 +29,7 @@ body {
 
     <!-- Load JavaScript Libraries -->
     <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/jquery/jquery-ui.min.js"></script>
     <script src="js/jquery/jquery.widget.min.js"></script>
     <script src="js/jquery/jquery.mousewheel.js"></script>
     <script src="js/prettify/prettify.js"></script>
@@ -52,6 +53,39 @@ body {
 
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
+
+    <script type="text/javascript" charset="UTF-8" >
+           
+           
+           function displayreg() {         
+              
+                  
+                  var dialog1 = $.Dialog({
+                       shadow: true,
+                       overlay: false,
+                       draggable: true,
+                       icon: '<img src="Assets/default_user.png">',
+                       title: 'Create Event',
+                       width: 700,
+                       height: 700,
+                      
+
+                       padding: 10,
+                       resizable: true,
+                       content: 'This Window is draggable by caption.'
+                      
+                    });
+                
+                 dialog1.html('<iframe style="border: 10px; float:bottom; " src="' + 'events/upload_events.php' + '" width="100%" height="100%"></iframe>');
+                 dialog1.dialog( "option", "title", "Dialog Title" ) 
+                 dialog1.dialog('open');
+                
+
+            }
+
+               
+        
+  </script>
     
 </head>
 	<body class="metro">
@@ -76,7 +110,7 @@ body {
                              <div id ="post_story_column" class="span4 offset_events">
                                  
                                  <div class="tile triple ">
-                                     <div class="tile-content icon button bg-violet">
+                                     <div class="tile-content icon button bg-violet" id="story">
                                         <i class="icon-pencil"></i>
                 
                                          
@@ -91,7 +125,7 @@ body {
                                  
                                  <div class="tile triple">
                                      
-                                     <div class="tile-content icon button bg-yellow" id="event">
+                                     <div class="tile-content icon button bg-yellow" id="event" onclick="displayreg()">
                                          <i class="icon-location"></i>
                                                  
                                  
@@ -161,10 +195,11 @@ body {
             
       
         </script>
+        
         <script  type="text/javascript" charset="UTF-8" >
            $(function () {
                
-               $("#event").on('click', function () {
+               $("#story").on('click', function () {
                    $.Dialog({
                        shadow: true,
                        overlay: false,
@@ -177,20 +212,18 @@ body {
                        onShow: function () {
                            $("#datepicker").datepicker();
                            var strVar="";
-                                strVar += "<form id=\"form1\" method =\"post\" action=\"events\/upload_events.php\">  ";
-                                strVar += "    <p>Is it for fun or academic?<\/p> <p><input name =\"type\" type=\"text\" \/><\/p> ";
-                                strVar += "   	<p>Describe what you're gonna do: <input name =\"description\" type=\"text\" \/><\/p> ";
-                                strVar += "     <p>At what time (YYYY-MM-DD): <input name =\"date\" type=\"datetime-local\" \/><\/p>";
-                                strVar += "    <p>lat:<\/p> <p><input name =\"lat\" type=\"number\" step=\"any\"\/><\/p> <p>long:<\/p><p><input name =\"long\" type=\"number\" step=\"any\"\/><\/p>";
+                                strVar += "<form id=\"form_stories\" method =\"post\" action=\"events\/upload_stories.php\">  ";
+                                strVar += "    <p>Please enter a title<\/p> <p><input name =\"story_title\" type=\"text\" \/><\/p> ";
+                                strVar += "    <div class=\"input-control textarea\"\/><textarea name=\"story_content\" cols=\"40\" rows=\"5\" \/>What you wanna write about?</textarea></div> ";
                                 strVar += "    <p><input name =\"submit\" type=\"submit\"\/> <\/p>";
                                 strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
-
                                 strVar += "<\/form>";
                                 strVar += "";
                            
 
-                           $.Dialog.title("Create Event");
+                           $.Dialog.title("Write A Story");
                            $.Dialog.content(strVar);
+                           $.Metro.initInputs();
                        }
 
                    });

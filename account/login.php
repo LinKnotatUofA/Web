@@ -19,6 +19,7 @@ if($username&&$password)
        {
            $dbusername = $row['username'];
            $dbpassword = $row['password'];
+           $dbuserid = $row['id'];
            
        }
        if($username==$dbusername&&$password==$dbpassword)
@@ -28,6 +29,7 @@ if($username&&$password)
            header( "refresh:5; url=/index.php" ); 
 
            $_SESSION['username']=$dbusername;
+           $_SESSION['id'] = $dbuserid;
            
        }
        else

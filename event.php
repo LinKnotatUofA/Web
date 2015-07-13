@@ -353,8 +353,7 @@ body {
         
         function success(pos) {
           var crd = pos.coords;
-          var markerz = new H.map.Marker({lat:crd.latitude, lng:crd.longitude});
-          map.addObject(markerz);
+            markerz.setPosition({lat:crd.latitude, lng:crd.longitude});
           calculateRouteFromAtoB (platform,crd.latitude,crd.longitude);
           
         }
