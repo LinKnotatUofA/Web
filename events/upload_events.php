@@ -144,7 +144,6 @@ if(isset($_POST['submit'])){
 
 
 <body>
-    
     <form id="form1" method ="post" enctype="multipart/form-data">  
         <p>Is it for fun or academic? <input name ="type" type="text" /></p> 
        	<p>Describe what you're gonna do: <input name ="description" type="text" /></p> 

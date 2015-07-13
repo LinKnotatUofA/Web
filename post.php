@@ -53,6 +53,39 @@ body {
 
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
+
+    <script type="text/javascript" charset="UTF-8" >
+           
+           
+           function displayreg() {         
+              
+                  
+                  var dialog1 = $.Dialog({
+                       shadow: true,
+                       overlay: false,
+                       draggable: true,
+                       icon: '<img src="Assets/default_user.png">',
+                       title: 'Create Event',
+                       width: 700,
+                       height: 700,
+                      
+
+                       padding: 10,
+                       resizable: true,
+                       content: 'This Window is draggable by caption.'
+                      
+                    });
+                
+                 dialog1.html('<iframe style="border: 10px; float:bottom; " src="' + 'events/upload_events.php' + '" width="100%" height="100%"></iframe>');
+                 dialog1.dialog( "option", "title", "Dialog Title" ) 
+                 dialog1.dialog('open');
+                
+
+            }
+
+               
+        
+  </script>
     
 </head>
 	<body class="metro">
@@ -92,7 +125,7 @@ body {
                                  
                                  <div class="tile triple">
                                      
-                                     <div class="tile-content icon button bg-yellow" id="event">
+                                     <div class="tile-content icon button bg-yellow" id="event" onclick="displayreg()">
                                          <i class="icon-location"></i>
                                                  
                                  
@@ -162,36 +195,7 @@ body {
             
       
         </script>
-        <script  type="text/javascript" charset="UTF-8" >
-           
-           
-           $(function () {         
-               $("#event").on('click', function () {
-                  
-                  var dialog1 = $.Dialog({
-                       shadow: true,
-                       overlay: false,
-                       draggable: true,
-                       icon: '<img src="Assets/default_user.png">',
-                       title: 'Create Event',
-                       show: 'fold',
-                       width: 500,
-                       height: 600,
-                       maxidth: 500,
-                       maxHeight: 600,
-                       padding: 10,
-                       content: 'This Window is draggable by caption.'
-                      
-                    });
-                
-                 dialog1.load('events/upload_events.php').dialog('open').title('Create an Event');
-                
-
-               });
-
-               
-           });
-        </script>
+        
         <script  type="text/javascript" charset="UTF-8" >
            $(function () {
                
