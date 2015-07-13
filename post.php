@@ -72,12 +72,17 @@ body {
 
                        padding: 10,
                        resizable: true,
-                       content: 'This Window is draggable by caption.'
+                        onShow: function () {
+                            var content = '<iframe style="border: 10px;" src="' + 'events/upload_events.php' + '" width="100%" height="700"></iframe>';
+
+                            $.Dialog.title("create event");
+                            $.Dialog.content(content);
+                        }
                       
                     });
                 
-                 dialog1.html('<iframe style="border: 10px; float:bottom; " src="' + 'events/upload_events.php' + '" width="100%" height="100%"></iframe>');
-                 dialog1.dialog( "option", "title", "Dialog Title" ) 
+                 //dialog1.html('<iframe style="border: 10px; float:bottom; " src="' + 'events/upload_events.php' + '" width="100%" height="100%"></iframe>');
+                 //dialog1.dialog( "option", "title", "Dialog Title" ) 
                  dialog1.dialog('open');
                 
 
@@ -214,7 +219,7 @@ body {
                            var strVar="";
                                 strVar += "<form id=\"form_stories\" method =\"post\" action=\"events\/upload_stories.php\">  ";
                                 strVar += "    <p>Please enter a title<\/p> <p><input name =\"story_title\" type=\"text\" \/><\/p> ";
-                                strVar += "    <div class=\"input-control textarea\"\/><textarea name=\"story_content\" cols=\"40\" rows=\"5\" \/>What you wanna write about?</textarea></div> ";
+                                strVar += "    <div class=\"input-control textarea\"\/><textarea name=\"story_content\" cols=\"40\" rows=\"5\" \/>What you wanna write about?<\/textarea><\/div> ";
                                 strVar += "    <p><input name =\"submit\" type=\"submit\"\/> <\/p>";
                                 strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
                                 strVar += "<\/form>";
