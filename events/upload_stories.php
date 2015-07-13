@@ -20,8 +20,8 @@ if (mysqli_connect_errno()) {
 
 if(isset($_POST['submit'])){
 
-    $title= @$_POST['story_title'];
-    $date = @$_POST['story_content'];
+    $story_title= @$_POST['story_title'];
+    $story_content = @$_POST['story_content'];
     $postdate = date('Y-m-d') ;
     $userID= $_SESSION['id'];
     $ID = 100;
@@ -40,7 +40,13 @@ if(isset($_POST['submit'])){
 
         
      //all stories have a default rating of 3 ramen-sauce ridden keyboards out of 5   
-    $insert=mysqli_query($mysqli,"INSERT INTO event VALUES ('$ID','$story_title','$userID','$story_content','3','$postdate')");
+    $insert=mysqli_query($mysqli,"INSERT INTO stories VALUES ('$ID','$story_title','$userID','$story_content','3','$postdate')");
+    echo "post was successful";
+    if ( false===$insert ) {
+        printf("error: %s\n", mysqli_error($mysqli));
+    }
+    header( "refresh:1; url=/post.php" ); 
+
 
     }
     
