@@ -105,7 +105,7 @@ body {
 							$storylistlen = count($storylist);
 							$x = 0;
 							while( $x <$storylistlen){
-								print_r($storylist[$x]['story_title']);print_r(" "); print_r($storylist[$x]['story_content']); print_r(" ");
+								print_r($storylist[$x]['story_title']);echo "<br>"; print_r($storylist[$x]['story_content']); echo "<br>";
 								$x++;
 							}
 							?>
