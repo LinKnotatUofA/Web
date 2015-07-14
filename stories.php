@@ -113,7 +113,7 @@ body {
 						$x=0;
 						while ($x<$storylistlen){
 							echo $tileArray[$x];
-							print_r($storylist[$x]['story_title']);echo "<br>"; print_r($storylist[$x]['story_content']); echo "<br>";
+							print_r(strtoupper($storylist[$x]['story_title']));echo "<br>"; print_r($storylist[$x]['story_content']); echo "<br>";
 							echo '</div>';
 							$x++;
 						}
