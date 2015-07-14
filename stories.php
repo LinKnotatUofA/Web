@@ -72,9 +72,9 @@ body {
 
                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
-                    <!-->redo story page pinterest/deviant art style<-->  
+                    <!--redo story page pinterest/deviant art style-->  
                     <br><br>            
-                    <div class="tile", >
+                    <div class="tile" >
             
                         <span class="text">
                             <span style="color:black">
@@ -113,7 +113,14 @@ body {
 						$x=0;
 						while ($x<$storylistlen){
 							echo $tileArray[$x];
-							print_r(strtoupper($storylist[$x]['story_title']));echo "<br>"; print_r($storylist[$x]['story_content']); echo "<br>";
+                            echo "<div><a href=single_stories.php?id=";
+                            print_r($storylist[$x]['story_id']);
+                            echo ">"; 
+							print_r(strtoupper($storylist[$x]['story_title']));
+                            echo "<br>"; 
+                            print_r($storylist[$x]['story_content']); 
+                            echo "<br>";
+                            echo"</a></div><div >";
 							echo '</div>';
 							$x++;
 						}
