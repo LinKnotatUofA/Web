@@ -89,11 +89,18 @@ body {
                                 Testing content
                             </span> 
                     </div>
-					<?php echo '<div class="tile double ribbed-amber">
+
+					<?php  
+						$tileArray= array('<div class="tile double ribbed-amber">
                         <div class="tile half bg-violet"></div>
 						<span class="text">
-							<span style="color:black">'?>
-							<?php $query = mysqli_query($mysqli,"SELECT * FROM stories");
+							<span style="color:black">',
+						'<div class="tile bg-darkPink ">', '<div class=" tile double bg-indigo">',
+						'<div class="tile bg-lime">', '<div class=" tile double bg-amber">',
+						'<div class="tile double bg-yellow">', '<div class="tile double bg-darkCyan">','<div class="tile bg-red">',
+						'<div class="tile bg-pink">','<div class="tile">', '<div class="tile double bg-green">' );
+						
+						$query = mysqli_query($mysqli,"SELECT * FROM stories");
 							function resultToArray($result) {
 								$rows = array();
 								while($row = $result->fetch_assoc()) {
@@ -101,39 +108,19 @@ body {
 								}
 								return $rows;
 							}
-							$storylist = resultToArray($query);
-							$storylistlen = count($storylist);
-							$x = 0;
-							while( $x <$storylistlen){
-								print_r($storylist[$x]['story_title']);echo "<br>"; print_r($storylist[$x]['story_content']); echo "<br>";
-								$x++;
-							}
-							?>
-							
-                    <?php echo'</div>'?>
-                   
+						$storylist = resultToArray($query);
+						$storylistlen = count($storylist);
+						$x=0;
+						while ($x<$storylistlen){
+							echo $tileArray[$x];
+							print_r($storylist[$x]['story_title']);echo "<br>"; print_r($storylist[$x]['story_content']); echo "<br>";
+							echo '</div>';
+							$x++;
+						}
+						
+					?>
 
-                    <div class="tile bg-darkPink "></div>
-
-                    <div class=" tile double bg-indigo"></div>
-
-                    <div class="tile bg-lime"></div>
-
-                    <div class=" tile double bg-amber"></div>
-
-                    <div class="tile double bg-yellow"></div>
-
-                    <div class="tile double bg-darkCyan"></div>
-
-                    <div class="tile bg-red"></div>
-
-                    <div class="tile bg-pink"></div>
-
-                    <div class="tile"></div>
-
-                    <div class="tile double bg-green"></div>
-
-
+      
                     </div>
             </div>
             <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
