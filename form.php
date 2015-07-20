@@ -1,5 +1,5 @@
 
-
+<html>
 <body>
     <h3>Group Form</h3>
     <form id="form1" method ="post" enctype="multipart/form-data">  
@@ -14,3 +14,4 @@
         <p><input name ="submit" type="submit"/> <INPUT Type="button" VALUE="Cancel and go back" onClick="history.go(-1); return true;"></p>
     </form>
 </body>
+</html>
