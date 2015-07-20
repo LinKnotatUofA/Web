@@ -1,5 +1,15 @@
 <?php 
     session_start();
+    require "/events/load_events.php";
+    //grab session id from url
+    global $storyid;
+    if (isset($_GET["id"]))
+    {
+        $storyid = $_GET["id"];
+    }
+    //grab content from database using id
+    $storystuff = getstoryinfo($storyid);
+    //WIN
     
     ?>
 
@@ -68,8 +78,35 @@ body {
 
                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
-                    <!-->redo story page pinterest/deviant art style<!-->              
-                    
+                    <!--redo story page pinterest/deviant art style-->
+                    <div class="panel" style="width:80% align:middle">
+                    <div class="panel-header bg-white fg-dark">
+                        <span class="text"> <?php    print_r($storystuff[0]['story_title']); ?> </span>
+                    </div>
+                    <div class="panel-content bg-white fg-dark">
+                        <span class="text"> 
+                            <!--start putting shit u just grabbed gere-->
+                            <?php
+                            echo"Written by:";
+                            echo"<br>";
+                            $nameID = $storystuff[0]['story_author'];
+                            $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$nameID'");
+                            $name = resultToArray($namedata);
+                            print_r($name[0]['username']);
+                            echo"<br>";
+                            echo"On:";
+                            echo"<br>";
+                            print_r($storystuff[0]['DATE']);
+                            echo"<br>";
+                            print_r($storystuff[0]['story_content']);    
+                            ?>
+                        </span>
+                    </div>
+                    </div>
+                    <!--new code below -->      
+                    <?php date_default_timezone_set('UTC');
+                    echo date(DATE_RFC2822);
+                    ?>
                     </div>
             </div>
             <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">

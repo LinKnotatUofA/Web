@@ -10,16 +10,6 @@
     //2.query our database for that event -
     $singleventproperty = geteventinfo($eventID);
     
-    //3.fill in all info based on the database
-    // reminder - use POST method (youtube style - url/event?=(insert id here))
-    //which will include:
-    // -Title (Farhan) 
-    // -Author (Sam)
-    // -Date (Sam)
-    // -Attendees (Elvis)
-    // -Location(LONG,LAT) (Farhan)
-    // -Promo Pic (Sam)
-    // I almost forgot - button for apply to join/leave (Sam) - I'll also deal with the functionality as well
     
     ?>
  <?php 

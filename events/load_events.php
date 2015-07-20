@@ -22,6 +22,14 @@ function geteventinfo($eID)
     $singleventproperty = resultToArray($singleventquery);
     return $singleventproperty;
 }
+//these two gotta be merged during code cleanup
+function getstoryinfo($sID)
+{
+    $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+    $singlestoryquery = mysqli_query($mysqli,"SELECT * FROM stories WHERE story_id = '$sID'");
+    $singlestoryproperty = resultToArray($singlestoryquery);
+    return $singlestoryproperty;
+}
 
 //print_r($eventlist[0]['EVENTID']);
 
