@@ -77,10 +77,7 @@ body {
                     
 
 					<?php  
-						$tileArray= array('<div class="tile double ribbed-amber">
-                        <div class="tile half bg-violet"></div>
-						<span class="text">
-							<span style="color:black">',
+						$tileArray= array('<div class="tile double ribbed-amber">',
 						'<div class="tile bg-darkPink ">', '<div class=" tile double bg-indigo">',
 						'<div class="tile bg-lime">', '<div class=" tile double bg-amber">',
 						'<div class="tile double bg-yellow">', '<div class="tile double bg-darkCyan">','<div class="tile bg-red">',
@@ -99,15 +96,14 @@ body {
 						$x=0;
 						while ($x<$storylistlen){
 							echo $tileArray[$x];
-                            echo "<div><a href=single_stories.php?id=";
+                            echo "<a href=single_stories.php?id=";
                             print_r($storylist[$x]['story_id']);
                             echo ">"; 
 							print_r(strtoupper($storylist[$x]['story_title']));
                             echo "<br>"; 
                             print_r($storylist[$x]['story_content']); 
                             echo "<br>";
-                            echo"</a></div><div >";
-							echo '</div>';
+                            echo"</a></div>";
 							$x++;
 						}
 						
