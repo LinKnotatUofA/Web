@@ -290,8 +290,11 @@ Don't be a retard, be a king?
 Think not
 Why be a king when you can be a God? </span>
                     </div>
-                    </div>       
-                    
+                    </div>
+                    <!--new code below -->      
+                    <?php date_default_timezone_set('UTC');
+                    echo date(DATE_RFC2822);
+                    ?>
                     </div>
             </div>
             <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
