@@ -105,7 +105,7 @@ body {
                     </div>
                     <!--new code below -->      
                     <?php date_default_timezone_set('UTC');
-                    echo date(DATE_RFC2822);
+                    //echo date(DATE_RFC2822);
                     ?>
                     </div>
             </div>
