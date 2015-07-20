@@ -105,11 +105,16 @@ body {
 
                         <script>
                         $(function(){
-                            $("#rating").rating({
-                                click: function(value, rating){
-                                    rating.rate(value);
-                                }
+                              $("#rating").rating({
+                               static: false,
+                               score: 2,
+                               stars: 5,
+                               showHint: true,
+                               hints: ['bad', 'poor', 'regular', 'good', 'gorgeous'],
+                               showScore: true,
+                               scoreHint: "Current score: ",
                             });
+
                         });
                         </script>
                         
