@@ -101,6 +101,24 @@ body {
                             print_r($storystuff[0]['story_content']);    
                             ?>
                         </span>
+                        <div class="rating"
+                            data-role="rating"
+                            data-static="false"
+                            data-score="3"
+                            data-stars="5"
+                            data-show-score="true"
+                            data-score-hint="Value: ">
+                        </div>
+                        <script>
+                        $(function(){
+                            $("#rating").rating({
+                                click: function(value, rating){
+                                    rating.rate(value);
+                                }
+                            });
+                        });
+                        </script>
+                        
                     </div>
                     </div>
                     <!--new code below -->      

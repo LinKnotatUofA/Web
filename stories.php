@@ -115,8 +115,8 @@ body {
 
       
                     </div>
-            </div>
-            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px;bottom:0;right;0">
+            </div><br>
+            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px;margin-left:0;">
                 Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
                 <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
                 <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
