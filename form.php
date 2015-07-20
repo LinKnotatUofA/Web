@@ -18,20 +18,11 @@ if(isset($_POST['submit'])){
     $group_name = $_POST['type'];
 	$description  = $_POST['description'];
 	$tags = $_POST['tags'];
-	$ID = 100;
-	$query = mysqli_query($mysqli,"SELECT ID FROM user WHERE ID=$ID");
-	if($query == true){
-		$numrows = 0;
-	}
-	else{
-		    $numrows = mysqli_num_rows($query);
-            while($numrows >= 0)
-	        {
-	            $ID = rand(1,10000);
-	            $query = mysqli_query($mysqli,"SELECT GID FROM groups WHERE ID=$ID");
-	            $numrows = mysqli_num_rows($query);
-	        }
-        }
+	$count = mysqli_query($mysqli,"SELECT COUNT(GID) as total FROM GROUPS"); 
+    $data=mysqli_fetch_assoc($count); 
+    $ID = $data['total']+1; 
+
+	
     print "<p> Name: $group_name</br>Describe: $description<br>Tags: $tags<br> ID: $ID</p>";
     
 	
