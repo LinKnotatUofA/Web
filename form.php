@@ -20,25 +20,28 @@ if(isset($_POST['submit'])){
 	$tags = $_POST['tags'];
 	$ID = 100;
 	$query = mysqli_query($mysqli,"SELECT ID FROM user WHERE ID=$ID");
-	if($query == null){
+	if($query == true){
 		$numrows = 0;
 	}
 	else{
-		$numrows = mysqli_num_rows($query);
-	}
-	while($numrows > 0)
-	{
-	$ID = rand(1,10000);
-	$query = mysqli_query($mysqli,"SELECT GID FROM groups WHERE ID=$ID");
-	#$numrows = mysqli_num_rows($query);
-	}
-	
-	print "<p> Name: $group_name</br>Describe: $description<br>Tags: $tags<br> ID: $ID</p>";
+		    $numrows = mysqli_num_rows($query);
+            while($numrows >= 0)
+	        {
+	            $ID = rand(1,10000);
+	            $query = mysqli_query($mysqli,"SELECT GID FROM groups WHERE ID=$ID");
+	            $numrows = mysqli_num_rows($query);
+	        }
+        }
+    print "<p> Name: $group_name</br>Describe: $description<br>Tags: $tags<br> ID: $ID</p>";
     
 	
-	$query = mysqli_query($mysqli, "INSERT INTO groups VALUES ('GID','GNAME','GTAGS','GDESCRIPTION') VALUES
-	('$ID','$group_name','$description','$tags')");
+	$query = mysqli_query($mysqli, "INSERT INTO groups VALUES ('$ID','$group_name','$tags','$description','NULL')");
+    if ( false===$query ) {
+        printf("error: %s\n", mysqli_error($mysqli));
+    }
+    
 }
+
 	?>	
 
 <html>
