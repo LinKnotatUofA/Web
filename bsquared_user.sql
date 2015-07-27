@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2015 at 07:51 AM
+-- Generation Time: Jul 27, 2015 at 08:08 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `attendees` (
+  `attendes_id` int(255) NOT NULL,
   `EVENTID` int(11) NOT NULL,
   `userID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -35,8 +36,8 @@ CREATE TABLE IF NOT EXISTS `attendees` (
 -- Dumping data for table `attendees`
 --
 
-INSERT INTO `attendees` (`EVENTID`, `userID`) VALUES
-(6060, 5640);
+INSERT INTO `attendees` (`attendes_id`, `EVENTID`, `userID`) VALUES
+(1, 100, 100);
 
 -- --------------------------------------------------------
 
@@ -74,6 +75,72 @@ INSERT INTO `event` (`EVENTID`, `TIME`, `postdate`, `LAT`, `LONGt`, `DESCRIPTION
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `groups`
+--
+
+CREATE TABLE IF NOT EXISTS `groups` (
+  `GID` int(255) NOT NULL,
+  `GNAME` varchar(100) NOT NULL,
+  `GTAGS` varchar(100) NOT NULL,
+  `GDESCRIPTION` varchar(2500) DEFAULT NULL,
+  `GPIC` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `groups`
+--
+
+INSERT INTO `groups` (`GID`, `GNAME`, `GTAGS`, `GDESCRIPTION`, `GPIC`) VALUES
+(100, 'vdfgdf', 'dfgdfgdf', 'dfgfdgd', 0x4e554c4c),
+(2, 'gdsfg', 'dsfds', 'sdfds', 0x4e554c4c);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `group_members`
+--
+
+CREATE TABLE IF NOT EXISTS `group_members` (
+  `gmID` int(255) NOT NULL,
+  `userID` int(255) NOT NULL,
+  `GID` int(255) NOT NULL,
+  PRIMARY KEY (`gmID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `group_members`
+--
+
+INSERT INTO `group_members` (`gmID`, `userID`, `GID`) VALUES
+(333, 100, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stories`
+--
+
+CREATE TABLE IF NOT EXISTS `stories` (
+  `story_id` int(11) NOT NULL,
+  `story_title` varchar(500) NOT NULL,
+  `story_author` int(11) NOT NULL,
+  `story_content` varchar(5000) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `DATE` date NOT NULL,
+  PRIMARY KEY (`story_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stories`
+--
+
+INSERT INTO `stories` (`story_id`, `story_title`, `story_author`, `story_content`, `rating`, `DATE`) VALUES
+(100, 'dsfhdsjkfndsjk', 100, 'dcndslfnds', 3, '2015-07-20'),
+(1117, 'xvkjhdsfjkd', 100, 'vuidsfjkhfdsk', 3, '2015-07-13');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -92,7 +159,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id`, `username`, `password`) VALUES
 (100, 'sam9116', '876543'),
 (1293, 'uio0000', '456456456'),
-(5640, 'derpking', '123456789');
+(5640, 'derpking', '123456789'),
+(56755, 'bcvancouver', 'xi');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
