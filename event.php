@@ -28,8 +28,10 @@ $row = mysqli_fetch_assoc($query);
 $id = $row['id'];
 if($join)
 {
-    
-    	$query = mysqli_query($mysqli, "INSERT INTO attendees VALUES ('$eventID','$id')");
+        $count = mysqli_query($mysqli,"SELECT COUNT(attendes_id) as total FROM attendees"); 
+        $data=mysqli_fetch_assoc($count); 
+        $AID = $data['total']+1;     
+    	$query = mysqli_query($mysqli, "INSERT INTO attendees VALUES ('$AID','$eventID','$id')");
     
 }
 else
@@ -251,12 +253,12 @@ body {
                                 </div>
                             </div>
                             <div class="tile bg-amber">
-                                <div class="tile-status">
-                                    <div class="brand bg-black">
-                                        
-                                        <span class="name fg-white"> <?php print_r($singleventproperty[0]['TIME']); ?></span>
+                                <div class="tile-content">
+                                        <div class="text-left padding5 ntp">
+                                            <h2 class="fg-white no-margin"><?php print_r($singleventproperty[0]['TIME']); ?></h2>
+                                            <p class="fg-white">Sunday</p>
+                                        </div>
                                     </div>
-                                </div>
                             </div>
                         </div> 
                         <div id ="info_row_2" class = "row"> 
@@ -274,8 +276,7 @@ body {
                                               <i class = "icon-cog">Attendees</i>
                                                   
                                
-                                         
-                                       </button>
+                                 </button>
 
                         </div>
                         

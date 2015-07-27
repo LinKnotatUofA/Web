@@ -1,4 +1,10 @@
 <?php 
+// what we need to achieve for groups 
+// 1.group creation - done
+// 2.group page
+// 3.search group
+// 4.figure out who's in what group
+// proposed table: group member id || user id || group id
     session_start();
     
     ?>
@@ -59,32 +65,96 @@ body {
                         <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
+
             <div id="row1" class="row" >
                 <div class="span_navbar_special">
                 </div>
                 <div class="span11 offset_special">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
-
-                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
-                    <div class="grid fluid show-grid">
-                        <div id="featured_row1" class="row" >
-                            <div class="spanspecial"> 
-                                </div>
-                            <a href ="form.php"><button class="large">Create</button></a>
-                            <button class="large">Search</button>
-                        </div>
-                    </div>
             </div>
-            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
-                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
+
+            <div id="row2" class="row">
+                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A">
+                    <div class="grid fluid show-grid">
+                     
+                        <div class="span3" >
+                            <div style="margin-left: 20px; margin-top:40px">
+                                <a href ="form.php"><button class="large">Create</button></a>
+                                <button class="large">Search</button>
+                            </div>
+                        </div>
+                        
+                        <?php 
+                        
+                        
+                            //if user already in a group , display that group on the groups page
+                            $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+                            $id = $_SESSION['id'];
+                        
+                        
+                            $query = mysqli_query($mysqli,"SELECT GID FROM group_members WHERE userID='$id'");
+                            $row = mysqli_fetch_assoc($query);
+                            $groupid = $row['GID'];
+
+
+                            
+                            //grab group info once we find out which group user belongs to
+                            $query = mysqli_query($mysqli,"SELECT * FROM groups WHERE GID='$groupid'");
+                            $row = mysqli_fetch_assoc($query);
+                            
+
+                            if($groupid)
+                            {
+                                 
+                                echo "<div class='tile-group four' style='margin-left:20px'>";
+                                echo "      <div class='tile double double-vertical'>";
+                                echo "          <div class='tile-content image'>
+                                        '           <img src='data:image/jpeg;base64,'.base64_encode(";print_r($row['GPIC']);echo")/>";
+                                echo "          </div>";
+                                echo "      </div>";
+                                echo "      <div class='tile double' style='float:right;background-color:#A3A86B'>";
+                                echo "          <div class='tile-content'>
+                                                        <div class='text-left padding5 ntp'>
+                                                            <h2 class='fg-white no-margin'>Name:<br>";print_r($row['GNAME']);echo"</h2>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                     ";     
+                               
+                                echo "      <div class='tile double' style='background-color:#82786F'>";
+                                echo "          <div class='tile-content'>
+                                                        <div class='text-left padding5 ntp'>
+                                                            <h2 class='fg-white no-margin'>Description:<br>";print_r($row['GDESCRIPTION']);echo"</h2>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                     ";     
+                                echo "      <div class='tile quadro' style='background-color:#404545'>";
+                                echo "          <div class='tile-content'>
+                                                        <div class='text-left padding5 ntp'>
+                                                            <h2 class='fg-white no-margin'>Tags:<br>";print_r($row['GTAGS']);echo"</h2>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                      </div>";     
+
+                                    
+                            }
+                        ?>    
+                         
+                            
+                        
+                    </div>
                 </div>
+            </div>
+            <div id="row3" class="row">
+                <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px" />
+                    Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
+                    <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
+                    <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
                 </div>
-                </div>
-                </div>
-                </div>
+            </div>
 
         <script  type="text/javascript" charset="UTF-8" >
             $(function () {
