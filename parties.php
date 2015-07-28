@@ -104,6 +104,26 @@ body {
                 echo"\r\n";
                 }
         }
+		
+		for($x = 0;$x<count($eventlist);$x++)
+        { 
+            if($eventlist[$x]['TYPE']=='1')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
+            {
+                echo "addMarkerToGroup(groupfun, { lat: ";
+                print_r($eventlist[$x]['LAT']);
+                echo", lng:";
+                print_r($eventlist[$x]['LONGt']);
+                echo"},'<div><a href=event.php?id=";
+                print_r($eventlist[$x]['EVENTID']);
+                echo ">";
+                print_r($eventlist[$x]['DESCRIPTION']);
+                echo"</a></div><div >";
+                print_r($eventlist[$x]['TIME']);
+			    #making changes here
+                echo"</div>');";
+                echo"\r\n";
+                }
+        }
         echo
         "
         
@@ -183,8 +203,8 @@ body {
                                  <nav class="vertical-menu">
                                      <ul>
                                          <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
-                                         <li class="title" style="color: white;">Party YES</li>
-                                         <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Studying
+                                         <li class="title" style="color: white;">Party</li>
+                                         <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
                                              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                                                  <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
                                              </svg></a></li>
