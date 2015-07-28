@@ -1,7 +1,7 @@
 <?php
     
 
-$mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com:3306", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+$mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
 
 //grab the latest 4 events from database
 $query = mysqli_query($mysqli,"SELECT * FROM event");
@@ -17,7 +17,7 @@ $eventlist = resultToArray($query);
 
 function geteventinfo($eID)
 {
-    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com:3306", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
     $singleventquery = mysqli_query($mysqli,"SELECT * FROM event WHERE EVENTID = '$eID'");
     $singleventproperty = resultToArray($singleventquery);
     return $singleventproperty;
@@ -25,7 +25,7 @@ function geteventinfo($eID)
 //these two gotta be merged during code cleanup
 function getstoryinfo($sID)
 {
-    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com:3306", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
     $singlestoryquery = mysqli_query($mysqli,"SELECT * FROM stories WHERE story_id = '$sID'");
     $singlestoryproperty = resultToArray($singlestoryquery);
     return $singlestoryproperty;
@@ -35,7 +35,7 @@ function getstoryinfo($sID)
 
 function printusername($ID)
 {
-    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com:3306", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
     $query = mysqli_query($mysqli,"SELECT username FROM user WHERE id='$ID'");
     
     $authorname ="";
