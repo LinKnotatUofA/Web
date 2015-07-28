@@ -177,8 +177,6 @@ body {
 
                 <div id="row2" class="row">
                     <div class="span3">
-                    </div>
-                    <div class="span3">
                         <nav class="vertical-menu">
                             <ul>
                                 <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
