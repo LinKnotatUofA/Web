@@ -1,6 +1,6 @@
 <?php
     
-
+session_start();
 $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
 
 //grab the latest 4 events from database
