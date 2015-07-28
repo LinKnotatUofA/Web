@@ -133,7 +133,7 @@ body {
 			{ 
 				if($eventlist[$x]['TYPE']=='1')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
 				{
-					echo "addMarkerToGroup(groupfun, { lat: ";
+					echo "addMarkerToGroup(groupstudy, { lat: ";
 					print_r($eventlist[$x]['LAT']);
 					echo", lng:";
 					print_r($eventlist[$x]['LONGt']);
