@@ -176,7 +176,7 @@ body {
 
 
                 <div id="row2" class="row">
-                    <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                    <div class="span12 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                         <div class="grid fluid show-grid">     
                         
                       
