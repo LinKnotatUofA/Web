@@ -163,32 +163,11 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupcustom;
             currenticon = custommark;
-            map.addObject(currentgroup);";?
-			<?php
-			for($x = 0;$x<count($eventlist);$x++)
-			{ 
-				if($eventlist[$x]['TYPE']=='2')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
-				{
-					echo "addMarkerToGroup(groupcustom, { lat: ";
-					print_r($eventlist[$x]['LAT']);
-					echo", lng:";
-					print_r($eventlist[$x]['LONGt']);
-					echo"},'<div><a href=event.php?id=";
-					print_r($eventlist[$x]['EVENTID']);
-					echo ">";
-					//print_r($eventlist[$x]['DESCRIPTION']);
-					echo"</a></div><div >";
-					print_r($eventlist[$x]['TIME']);
-					#making changes here
-					echo"</div>');";
-					echo"\r\n";
-					}
-			}
-			
-           /* addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
+            map.addObject(currentgroup);
+            addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
           '<div ><a>Workout Session</a>' +
-          '</div><div >@ PAW<br>Today @ 4:00 PM</div>');*/
-            echo "return false;
+          '</div><div >@ PAW<br>Today @ 4:00 PM</div>');
+            return false;
         }
      function display_own() {
             if (edit == false) {
