@@ -56,6 +56,34 @@ body {
 
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
+    <script>
+        function opensearchwindow()
+        {
+            
+            $.Dialog({
+            shadow: true,
+            overlay: false,
+            icon: '<span class="icon-search"></span>',
+            title: 'Search For Groups',
+            width: 500,
+            padding: 10,
+            onShow: function () {
+                $("#datepicker").datepicker();
+                var strVar="";
+                     strVar += "<form id=\"form_stories\" method =\"post\" action=\"events\/upload_stories.php\">  ";
+                     strVar += "    <p>What kind of groups are you interested?<\/p> <p><input name =\"search\" type=\"text\" \/><\/p> ";
+                     strVar += "    <p><input name =\"submit\" type=\"submit\"\/> <\/p>";
+                     strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
+                     strVar += "<\/form>";
+                     strVar += "";
+                $.Dialog.content(strVar);
+                $.Metro.initInputs();
+            }
+         });
+
+        
+        }
+    </script>
     
 </head>
 	<body class="metro">
@@ -81,7 +109,7 @@ body {
                         <div class="span3" >
                             <div style="margin-left: 20px; margin-top:40px">
                                 <a href ="form.php"><button class="large">Create</button></a>
-                                <button class="large">Search</button>
+                                <button class="large" onclick="opensearchwindow()">Search</button>
                             </div>
                         </div>
                         
