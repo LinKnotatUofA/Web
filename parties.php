@@ -184,7 +184,7 @@ body {
                                      <ul>
                                          <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
                                          <li class="title" style="color: white;">Party YES</li>
-                                         <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
+                                         <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Studying
                                              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                                                  <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
                                              </svg></a></li>
