@@ -206,7 +206,7 @@ body {
                                
                         </div>  
                     </div>  
-               </div>
+              
 
     
              <div id="row3" class="row" >
@@ -216,6 +216,7 @@ body {
                     <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>             
                 </div>
              </div>
+         </div>
      
 
 
