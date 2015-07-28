@@ -1,6 +1,6 @@
 <?php
 
-$mysql_hostname = "us-cdbr-azure-northcentral-a.cleardb.com";
+$mysql_hostname = "127.0.0.1";
 $mysql_username = "ba30dbdb2d10ef";
 $mysql_password = "272e799b";
 $mysql_database = "bsquared_user";
