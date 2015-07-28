@@ -96,7 +96,7 @@ body {
                 echo"},'<div><a href=event.php?id=";
                 print_r($eventlist[$x]['EVENTID']);
                 echo ">";
-                //print_r($eventlist[$x]['DESCRIPTION']);
+                print_r($eventlist[$x]['DESCRIPTION']);
                 echo"</a></div><div >";
                 print_r($eventlist[$x]['TIME']);
 			    #making changes here
@@ -127,10 +127,32 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupstudy;
             currenticon = studymark;
-            map.addObject(currentgroup);
-            addMarkerToGroup(currentgroup, { lat: 53.528200, lng: -113.525439 },
+            map.addObject(currentgroup); ";?>
+			<?php
+			for($x = 0;$x<count($eventlist);$x++)
+			{ 
+				if($eventlist[$x]['TYPE']=='1')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
+				{
+					echo "addMarkerToGroup(groupfun, { lat: ";
+					print_r($eventlist[$x]['LAT']);
+					echo", lng:";
+					print_r($eventlist[$x]['LONGt']);
+					echo"},'<div><a href=event.php?id=";
+					print_r($eventlist[$x]['EVENTID']);
+					echo ">";
+					print_r($eventlist[$x]['DESCRIPTION']);
+					echo"</a></div><div >";
+					print_r($eventlist[$x]['TIME']);
+					#making changes here
+					echo"</div>');";
+					echo"\r\n";
+					}
+			}
+
+           /* addMarkerToGroup(currentgroup, { lat: 53.528200, lng: -113.525439 },
           '<div ><a>Stats 151 Study Group</a>' +
-          '</div><div >@ CCIS L2-220<br>Tommrow @ 12:00 AM</div>');
+          '</div><div >@ CCIS L2-220<br>Tommrow @ 12:00 AM</div>');*/
+		  echo "
             return false;
         }
     function display_custom() {
