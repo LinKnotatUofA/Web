@@ -104,26 +104,7 @@ body {
                 echo"\r\n";
                 }
         }
-		
-		for($x = 0;$x<count($eventlist);$x++)
-        { 
-            if($eventlist[$x]['TYPE']=='1')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
-            {
-                echo "addMarkerToGroup(groupfun, { lat: ";
-                print_r($eventlist[$x]['LAT']);
-                echo", lng:";
-                print_r($eventlist[$x]['LONGt']);
-                echo"},'<div><a href=event.php?id=";
-                print_r($eventlist[$x]['EVENTID']);
-                echo ">";
-                print_r($eventlist[$x]['DESCRIPTION']);
-                echo"</a></div><div >";
-                print_r($eventlist[$x]['TIME']);
-			    #making changes here
-                echo"</div>');";
-                echo"\r\n";
-                }
-        }
+
         echo
         "
         
