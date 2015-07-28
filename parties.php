@@ -176,6 +176,10 @@ body {
 
 
                 <div id="row2" class="row">
+                    <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                        <div class="grid fluid show-grid">     
+                        
+                      
                     <div class="span3">
                         <nav class="vertical-menu">
                             <ul>
@@ -200,6 +204,7 @@ body {
                     <div class="span9" id="map" style="width: 100%; height: 400px; background: grey" />   
                                
                 </div>  
+             </div>   
                 <div class="span12 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
                     Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
                     <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
