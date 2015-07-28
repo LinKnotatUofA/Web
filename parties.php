@@ -96,7 +96,7 @@ body {
                 echo"},'<div><a href=event.php?id=";
                 print_r($eventlist[$x]['EVENTID']);
                 echo ">";
-                print_r($eventlist[$x]['DESCRIPTION']);
+                print_r($eventlist[$x]['DESCRIPTION']yes);
                 echo"</a></div><div >";
                 print_r($eventlist[$x]['TIME']);
 			    #making changes here
