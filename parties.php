@@ -210,11 +210,9 @@ body {
                     Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
                     <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
                     <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>             
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
+                </div>
+             </div>
+     
 
 
 
