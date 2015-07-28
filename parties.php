@@ -81,10 +81,10 @@ body {
         map.removeObject(currentgroup);
         currentgroup = groupfun;
         currenticon = funmark;
-        map.addObject(currentgroup);";?>
+        map.addObject(currentgroup);";
 	
 		
-		<?php
+		
         for($x = 0;$x<count($eventlist);$x++)
         { 
             if($eventlist[$x]['TYPE']=='0')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
@@ -127,8 +127,8 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupstudy;
             currenticon = studymark;
-            map.addObject(currentgroup); ";?>
-			<?php
+            map.addObject(currentgroup); ";
+			
 			for($x = 0;$x<count($eventlist);$x++)
 			{ 
 				if($eventlist[$x]['TYPE']=='1')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
@@ -164,7 +164,7 @@ body {
             currentgroup = groupcustom;
             currenticon = custommark;
             map.addObject(currentgroup);
-            addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
+            /*addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
           '<div ><a>Workout Session</a>' +
           '</div><div >@ PAW<br>Today @ 4:00 PM</div>');
             return false;
