@@ -69,7 +69,7 @@ body {
 		}
 		?>
     <?php 
-	
+	echo "yes----------------------";
     echo"<script  type='text/javascript' charset='UTF-8'>
 
     function display_fun() {
