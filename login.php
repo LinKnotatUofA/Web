@@ -8,7 +8,7 @@ $password = $_POST['password'];
 if($username&&$password)
 {
     
-   $mysqli = new mysqli("localhost:3306", "root", "goodtogo", "bsquared_user");
+   $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com:3306", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
    
    $query = mysqli_query($mysqli,"SELECT * FROM user WHERE username='$username'");
    $numrows = mysqli_num_rows($query);

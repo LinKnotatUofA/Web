@@ -89,7 +89,7 @@ body {
                         
                         
                             //if user already in a group , display that group on the groups page
-                            $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+                            $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com:3306", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
                             $id = $_SESSION['id'];
                         
                         
