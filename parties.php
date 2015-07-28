@@ -149,9 +149,6 @@ body {
 					}
 			}
 
-           /* addMarkerToGroup(currentgroup, { lat: 53.528200, lng: -113.525439 },
-          '<div ><a>Stats 151 Study Group</a>' +
-          '</div><div >@ CCIS L2-220<br>Tommrow @ 12:00 AM</div>');*/
 		  echo "
             return false;
         }
@@ -176,7 +173,7 @@ body {
 					echo"},'<div><a href=event.php?id=";
 					print_r($eventlist[$x]['EVENTID']);
 					echo ">";
-					//print_r($eventlist[$x]['DESCRIPTION']);
+					print_r($eventlist[$x]['DESCRIPTION']);
 					echo"</a></div><div >";
 					print_r($eventlist[$x]['TIME']);
 					#making changes here
@@ -184,9 +181,7 @@ body {
 					echo"\r\n";
 					}
 			}
-            /*addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
-          '<div ><a>Workout Session</a>' +
-          '</div><div >@ PAW<br>Today @ 4:00 PM</div>');*/
+            
             echo "return false;
         }
      function display_own() {
