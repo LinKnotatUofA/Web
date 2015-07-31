@@ -19,7 +19,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="about_us.php" />
-    <Compile Include="db.php" />
     <Compile Include="event.php" />
     <Compile Include="form.php" />
     <Compile Include="group.php" />
@@ -27,19 +26,12 @@
     <Compile Include="imaging.php" />
     <Compile Include="index.php" />
     <Compile Include="insert_info.php" />
-    <Compile Include="load_events.php" />
-    <Compile Include="login.php" />
-    <Compile Include="logout.php" />
-    <Compile Include="member.php" />
     <Compile Include="nightlife.php" />
     <Compile Include="parties.php" />
     <Compile Include="post.php" />
-    <Compile Include="registration.php" />
     <Compile Include="single_stories.php" />
     <Compile Include="stories.php" />
     <Compile Include="topbar.php" />
-    <Compile Include="upload_events.php" />
-    <Compile Include="upload_stories.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

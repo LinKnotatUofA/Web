@@ -158,10 +158,35 @@ body {
                                                     </div>
                                             </div>
                                      ";     
-                                echo "      <div class='tile quadro' style='background-color:#404545'>";
+                                echo "      <div class='tile triple' style='background-color:#404545'>";
                                 echo "          <div class='tile-content'>
                                                         <div class='text-left padding5 ntp'>
                                                             <h2 class='fg-white no-margin'>Tags:<br>";print_r($row['GTAGS']);echo"</h2>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                      </div>";     
+                                //we also gotta figure out who is in the group
+                                $peoplefinder = mysqli_query($mysqli,"SELECT GID FROM group_members WHERE userID='$id'");
+                                $result = mysqli_fetch_array($peoplefinder);
+                                $resultlen = count($result);
+                                //Display the first five members, then spawn a button that will expand the list when clicked 
+                                echo "      <div class='tile' style='background-color:#404545'>";
+                                echo "          <div class='tile-content'>
+                                                        <div class='text-left padding5 ntp'>
+                                                            <h2 class='fg-white no-margin'>Group Members:<br>";if($resultlen <=5)
+                                                                                                               {
+                                                                                                                    $x = 0;
+                                                                                                                    while($x<$resultlen)
+                                                                                                                    {
+                                                                                                                        //display the user ids
+                                                                                                                        print_r( $result[$x]);
+                                                                                                                        echo "<br>";
+                                                                                                                        $x++;
+                                                                                                                    }
+                                                                                                               }
+                                                                                                               else;
+                                                    echo"</h2>
                                                         </div>
                                                     </div>
                                             </div>
