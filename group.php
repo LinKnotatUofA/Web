@@ -165,7 +165,7 @@ body {
                                                         </div>
                                                     </div>
                                             </div>
-                                      </div>";     
+                                     ";     
                                 //we also gotta figure out who is in the group
                                 $peoplefinder = mysqli_query($mysqli,"SELECT GID FROM group_members WHERE userID='$id'");
                                 $result = mysqli_fetch_array($peoplefinder);
