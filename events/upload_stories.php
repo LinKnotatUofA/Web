@@ -7,7 +7,7 @@
 session_start();
 
 
-$mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+$mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
 
 
 if (mysqli_connect_errno()) {

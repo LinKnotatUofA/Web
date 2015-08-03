@@ -69,7 +69,6 @@ body {
 		}
 		?>
     <?php 
-	
     echo"<script  type='text/javascript' charset='UTF-8'>
 
     function display_fun() {
@@ -105,6 +104,7 @@ body {
                 echo"\r\n";
                 }
         }
+
         echo
         "
         
@@ -127,10 +127,29 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupstudy;
             currenticon = studymark;
-            map.addObject(currentgroup);
-            addMarkerToGroup(currentgroup, { lat: 53.528200, lng: -113.525439 },
-          '<div ><a>Stats 151 Study Group</a>' +
-          '</div><div >@ CCIS L2-220<br>Tommrow @ 12:00 AM</div>');
+            map.addObject(currentgroup); ";?>
+			<?php
+			for($x = 0;$x<count($eventlist);$x++)
+			{ 
+				if($eventlist[$x]['TYPE']=='1')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
+				{
+					echo "addMarkerToGroup(groupstudy, { lat: ";
+					print_r($eventlist[$x]['LAT']);
+					echo", lng:";
+					print_r($eventlist[$x]['LONGt']);
+					echo"},'<div><a href=event.php?id=";
+					print_r($eventlist[$x]['EVENTID']);
+					echo ">";
+					print_r($eventlist[$x]['DESCRIPTION']);
+					echo"</a></div><div >";
+					print_r($eventlist[$x]['TIME']);
+					#making changes here
+					echo"</div>');";
+					echo"\r\n";
+					}
+			}
+
+		  echo "
             return false;
         }
     function display_custom() {
@@ -141,11 +160,29 @@ body {
             map.removeObject(currentgroup);
             currentgroup = groupcustom;
             currenticon = custommark;
-            map.addObject(currentgroup);
-            addMarkerToGroup(currentgroup, { lat: 53.523171, lng: -113.526031 },
-          '<div ><a>Workout Session</a>' +
-          '</div><div >@ PAW<br>Today @ 4:00 PM</div>');
-            return false;
+            map.addObject(currentgroup);";?>
+			<?php
+			for($x = 0;$x<count($eventlist);$x++)
+			{ 
+				if($eventlist[$x]['TYPE']=='2')        #if($eventlist[$x]['TYPE']=='0') originally array_search($eventlist[$x]['TYPE'],$typeArray)
+				{
+					echo "addMarkerToGroup(groupcustom, { lat: ";
+					print_r($eventlist[$x]['LAT']);
+					echo", lng:";
+					print_r($eventlist[$x]['LONGt']);
+					echo"},'<div><a href=event.php?id=";
+					print_r($eventlist[$x]['EVENTID']);
+					echo ">";
+					print_r($eventlist[$x]['DESCRIPTION']);
+					echo"</a></div><div >";
+					print_r($eventlist[$x]['TIME']);
+					#making changes here
+					echo"</div>');";
+					echo"\r\n";
+					}
+			}
+            
+            echo "return false;
         }
      function display_own() {
             if (edit == false) {
@@ -176,41 +213,48 @@ body {
 
 
                 <div id="row2" class="row">
-                    <div class="span3">
-                    </div>
-                    <div class="span3">
-                        <nav class="vertical-menu">
-                            <ul>
-                                <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
-                                <li class="title" style="color: white;">Party</li>
-                                <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
-                                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                                        <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
-                                    </svg></a></li>
-                                <li><a style="color: white;" onclick="display_fun()" id="fun" href="#fun">Fun
-                                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">       
-                                        <rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" />
-                                    </svg></a></li>
-                                <li><a style="color: white;" onclick="display_custom()" id="custom" href="#custom">Custom
-                                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                                        <rect stroke="white" fill="#ba00ff" x="1" y="1" width="22" height="22" />
-                                    </svg></a></li>
-                                <li><a style="color: white;" onclick="display_own()" id="own" href="#add">+Your Own</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="span9" id="map" style="width: 100%; height: 400px; background: grey" />   
+                    <div class="span12 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                        <div class="grid fluid show-grid">     
+                        
+                      
+                             <div class="span3">
+                                 <nav class="vertical-menu">
+                                     <ul>
+                                         <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
+                                         <li class="title" style="color: white;">Party</li>
+                                         <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
+                                             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                                 <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
+                                             </svg></a></li>
+                                         <li><a style="color: white;" onclick="display_fun()" id="fun" href="#fun">Fun
+                                             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">       
+                                                 <rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" />
+                                             </svg></a></li>
+                                         <li><a style="color: white;" onclick="display_custom()" id="custom" href="#custom">Custom
+                                             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                                 <rect stroke="white" fill="#ba00ff" x="1" y="1" width="22" height="22" />
+                                             </svg></a></li>
+                                         <li><a style="color: white;" onclick="display_own()" id="own" href="#add">+Your Own</a></li>
+                                     </ul>
+                                 </nav>
+                             </div>
+
+                             <div class="span9" id="map" style="width: 100%; height: 400px; background: grey" />   
                                
-                </div>  
-                <div class="span12 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
+                        </div>  
+                    </div>  
+              
+
+    
+             <div id="row3" class="row" >
+                <div class="span12 tertiary-text bg-dark fg-white" style="padding: 20px">
                     Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
                     <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
                     <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>             
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
+                </div>
+             </div>
+         </div>
+     
 
 
 
