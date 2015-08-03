@@ -169,8 +169,22 @@ body {
                                 //we also gotta figure out who is in the group
                                 $peoplefinder = mysqli_query($mysqli,"SELECT userID FROM group_members WHERE GID='$groupid'");
                                 $result = mysqli_fetch_array($peoplefinder);
-								echo "$result";
                                 $resultlen = count($result);
+								//making changes from here
+								$x = 0;
+								$usernamelist = array();
+								while ($x < $resultlen)
+								{
+									$namefinder = mysqli_query($mysqli,"SELECT username FROM user WHERE id='$result[$x]'");
+									$username = mysqli_fetch_array($namefinder);
+									array_push($usernamelist,$username[0]);
+									$x++;
+								}
+								for ($x=0; $x < count($usernamelist); $x++)
+								{
+									echo "$usernamelist[$x]"l;
+								}
+								
                                 //Display the first five members, then spawn a button that will expand the list when clicked 
                                 echo "      <div class='tile' style='background-color:#404545'>";
                                 echo "          <div class='tile-content'>
