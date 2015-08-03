@@ -56,6 +56,34 @@ body {
 
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
+    <script>
+        function opensearchwindow()
+        {
+            
+            $.Dialog({
+            shadow: true,
+            overlay: false,
+            icon: '<span class="icon-search"></span>',
+            title: 'Search For Groups',
+            width: 500,
+            padding: 10,
+            onShow: function () {
+                $("#datepicker").datepicker();
+                var strVar="";
+                     strVar += "<form id=\"form_stories\" method =\"post\" action=\"events\/upload_stories.php\">  ";
+                     strVar += "    <p>What kind of groups are you interested?<\/p> <p><input name =\"search\" type=\"text\" \/><\/p> ";
+                     strVar += "    <p><input name =\"submit\" type=\"submit\"\/> <\/p>";
+                     strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
+                     strVar += "<\/form>";
+                     strVar += "";
+                $.Dialog.content(strVar);
+                $.Metro.initInputs();
+            }
+         });
+
+        
+        }
+    </script>
     
 </head>
 	<body class="metro">
@@ -81,7 +109,7 @@ body {
                         <div class="span3" >
                             <div style="margin-left: 20px; margin-top:40px">
                                 <a href ="form.php"><button class="large">Create</button></a>
-                                <button class="large">Search</button>
+                                <button class="large" onclick="opensearchwindow()">Search</button>
                             </div>
                         </div>
                         
@@ -89,7 +117,7 @@ body {
                         
                         
                             //if user already in a group , display that group on the groups page
-                            $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+                            $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
                             $id = $_SESSION['id'];
                         
                         
@@ -130,10 +158,37 @@ body {
                                                     </div>
                                             </div>
                                      ";     
-                                echo "      <div class='tile quadro' style='background-color:#404545'>";
+                                echo "      <div class='tile triple' style='background-color:#404545'>";
                                 echo "          <div class='tile-content'>
                                                         <div class='text-left padding5 ntp'>
                                                             <h2 class='fg-white no-margin'>Tags:<br>";print_r($row['GTAGS']);echo"</h2>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                     ";     
+                                //we also gotta figure out who is in the group
+                                $peoplefinder = mysqli_query($mysqli,"SELECT GID FROM group_members WHERE userID='$id'");
+                                $result = mysqli_fetch_array($peoplefinder);
+                                $resultlen = count($result);
+                                //Display the first five members, then spawn a button that will expand the list when clicked 
+                                echo "      <div class='tile' style='background-color:#404545'>";
+                                echo "          <div class='tile-content'>
+                                                        <div class='text-left padding5 ntp'>
+                                                            <h2 class='fg-white no-margin'>Group Members:<br>";if($resultlen <=5)
+                                                                                                               {
+                                                                                                                    $x = 0;
+                                                                                                                    while($x<$resultlen)
+                                                                                                                    {
+                                                                                                                        // display the user ids
+                                                                                                                        // bare minimum is achieved in order to display user ID
+                                                                                                                        // next up would be to query all group member info with one big ass mysqli statement, in a fucking fancy javascript dialog
+                                                                                                                        print_r( $result[$x]);
+                                                                                                                        echo "<br>";
+                                                                                                                        $x++;
+                                                                                                                    }
+                                                                                                               }
+                                                                                                               else;
+                                                    echo"</h2>
                                                         </div>
                                                     </div>
                                             </div>

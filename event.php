@@ -21,7 +21,7 @@ else
 {
     $join = null;
 }
-$mysqli = new mysqli("localhost:3306", "root", "goodtogo", "bsquared_user");
+$mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
 $user = $_SESSION['username'];
 $query = mysqli_query($mysqli,"SELECT id FROM user WHERE username='$user'");
 $row = mysqli_fetch_assoc($query);
@@ -153,7 +153,7 @@ body {
                         content: '',
                         onShow: function(_dialog){
                            var strVar='';";
-                        $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+                        $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
                         $query = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE EVENTID = '$eventID'");
                         $attendeeslist = resultToArray($query);
                         $length = count($attendeeslist);
@@ -184,7 +184,7 @@ body {
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 	<body class="metro">
-	    <div id="fb-root"></div>
+	    <div id="fb-ba30dbdb2d10ef"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -228,9 +228,9 @@ body {
                                         </label>
                                     </div>   
                                 </form>
-                                 <div class="fb-share-button" data-href="localhost/event.php?id=$eventID" data-layout="button_count"></div>
+                                 <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID" data-layout="button_count"></div>
                                 <div class="g-plusone"  data-annotation="inline" data-width="300"></div>
-                                <a href="http://twitter.com/share?url=http://localhost/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
+                                <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
                             </ul>
                         </nav>
                     </div>
@@ -242,7 +242,7 @@ body {
                                         
                                         <span class="name fg-white"><img src='Assets/default_user.png'/><br>Created By:
                                         <?php 
-                                        $mysqli = new mysqli("localhost", "root", "goodtogo", "bsquared_user");
+                                        $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
                                         $authid = $singleventproperty[0]['authID'];
                                         //grab the latest 4 events from database
                                         $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");

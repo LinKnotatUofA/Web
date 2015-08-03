@@ -1,8 +1,8 @@
 <?php
 
 $mysql_hostname = "127.0.0.1";
-$mysql_username = "root";
-$mysql_password = "goodtogo";
+$mysql_username = "ba30dbdb2d10ef";
+$mysql_password = "272e799b";
 $mysql_database = "bsquared_user";
 $db = mysql_connect ($mysql_hostname,$mysql_username,$mysql_password,$mysql_database) or die("something is broken");
 
