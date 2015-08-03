@@ -198,8 +198,6 @@ body {
                                                                                                                         // display the user ids
                                                                                                                         // bare minimum is achieved in order to display user ID
                                                                                                                         // next up would be to query all group member info with one big ass mysqli statement, in a fucking fancy javascript dialog
-                                                                                                                        print_r( $result[$x]);
-                                                                                                                        echo "<br>";
 																														echo "$usernamelist[$x]";
 																														echo "<br>";
                                                                                                                         $x++;
