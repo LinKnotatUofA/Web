@@ -178,6 +178,7 @@ body {
 									$namefinder = mysqli_query($mysqli,"SELECT username FROM user WHERE id='$result[$x]'");
 									$username = mysqli_fetch_array($namefinder);
 									array_push($usernamelist,$username[0]);
+									echo "$usernamelist[$x]";
 									$x++;
 								}
 								/*for ($x=0; $x < count($usernamelist); $x++)
