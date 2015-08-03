@@ -178,7 +178,7 @@ body {
 									$namefinder = mysqli_query($mysqli,"SELECT username FROM user WHERE id='$result[$x]'");
 									$username = mysqli_fetch_array($namefinder);
 									array_push($usernamelist,$username[0]);
-									echo "$usernamelist[$x]";
+									//echo "$usernamelist[$x]";
 									$x++;
 								}
 								/*for ($x=0; $x < count($usernamelist); $x++)
@@ -200,6 +200,8 @@ body {
                                                                                                                         // next up would be to query all group member info with one big ass mysqli statement, in a fucking fancy javascript dialog
                                                                                                                         print_r( $result[$x]);
                                                                                                                         echo "<br>";
+																														echo "$usernamelist[$x]";
+																														echo "<br>";
                                                                                                                         $x++;
                                                                                                                     }
                                                                                                                }
