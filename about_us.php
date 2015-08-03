@@ -68,7 +68,7 @@ body {
 
                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
-                    <!-->redo story page pinterest/deviant art style<-->              
+                    <!-->redo story page pinterest/deviant art style testing testing<-->              
                     
                     </div>
             </div>
