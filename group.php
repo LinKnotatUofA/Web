@@ -167,7 +167,7 @@ body {
                                             </div>
                                      ";     
                                 //we also gotta figure out who is in the group
-                                $peoplefinder = mysqli_query($mysqli,"SELECT GID FROM group_members WHERE userID='$id'");
+                                $peoplefinder = mysqli_query($mysqli,"SELECT userID FROM group_members WHERE GID='$groupid'");
                                 $result = mysqli_fetch_array($peoplefinder);
                                 $resultlen = count($result);
                                 //Display the first five members, then spawn a button that will expand the list when clicked 
