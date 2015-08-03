@@ -180,10 +180,10 @@ body {
 									array_push($usernamelist,$username[0]);
 									$x++;
 								}
-								for ($x=0; $x < count($usernamelist); $x++)
+								/*for ($x=0; $x < count($usernamelist); $x++)
 								{
 									echo "$usernamelist[$x]"l;
-								}
+								}*/
 								
                                 //Display the first five members, then spawn a button that will expand the list when clicked 
                                 echo "      <div class='tile' style='background-color:#404545'>";
