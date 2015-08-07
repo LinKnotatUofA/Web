@@ -146,6 +146,7 @@ body {
                                                         <div class='text-left padding5 ntp'>
                                                             <h2 class='fg-white no-margin'>Name:<br>";print_r($row['GNAME']);echo"</h2>
                                                         </div>
+
                                                 </div>
                                             </div>
                                      ";     
@@ -205,6 +206,7 @@ body {
                                                                                                                }
                                                                                                                else;
                                                     echo"</h2>
+                                                    <button>Button</button>
                                                         </div>
                                                     </div>
                                             </div>
