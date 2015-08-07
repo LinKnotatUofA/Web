@@ -21,14 +21,16 @@
             <span class="element-divider"></span>
             <a href="about_us.php" class="element"> About Us </a>
             <span class="element-divider"></span>
+            <form>
             <div class="element input-element">
-                <form>
+                <form method="post" action="search_backend.php">
                     <div class="input-control text">
                         <input type="text" placeholder="Search...">
                         <button class="btn-search"></button>
                     </div>
                 </form>
             </div>
+            </form>
             <span class="element-divider"></span>
             <?php
                 session_start();

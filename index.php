@@ -71,8 +71,6 @@ body {
                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
                         <div id="featured_row1" class="row" >
-                            <div class="spanspecial"> 
-                                </div>
                             <div id ="content_column" class="span4">
                                 <!-- wait until rating system, grab events/stories with the highest ratings-->
                                 <div class="tile triple double-vertical">
