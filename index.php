@@ -68,7 +68,7 @@ body {
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
 
-                <div class="span11 offset_special" id="content" style="width: auto; height: auto; background: #C7D28A; padding: 20px" />
+                <div class="span11 offset_special" id="content" style="width: auto; height: auto; background: #C7D28A;" />
                     <div class="grid fluid show-grid">
                         <div id="featured_row1" class="row" >
                             <div id ="content_column" class="tile-group two">
