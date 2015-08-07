@@ -139,7 +139,7 @@ body {
                                        </script>
                                 </div>
                             </div>
-                            <div class="span1"></div>
+                            <div class="span1" style="padding:20px"></div>
                             
                             <div id="livefeed_column" class="span4"> 
                                 <div class="tile triple">
