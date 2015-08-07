@@ -71,7 +71,7 @@ body {
                 <div class="span11 offset_special" id="content" style="width: auto; height: auto; background: #C7D28A; padding: 20px" />
                     <div class="grid fluid show-grid">
                         <div id="featured_row1" class="row" >
-                            <div id ="content_column" class="tile-group four">
+                            <div id ="content_column" class="tile-group two">
                                 <!-- wait until rating system, grab events/stories with the highest ratings-->
                                 <div class="tile triple double-vertical">
                                     <div class="carousel" id="carousel1">
