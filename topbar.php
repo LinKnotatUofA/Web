@@ -36,8 +36,9 @@
                 session_start();
                 if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
                 {
-                    echo "<a class='element'> Welcome! ".$_SESSION['username']." </a>" ;
+                    
                     echo "<div class='element place-right'>
+                            <a class = \"fg-dark\"> Welcome! ".$_SESSION['username']."&nbsp;&nbsp;</a>
                             <a class='dropdown-toggle' href='#'>
                             <span class='icon-cog'></span>
                         </a>

@@ -4,8 +4,8 @@ session_start();
 $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
 
 //grab the latest 4 events from database
-$query = mysqli_query($mysqli,"SELECT * FROM event");
-
+$query = mysqli_query($mysqli,"SELECT * FROM event order by event.postdate");
+$Story_query = mysqli_query($mysqli,"SELECT * FROM stories order by stories.date");
 function resultToArray($result) {
     $rows = array();
     while($row = $result->fetch_assoc()) {
@@ -14,6 +14,7 @@ function resultToArray($result) {
     return $rows;
 }
 $eventlist = resultToArray($query);
+$storylist = resultToarray($Story_query);
 
 function geteventinfo($eID)
 {
