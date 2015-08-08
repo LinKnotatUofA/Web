@@ -54,18 +54,18 @@ body {
     
 </head>
 	<body class="metro">
-        <div class="page" align="center">
-            <div id="row0" class="row">
+        <div class="grid fluid show-grid" align="center">
+            <div id="row0">
                 <div class="span4">
                         <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
-            <div id="row1" class="row">
+            <div id="row1" >
                 <div class="span11" align="center">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
             </div>
-            <div id="row2" class="row">
+            <div id="row2" >
                 <div class="span11" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;" />
                     <div class="grid fluid show-grid">
                         <div id="featured_row1" class="row" >
@@ -164,7 +164,7 @@ body {
                     </div>
                </div>  
             </div> 
-            <div id="row3" class="row">
+            <div id="row3">
                 <div align="left" class="span11 tertiary-text bg-dark fg-white" style="padding: 20px" >
                     Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
                     <br></br><a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
