@@ -1,5 +1,9 @@
 <?php 
     session_start();
+<<<<<<< HEAD
+    
+    ?>
+=======
     require "\account\db.php";
 
    
@@ -18,6 +22,7 @@
 ?>
     
 
+>>>>>>> 625ef794db0837af3bf1ec8a29d491b0ddcfa385
 
 
 <!doctype html>
