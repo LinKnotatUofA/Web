@@ -54,23 +54,26 @@ body {
     
 </head>
 	<body class="metro">
-        <div class="grid fluid show-grid" align="center">
-            <div id="row0">
-                <div class="row span4" >
-                        <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
+        <div class="grid">
+            <div id="row0" class="row" >
+                <div class="span4 offset_special">
+                        <a href="index.html"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
-            <div id="row1" >
-                <div class="row span12" align="left">
+            <div id="row1" class="row" >
+                <div class="span_navbar_special">
+                </div>
+              
+                <div class="span11 offset_special">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
-            </div>
-            <div id="row2" >
-                <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;" />
+
+                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
                         <div id="featured_row1" class="row" >
-                            <div id ="content_column" class="span6" style="margin-left:4%">
-                                <h2 class="subheader fg-white place-left">Featured & Latest Events</h2>
+                            <div class="spanspecial"> 
+                                </div>
+                            <div id ="content_column" class="span4">
                                 <!-- wait until rating system, grab events/stories with the highest ratings-->
                                 <div class="tile triple double-vertical">
                                     <div class="carousel" id="carousel1">
@@ -86,7 +89,8 @@ body {
                                                 <img src="Assets/3.png" class="cover1"/>
                                             </div>
                                 
-                        
+                                            <a class="controls left"><i class="icon-arrow-left-3"></i></a>
+                                            <a class="controls right"><i class="icon-arrow-right-3"></i></a>
                                     </div>
                                     <div class="brand bg-black">
                                         <div class="label fg-white place-right">Featured</div>
@@ -137,42 +141,52 @@ body {
                                        </script>
                                 </div>
                             </div>
+
                             
-                            <div id="livefeed_column" class="span5"> 
-                                <h2 class="subheader fg-white place-left">Featured & Latest Stories </h2>
-                                <?php 
-                                
-                                    $storycount=count($storylist);
-                                    
-                                        $x=1;
-                                        while($x <= $storycount)
-                                        {
-                                          echo"<div class='tile triple'>
-                                                   <div class ='tile-content'>
-                                                       <h3 class='text-left padding20'><a class=\"readable-text fg-dark\" href="; print_r("\"single_stories.php?id=");print_r($storylist[$storycount-$x]['story_id']);print_r("\""); echo">"; echo"<blockquote class=\"place-left\">";echo "\"";print_r($storylist[$storycount-$x]['story_content']);echo "\"<br><small><cite>";print_r($storylist[$storycount-$x]['story_title']);echo"</cite>"; echo" by "; printusername($storylist[$storycount-$x]['story_author']); echo", circa "; print_r($storylist[$storycount-$x]['DATE']); echo"</small></blockquote></a></h3>
-                                                   </div>
-                                               </div>";
-                                            $x++;
+                            <div id="livefeed_column" class="span4 offset_livefeed_column"> 
+                                <div class="tile triple">
+                                    <div class ="tile-content">
+                                        <h3 class='text-left padding10'><a href=<?php print_r("\"event.php?id=");print_r($eventlist[0]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[0]['DESCRIPTION']); echo"<p class='text-left readable-text'> on </p> "; print_r($eventlist[0]['TIME']); echo" - "; printusername($eventlist[0]['authID']);?></a></h3>
+                                    </div>
+                                </div>
 
+                                <div class="tile triple">
+                                    <div class ="tile-content">
+                                        <h3 class='text-left padding10'><a href=<?php print_r("\"event.php?id=");print_r($eventlist[1]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[1]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[1]['TIME']); echo" - "; printusername($eventlist[1]['authID']);?></a></h3>
+                                    </div>
+                                </div>
 
-                                        }
+                                <div class="tile triple">
+                                    <div class ="tile-content">
+                                        <h3 class='text-left padding10'><a href=<?php print_r("\"event.php?id=");print_r($eventlist[2]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[2]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[2]['TIME']); echo" - "; printusername($eventlist[2]['authID']);?></a></h3>
+                                    </div>
+                                </div>
 
-              
-                                 ?>
+                                <div class="tile triple">
+                                    <div class ="tile-content">
+                                        <h3 class='text-left padding10'><a href=<?php print_r("\"event.php?id=");print_r($eventlist[3]['EVENTID']);print_r("\""); ?>><?php print_r($eventlist[3]['DESCRIPTION']); echo"<p> on </p> "; print_r($eventlist[3]['TIME']); echo" - "; printusername($eventlist[3]['authID']);?></a></h3>
+                                    </div>
+                                </div> 
+
                             </div>
                         </div>
                     </div>
-               </div>  
-            </div> 
-            <div id="row3">
-                <div align="left" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" >
-                    Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                    <br></br><a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                    <br></br>Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
-                 
-                </div>
-            </div>
-        </div>        
+               </div>   
         </div>
+        <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
+            Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
+            <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
+            <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+          
+
+
+        
+
+        
     </body>
 </html>

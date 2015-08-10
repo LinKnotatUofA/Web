@@ -10,13 +10,6 @@
     <OutputPath>.</OutputPath>
     <RootNamespace>UofABsquared</RootNamespace>
     <ProjectTypeGuids>{73520F3B-57D4-4D7D-8280-D81F0A3C992B};{349C5851-65DF-11DA-9384-00065B846F21};{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
-    <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-    <Server>PHPDev</Server>
-    <PublishEvent>None</PublishEvent>
-    <PHPDevAutoPort>True</PHPDevAutoPort>
-    <PHPDevPort>18482</PHPDevPort>
-    <PHPDevHostName>localhost</PHPDevHostName>
-    <IISProjectUrl>http://localhost:18482/</IISProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <IncludeDebugInformation>true</IncludeDebugInformation>

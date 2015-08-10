@@ -1,8 +1,22 @@
 <?php 
+/*
     session_start();
-    
-    ?>
+    require "\account\db.php";
 
+   
+    
+    if(isset($_POST['input']))
+    {   
+        $input = $_POST['input'];
+
+    }
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    // user
+    $searchuserstatement="Select username, id from user where username like %$input%";
+    $searchgroupstatement="Select GID from groups where GTAG like %$input% or GNAME like %$input% or GDESCRIPTION LIKE %INPUT%";
+    $searcheventstatement="Select EVENTID from events where DESCRIPTION like %$input%";
+*/
+?>
 
 <!doctype html>
 <html>
@@ -68,7 +82,8 @@ body {
 
                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
-     <h2 id="__table__">Table</h2>
+                        
+     <h2 id="__table__">Events</h2>
         <div class="example">
             <table class="table striped bordered hovered">
                 <thead>
