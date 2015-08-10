@@ -107,7 +107,7 @@ body {
 						}
 						
 					?>
-    <div class="tile-group one">
+    <div class="tile double">
         <div class="tile-group-title">Group Tiles</div>
         <div class="tile double ribbed-amber"></div>
         <div class="tile bg-darkPink "></div>
