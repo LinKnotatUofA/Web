@@ -144,15 +144,15 @@ body {
                                 
                                     $storycount=count($storylist);
                                     
-                                        $x=4;
-                                        while($x>=1)
+                                        $x=1;
+                                        while($x <= $storycount)
                                         {
                                           echo"<div class='tile triple'>
                                                    <div class ='tile-content'>
                                                        <h3 class='text-left padding20'><a class=\"readable-text fg-dark\" href="; print_r("\"single_stories.php?id=");print_r($storylist[$storycount-$x]['story_id']);print_r("\""); echo">"; echo"<blockquote class=\"place-left\">";echo "\"";print_r($storylist[$storycount-$x]['story_content']);echo "\"<br><small><cite>";print_r($storylist[$storycount-$x]['story_title']);echo"</cite>"; echo" by "; printusername($storylist[$storycount-$x]['story_author']); echo", circa "; print_r($storylist[$storycount-$x]['DATE']); echo"</small></blockquote></a></h3>
                                                    </div>
                                                </div>";
-                                            $x--;
+                                            $x++;
 
 
                                         }
