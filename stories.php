@@ -96,9 +96,9 @@ body {
 						$x=0;
 						while ($x<$storylistlen){
 							echo $tileArray[$x];
-                            //echo "<a href=single_stories.php?id=";
+                            echo "<a href=single_stories.php?id=";
                             print_r($storylist[$x]['story_id']);
-                            //echo ">"; 
+                            echo ">"; 
 							print_r(strtoupper($storylist[$x]['story_title']));
                             echo "<br>"; 
                             print_r($storylist[$x]['story_content']); 
