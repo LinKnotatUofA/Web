@@ -105,7 +105,7 @@ body {
                             echo"</a></div>";
 							$x++;
 						}
-						echo"<br>";
+						//echo"<br>";
 						
 					?>
     <div class="tile double">
