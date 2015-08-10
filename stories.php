@@ -105,6 +105,7 @@ body {
                             echo"</a></div>";
 							$x++;
 						}
+						//echo"<br>";
 						
 					?>
     <div class="tile-group six">
