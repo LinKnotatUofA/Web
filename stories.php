@@ -82,7 +82,7 @@ body {
 						'<div class="tile double bg-yellow">', '<div class="tile double bg-darkCyan">','<div class="tile bg-red">',
 						'<div class="tile bg-pink">','<div class="tile">', '<div class="tile double bg-green">' );
 						
-                        <div class="tile-group double">
+                       /* <div class="tile-group double">
                             <div class="tile-group-title">Group Tiles</div>
                             <div class="tile double ribbed-amber"></div>
                             <div class="tile bg-darkPink "></div>
@@ -95,7 +95,7 @@ body {
                             <div class="tile bg-pink"></div>
                             <div class="tile"></div>
                             <div class="tile double bg-green"></div>
-                        </div>
+                        </div>*/
                         
 						$query = mysqli_query($mysqli,"SELECT * FROM stories");
 							function resultToArray($result) {
