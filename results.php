@@ -1,7 +1,28 @@
 <?php 
     session_start();
+<<<<<<< HEAD
     
     ?>
+=======
+    require "\account\db.php";
+
+   
+    
+    if(isset($_POST['input']))
+    {   
+        $input = $_POST['input'];
+
+    }
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    // user
+    $searchuserstatement="Select username, id from user where username like %$input%";
+    $searchgroupstatement="Select GID from groups where GTAG like %$input% or GNAME like %$input% or GDESCRIPTION LIKE %INPUT%";
+    $searcheventstatement="Select EVENTID from events where DESCRIPTION like %$input%";
+
+?>
+    
+
+>>>>>>> 625ef794db0837af3bf1ec8a29d491b0ddcfa385
 
 
 <!doctype html>

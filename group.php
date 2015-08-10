@@ -146,6 +146,7 @@ body {
                                                         <div class='text-left padding5 ntp'>
                                                             <h2 class='fg-white no-margin'>Name:<br>";print_r($row['GNAME']);echo"</h2>
                                                         </div>
+
                                                 </div>
                                             </div>
                                      ";     
@@ -158,10 +159,54 @@ body {
                                                     </div>
                                             </div>
                                      ";     
-                                echo "      <div class='tile quadro' style='background-color:#404545'>";
+                                echo "      <div class='tile triple' style='background-color:#404545'>";
                                 echo "          <div class='tile-content'>
                                                         <div class='text-left padding5 ntp'>
                                                             <h2 class='fg-white no-margin'>Tags:<br>";print_r($row['GTAGS']);echo"</h2>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                     ";     
+                                //we also gotta figure out who is in the group
+                                $peoplefinder = mysqli_query($mysqli,"SELECT userID FROM group_members WHERE GID='$groupid'");
+                                $result = mysqli_fetch_array($peoplefinder);
+                                $resultlen = count($result);
+								//making changes from here
+								$x = 0;
+								$usernamelist = array();
+								while ($x < $resultlen)
+								{
+									$namefinder = mysqli_query($mysqli,"SELECT username FROM user WHERE id='$result[$x]'");
+									$username = mysqli_fetch_array($namefinder);
+									array_push($usernamelist,$username[0]);
+									//echo "$usernamelist[$x]";
+									$x++;
+								}
+								/*for ($x=0; $x < count($usernamelist); $x++)
+								{
+									echo "$usernamelist[$x]"l;
+								}*/
+								
+                                //Display the first five members, then spawn a button that will expand the list when clicked 
+                                echo "      <div class='tile' style='background-color:#404545'>";
+                                echo "          <div class='tile-content'>
+                                                        <div class='text-left padding5 ntp'>
+                                                            <h2 class='fg-white no-margin'>Group Members:<br>";if($resultlen <=5)
+                                                                                                               {
+                                                                                                                    $x = 0;
+                                                                                                                    while($x<$resultlen)
+                                                                                                                    {
+                                                                                                                        // display the user ids
+                                                                                                                        // bare minimum is achieved in order to display user ID
+                                                                                                                        // next up would be to query all group member info with one big ass mysqli statement, in a fucking fancy javascript dialog
+																														echo "$usernamelist[$x]";
+																														echo "<br>";
+                                                                                                                        $x++;
+                                                                                                                    }
+                                                                                                               }
+                                                                                                               else;
+                                                    echo"</h2>
+                                                    <button>Button</button>
                                                         </div>
                                                     </div>
                                             </div>

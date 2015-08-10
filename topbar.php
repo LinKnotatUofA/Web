@@ -21,21 +21,24 @@
             <span class="element-divider"></span>
             <a href="about_us.php" class="element"> About Us </a>
             <span class="element-divider"></span>
+            <form>
             <div class="element input-element">
-                <form>
+                <form method="post" action="search_backend.php">
                     <div class="input-control text">
                         <input type="text" placeholder="Search...">
                         <button class="btn-search"></button>
                     </div>
                 </form>
             </div>
+            </form>
             <span class="element-divider"></span>
             <?php
                 session_start();
                 if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
                 {
-                    echo "<a class='element'> Welcome! ".$_SESSION['username']." </a>" ;
+                    
                     echo "<div class='element place-right'>
+                            <a class = \"fg-dark\"> Welcome! ".$_SESSION['username']."&nbsp;&nbsp;</a>
                             <a class='dropdown-toggle' href='#'>
                             <span class='icon-cog'></span>
                         </a>
