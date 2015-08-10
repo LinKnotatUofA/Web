@@ -77,8 +77,8 @@ body {
                     
 
 					<?php  
-						$tileArray= array('<div class="tile double bg-AliceBlue">',
-						'<div class="tile bg-LightSeaGreen">', '<div class=" tile double bg-#E9633B">',
+						$tileArray= array('<div class="tile double bg-pink">',
+						'<div class="tile bg-LightSeaGreen">', '<div class=" tile double bg-yellow">',
 						'<div class="tile bg-lime">', '<div class=" tile double bg-amber">',
 						'<div class="tile double bg-yellow">', '<div class="tile double bg-darkCyan">','<div class="tile bg-red">',
 						'<div class="tile bg-pink">','<div class="tile">', '<div class="tile double bg-green">' );
