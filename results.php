@@ -16,6 +16,10 @@
     $searchgroupstatement="Select GID from groups where GTAG like %$input% or GNAME like %$input% or GDESCRIPTION LIKE %INPUT%";
     $searcheventstatement="Select EVENTID from events where DESCRIPTION like %$input%";
 */
+
+    function row_print($col1){
+        print_r('<tr class="info"><td>'.$col1.'</td><td class="right">'.$col1.'</td><td class="right">'.$col1.'</td><td class="right">'.$col1.'</td><td class="right">'.$col1.'</td></tr>');
+    }
 ?>
 
 <!doctype html>
@@ -103,8 +107,9 @@ body {
                 <tr class="info"><td>News</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
                 <tr class="selected"><td>Music</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
                 <?php
-                    $col1 = "WHAT THE TRUCK";
-                    print_r('<tr class="info"><td>{$col1}</td><td class="right">{$col1}</td><td class="right">{$col1}</td><td class="right">{$col1}</td><td class="right">{$col1}</td></tr>');
+                    for ($x = 0; $x <= 10; $x++) {
+                        row_print("WHAT THE TRUCK");
+                    } 
                 ?>
                 </tbody>
             </table>

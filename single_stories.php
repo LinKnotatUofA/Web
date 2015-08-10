@@ -109,19 +109,24 @@ body {
                                static: false,
                                score: 2,
                                stars: 5,
-                               showHint: true,
+                               showHint: false,
                                hints: ['bad', 'poor', 'regular', 'good', 'gorgeous'],
                                showScore: true,
                                scoreHint: "Current score: ",
                             });
-
                         });
                         </script>
                         
                     </div>
                     </div>
+                    <div class="panel-footer">
+                    <button class="large" onclick ="opencommentdialog()">Comment </button>
+
+
+                    </div>
                     <!--new code below -->      
-                    <?php date_default_timezone_set('UTC');
+                    <?php 
+                        date_default_timezone_set('UTC');
                     //echo date(DATE_RFC2822);
                     ?>
                     </div>
