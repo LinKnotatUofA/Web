@@ -83,30 +83,65 @@ body {
                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
                         
-     <h2 id="__table__">Events</h2>
-        <div class="example">
+     <h2 id="__table0__">Events</h2>
+        <div class="example" style="color:black">
             <table class="table striped bordered hovered">
                 <thead>
                 <tr>
                     <th class="text-left">Name</th>
-                    <th class="text-left">Time CP</th>
-                    <th class="text-left">Network</th>
-                    <th class="text-left">Traffic</th>
-                    <th class="text-left">Tiles update</th>
+                    <th class="text-left">Start/End Date</th>
+                    <th class="text-left">Details</th>
+                    <th class="text-left">Location</th>
+                    <th class="text-left">Read More...</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                <tr class=""><td>Bing</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
-                <tr class=""><td>Bing</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
-                <tr class=""><td>Bing</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
-                <tr class=""><td>Bing</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
-                <tr class=""><td>Bing</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
                 <tr class="error"><td>Bing</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
                 <tr class="success"><td>Internet Explorer</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
                 <tr class="warning"><td>Chrome</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
                 <tr class="info"><td>News</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
                 <tr class="selected"><td>Music</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
+                <?php
+                    $col1 = "WHAT THE TRUCK";
+                    print_r('<tr class="info"><td>{$col1}</td><td class="right">{$col1}</td><td class="right">{$col1}</td><td class="right">{$col1}</td><td class="right">{$col1}</td></tr>');
+                ?>
+                </tbody>
+            </table>
+        </div>
+         <h2 id="__table1__">Stories</h2>
+        <div class="example" style="color:black">
+            <table class="table striped bordered hovered">
+                <thead>
+                <tr>
+                    <th class="text-left">Name/Author</th>
+                    <th class="text-left">Date</th>
+                    <th class="text-left">Comments&Likes</th>
+                    <th class="text-left">Location</th>
+                    <th class="text-left">Read More...</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="selected"><td>Music</td><td class="right">0:00:01</td><td class="right">0,1 Mb</td><td class="right">0 Mb</td><td class="right">0,1 Mb</td></tr>
+                </tbody>
+            </table>
+        </div>
+         <h2 id="__table2__">Groups</h2>
+        <div class="example" style="color:black">
+            <table class="table striped bordered hovered">
+                <thead>
+                <tr>
+                    <th class="text-left">Name</th>
+                    <th class="text-left">Members</th>
+                    <th class="text-left">Sponsors</th>
+                    <th class="text-left">Photos</th>
+                    <th class="text-left">Discussions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr class="selected"><td>John</td><td class="right">Jian</td><td class="right">Telus</td><td class="right">hi.jpg</td><td class="right">Fun</td></tr>
                 </tbody>
             </table>
         </div>
