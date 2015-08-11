@@ -117,7 +117,7 @@ body {
     echo", lng: ";print_r($singleventproperty[0]['LONGt']); 
     
     echo"},
-      '<div><a>Location:(*Is this shit loaded?)</a>');
+      '<div><a>Location:(Ask user for detailed location instruction)</a>');
     return false;
 }";
     echo" function movetoeventcenter(map) {
@@ -159,11 +159,11 @@ body {
                         $length = count($attendeeslist);
                         for ($i = 0; $i < $length; $i++) 
                         {
-                            $attending =$attendeeslist[0]['userID'];
+                            $attending =$attendeeslist[i]['userID'];
                             $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attending'");
                             $name = resultToArray($namedata);
                             echo "strVar +='<p>";    
-                            print_r($name[0]['username']);
+                            print_r($name[i]['username']);
                             echo "</p>';";
                         }
                         
@@ -255,7 +255,7 @@ body {
                             <div class="tile bg-amber">
                                 <div class="tile-content">
                                         <div class="text-left padding5 ntp">
-                                            <h2 class="fg-white no-margin"><?php print_r($singleventproperty[0]['TIME']); ?></h2>
+                                            <p class="fg-white no-margin"><?php print_r($singleventproperty[0]['TIME']); ?></p>
                                             <p class="fg-white">Sunday</p>
                                         </div>
                                     </div>
@@ -271,13 +271,11 @@ body {
                                     </div>
                                 </div>
                             </div>
-                             
-                                 <button class="shortcut bg-darkPink fg-white" onclick="people()"> 
+                            <div class="tile bg-darkPink fg-white"> 
+                                 <button class="shortcut" onclick="people()"> 
                                               <i class = "icon-cog">Attendees</i>
-                                                  
-                               
                                  </button>
-
+                            </div>
                         </div>
                         
                         
