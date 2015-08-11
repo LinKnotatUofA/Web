@@ -159,11 +159,11 @@ body {
                         $length = count($attendeeslist);
                         for ($i = 0; $i < $length; $i++) 
                         {
-                            $attending =$attendeeslist[i]['userID'];
+                            $attending =$attendeeslist[$i]['userID'];
                             $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attending'");
                             $name = resultToArray($namedata);
                             echo "strVar +='<p>";    
-                            print_r($name[i]['username']);
+                            print_r($name[$i]['username']);
                             echo "</p>';";
                         }
                         
