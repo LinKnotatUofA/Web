@@ -163,7 +163,7 @@ body {
                             $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attending'");
                             $name = resultToArray($namedata);
                             echo "strVar +='<p>";    
-                            print_r($name[$i]['username']);
+                            print_r($name[0]['username']);
                             echo "</p>';";
                         }
                         
