@@ -162,15 +162,13 @@ body {
                     ?>
                     </div>
             </div>
-            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
-                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
+            <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
+                <footer class="bg-dark" data-load="bottom.html"></footer>
+            </div>
+        </div>
+    </div>
+</div>
+                
 
      
 

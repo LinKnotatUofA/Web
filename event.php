@@ -182,16 +182,17 @@ body {
 ?>
     <script src="js/page_scripts/events/event_script.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-</head>
-	<body class="metro">
-	    <div id="fb-ba30dbdb2d10ef"></div>
-        <script>(function(d, s, id) {
+     <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
           js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
+</head>
+	<body class="metro">
+	    <div id="fb-ba30dbdb2d10ef"></div>
+       
         <div class="grid">
             <div id="row0" class="row" >
                 <div class="span4 offset_special">
@@ -234,13 +235,13 @@ body {
                             </ul>
                         </nav>
                     </div>
-                    <div class= "span5" id ="content">
-                        <div id ="info_row_1" class = "row">
+                    <div class= "span5y" id ="content">
+                        <div id ="info" class = "tile-group two">
                             <div class="tile bg-darkPink">
                                 <div class="tile-status">
                                     <div class="brand bg-black">
                                         
-                                        <span class="name fg-white"><img src='Assets/default_user.png'/><br>Created By:
+                                        <span class="name fg-white"><img src='Assets/default_user.png'/><br></br>Created By:
                                         <?php 
                                         $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
                                         $authid = $singleventproperty[0]['authID'];
@@ -260,8 +261,8 @@ body {
                                         </div>
                                     </div>
                             </div>
-                        </div> 
-                        <div id ="info_row_2" class = "row"> 
+                       
+                        
                             <div class="tile bg-red">
                                 <div class="tile-content image-container">
                                     <div class="image-container">
@@ -276,7 +277,8 @@ body {
                                               <i class = "icon-cog">Attendees</i>
                                  </button>
                             </div>
-                        </div>
+
+                        
                         
                         
                     </div>
@@ -287,11 +289,9 @@ body {
                     
                     
             </div>
-            <div class="span12 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
-                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
-                </div>
+            <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
+                <footer class="bg-dark" data-load="bottom.html"></footer>
+            </div>
                 </div>
                 </div>
         <script type="text/javascript" charset="UTF-8">

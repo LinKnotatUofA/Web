@@ -198,61 +198,58 @@ body {
    ?>
     
 </head>
-	<body class="metro">
-        <div class="grid">
-            <div id="row0" class="row" >
-                <div class="span4 offset_special">
+	<body class="metro" >
+        <div class="grid" align="center">
+            <div id="row0" >
+                <div class="span4 ">
                         <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
-            <div id="row1" class="row" >
-                <div class="span12 offset_special">
+            <div id="row1" class="row span12" >
+                <div >
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
             </div>
 
 
-                <div id="row2" class="row">
-                    <div class="span12 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
-                        <div class="grid fluid show-grid">     
-                        
-                      
-                             <div class="span3">
-                                 <nav class="vertical-menu">
-                                     <ul>
-                                         <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
-                                         <li class="title" style="color: white;">Party</li>
-                                         <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
-                                             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                                                 <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
-                                             </svg></a></li>
-                                         <li><a style="color: white;" onclick="display_fun()" id="fun" href="#fun">Fun
-                                             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">       
-                                                 <rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" />
-                                             </svg></a></li>
-                                         <li><a style="color: white;" onclick="display_custom()" id="custom" href="#custom">Custom
-                                             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                                                 <rect stroke="white" fill="#ba00ff" x="1" y="1" width="22" height="22" />
-                                             </svg></a></li>
-                                         <li><a style="color: white;" onclick="display_own()" id="own" href="#add">+Your Own</a></li>
-                                     </ul>
-                                 </nav>
-                             </div>
+            <div id="row2" >
+                <div class="row span12 " id="content" style="width: 100%; height: auto; background: #C7D28A; padding:20px" >
+                    <div class="grid fluid show-grid" align="left">     
+                         <div class="row">
+                            <div class="span3">
+                                <nav class="vertical-menu">
+                                    <ul>
+                                        <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
+                                        <li class="title" style="color: white;">Party</li>
+                                        <li><a style="color: white;" onclick="display_study()" id="study" href="#study">Study
+                                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                                <rect stroke="white" fill="#1b468d" x="1" y="1" width="22" height="22" />
+                                            </svg></a></li>
+                                        <li><a style="color: white;" onclick="display_fun()" id="fun" href="#fun">Fun
+                                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">       
+                                                <rect stroke="white" fill="#7fff00" x="1" y="1" width="22" height="22" />
+                                            </svg></a></li>
+                                        <li><a style="color: white;" onclick="display_custom()" id="custom" href="#custom">Custom
+                                            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                                <rect stroke="white" fill="#ba00ff" x="1" y="1" width="22" height="22" />
+                                            </svg></a></li>
+                                        <li><a style="color: white;" onclick="display_own()" id="own" href="#add">+Your Own</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
 
-                             <div class="span9" id="map" style="width: 100%; height: 400px; background: grey" />   
-                               
-                        </div>  
+                            <div class="span9" id="map" style="width: 100%; height: 400px; background: grey" />   
+                         </div> 
                     </div>  
+                </div>
+            </div>  
               
 
     
-             <div id="row3" class="row" >
-                <div class="span12 tertiary-text bg-dark fg-white" style="padding: 20px">
-                    Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                    <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                    <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>             
-                </div>
-             </div>
+            <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align="left" >
+                <footer class="bg-dark" data-load="bottom.html"></footer>
+            </div>
+         </div>
          </div>
      
 
