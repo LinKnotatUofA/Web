@@ -230,7 +230,7 @@ body {
                                     </div>   
                                 </form>
                                  <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID" data-layout="button_count"></div>
-                                <div class="g-plusone"  data-annotation="inline" data-width="300"></div>
+                                <div class="g-plusone" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID"  data-annotation="inline" data-width="300"></div>
                                 <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
                             </ul>
                         </nav>
