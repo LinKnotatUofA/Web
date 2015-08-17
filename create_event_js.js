@@ -1,8 +1,5 @@
-<html>
-   <body>
-   
-      <script language="javascript" type="text/javascript">
-         <!--
+
+        
             
 			function displayCreateEvent() {         
               
@@ -34,8 +31,5 @@
                 
 
             }
-         //-->
-      </script>
+         
       
-   </body>
-</html>
