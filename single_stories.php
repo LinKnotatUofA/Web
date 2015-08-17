@@ -24,12 +24,6 @@
 <meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <link href="css/metro-bootstrap.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-body {
-	background-color: #3CB6CE;
-    color: #000000;
-}
-</style>
 
 	<link href="css/metro-bootstrap.css" rel="stylesheet">
     <link href="css/metro-bootstrap-responsive.css" rel="stylesheet">
@@ -91,7 +85,12 @@ body {
         
         }
     </script>
-    
+    <style type="text/css">
+body {
+	background-color: #3CB6CE;
+    color: #000000;
+}
+</style>
 </head>
 	<body class="metro">
         <div class="grid" align="center">
