@@ -60,6 +60,37 @@ body {
 
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
+    <script>
+        function opencommentdialog()
+        {
+            
+            $.Dialog({
+            shadow: true,
+            overlay: false,
+            icon: '<span class="icon-pencil"></span>',
+            title: 'Search For Groups',
+            width: 500,
+            padding: 10,
+            onShow: function () {
+                $("#datepicker").datepicker();
+                var strVar="";
+                     strVar += "<form id=\"comment_stories\" method =\"post\" action=\"upload\/upload_comments.php\">  ";
+                     strVar += "    <p>What do you think?<\/p> <p><input name =\"comment\" type=\"text\" \/><\/p> ";
+                     strVar += "    <input type=\"hidden\" name=\"content_id\" value=\"1234\"> ";
+                     //hardcoded shit, this needs to be converted to php
+                     strVar += "    <input type=\"hidden\" name=\"istype\" value=\"stories\"> ";
+                     strVar += "    <p><input name =\"comments\" type=\"submit\"\/> <\/p>";
+                     strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
+                     strVar += "<\/form>";
+                     strVar += "";
+                $.Dialog.content(strVar);
+                $.Metro.initInputs();
+            }
+         });
+    
+        
+        }
+    </script>
     
 </head>
 	<body class="metro">
@@ -133,15 +164,13 @@ body {
                     ?>
                     </div>
             </div>
-            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
-                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
+            <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
+                <footer class="bg-dark" data-load="bottom.html"></footer>
+            </div>
+        </div>
+    </div>
+</div>
+                
 
      
 

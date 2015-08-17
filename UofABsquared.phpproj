@@ -38,7 +38,7 @@
     <Compile Include="post.php" />
     <Compile Include="single_stories.php" />
     <Compile Include="stories.php" />
-    <Compile Include="topbar.php" />
+    <Compile Include="bottom.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

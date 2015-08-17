@@ -117,7 +117,7 @@ body {
     echo", lng: ";print_r($singleventproperty[0]['LONGt']); 
     
     echo"},
-      '<div><a>Location:(*Is this shit loaded?)</a>');
+      '<div><a>Location:(Ask user for detailed location instruction)</a>');
     return false;
 }";
     echo" function movetoeventcenter(map) {
@@ -159,7 +159,7 @@ body {
                         $length = count($attendeeslist);
                         for ($i = 0; $i < $length; $i++) 
                         {
-                            $attending =$attendeeslist[0]['userID'];
+                            $attending =$attendeeslist[$i]['userID'];
                             $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$attending'");
                             $name = resultToArray($namedata);
                             echo "strVar +='<p>";    
@@ -181,121 +181,117 @@ body {
     </script>";
 ?>
     <script src="js/page_scripts/events/event_script.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </head>
 	<body class="metro">
 	    <div id="fb-ba30dbdb2d10ef"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-        <div class="grid">
-            <div id="row0" class="row" >
-                <div class="span4 offset_special">
-                        <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
+       
+        <div class="grid fluid show-grid" align="center">
+            <div id="row0">
+                <div class="row span4">
+                     <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>   
                 </div>
             </div>
-            <div id="row1" class="row" >
-                <div class="span_navbar_special">
-                </div>
-                <div class="span12 offset_special">
+            <div id="row1" >
+               
+                <div class="row span12 ">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
-                <div id="row2" class="row">
-                    <div class="span3">
-                    </div>
-                    <div class="span3">
-                        <nav class="vertical-menu">
-                            <ul>
-                                <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
-                                <li class="title" style="color: white;">Options</li>
-                                <li><a style="color: white;"><?php echo "Event ID:".$eventID;?>
-                                    </a></li>
-                                <form action="event.php?id=<?php echo"$eventID"; ?>" method = "POST">                                                             
-                                    <div class="input-control switch">
-                                        <label><a style="color: white;">Join</a>
-                                            <input type="checkbox" name="join" onclick="submit()" id="joinswitch" <?php //we gotta check from our database if user already joined this event
-                                                                                                                     $status = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE userID = '$id' AND EVENTID = $eventID");
-                                                                                                                     $numrows = mysqli_num_rows($status);
-                                                                                                                     if($numrows>0)
-                                                                                                                     {
-                                                                                                                        echo "checked";
-                                                                                                                     }?>/>
-                                            <span class="check"></span>
-                                        </label>
-                                    </div>   
-                                </form>
-                                 <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID" data-layout="button_count"></div>
-                                <div class="g-plusone"  data-annotation="inline" data-width="300"></div>
-                                <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class= "span5" id ="content">
-                        <div id ="info_row_1" class = "row">
-                            <div class="tile bg-darkPink">
-                                <div class="tile-status">
-                                    <div class="brand bg-black">
-                                        
-                                        <span class="name fg-white"><img src='Assets/default_user.png'/><br>Created By:
-                                        <?php 
-                                        $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
-                                        $authid = $singleventproperty[0]['authID'];
-                                        //grab the latest 4 events from database
-                                        $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");
-                                        $stuff = resultToArray($query);
-                                        print_r($stuff[0]['username']);
-                                        ?></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tile bg-amber">
-                                <div class="tile-content">
-                                        <div class="text-left padding5 ntp">
-                                            <h2 class="fg-white no-margin"><?php print_r($singleventproperty[0]['TIME']); ?></h2>
-                                            <p class="fg-white">Sunday</p>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div> 
-                        <div id ="info_row_2" class = "row"> 
-                            <div class="tile bg-red">
-                                <div class="tile-content image-container">
-                                    <div class="image-container">
-                                        <div class="frame">
-                                            <?php   echo '<img src="data:image/jpeg;base64,'.base64_encode($singleventproperty[0]['thumbnail'] ).'"/>';  ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                             
-                                 <button class="shortcut bg-darkPink fg-white" onclick="people()"> 
-                                              <i class = "icon-cog">Attendees</i>
-                                                  
-                               
-                                 </button>
-
-                        </div>
-                        
-                        
-                    </div>
-                    <div class="span4" id="map" style="width: 100%; height: 400px; background: grey" />   
-                               
-                </div>  
-                    
-                    
-                    
             </div>
-            <div class="span12 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
-                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
+
+                <div id="row2">
+                    <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;" />
+                        <div class="span3" align="left">
+                            <nav class="vertical-menu">
+                                <ul>
+                                    <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
+                                    <li class="title" style="color: white;">Options</li>
+                                    <li><a style="color: white;"><?php echo "Event ID:".$eventID;?>
+                                        </a></li>
+                                    <form action="event.php?id=<?php echo"$eventID"; ?>" method = "POST">                                                             
+                                        <div class="input-control switch">
+                                            <label><a style="color: white;">Join</a>
+                                                <input type="checkbox" name="join" onclick="submit()" id="joinswitch" <?php //we gotta check from our database if user already joined this event
+                                                                                                                         $status = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE userID = '$id' AND EVENTID = $eventID");
+                                                                                                                         $numrows = mysqli_num_rows($status);
+                                                                                                                         if($numrows>0)
+                                                                                                                         {
+                                                                                                                            echo "checked";
+                                                                                                                         }?>/>
+                                                <span class="check"></span>
+                                            </label>
+                                        </div>   
+                                    </form>
+                                     <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br>
+                                     <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div><br>
+                                     <g:plusone  href="uofabsquared.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300" size="tall"></g:plusone>
+
+                                </ul>
+                            </nav>
+                        </div>
+                         <div class= "span5" id ="content">
+                             <div id ="info" class = "tile-group two">
+                             <div class="tile-group-title">Info</div>
+                                 <div class="tile bg-darkPink">
+                                     <div class="tile-status">
+                                         <div class="brand bg-black">
+                                             
+                                             <span class="name fg-white"><img src='Assets/default_user.png'/><br></br>Created By:
+                                             <?php 
+                                             $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+                                             $authid = $singleventproperty[0]['authID'];
+                                             //grab the latest 4 events from database
+                                             $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");
+                                             $stuff = resultToArray($query);
+                                             print_r($stuff[0]['username']);
+                                             ?></span>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="tile bg-amber">
+                                     <div class="tile-content">
+                                             <div class="text-left padding5 ntp">
+                                                 <p class="fg-white no-margin"><?php print_r($singleventproperty[0]['TIME']); ?></p>
+                                                 <p class="fg-white">Sunday</p>
+                                             </div>
+                                         </div>
+                                 </div>
+                            
+                             
+                                 <div class="tile bg-red">
+                                     <div class="tile-content image-container">
+                                         <div class="image-container">
+                                             <div class="frame">
+                                                 <?php   echo '<img src="data:image/jpeg;base64,'.base64_encode($singleventproperty[0]['thumbnail'] ).'"/>';  ?>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="tile bg-darkPink fg-white"> 
+                                      <button class="shortcut" onclick="people()"> 
+                                                   <i class = "icon-cog">Attendees</i>
+                                      </button>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="span4" id="map" style="width: 100%; height: 400px; background: grey" />   
                 </div>
                 </div>
+
+                <div class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
+                    <footer class="bg-dark" data-load="bottom.html"></footer>
                 </div>
+               
+            </div>
         <script type="text/javascript" charset="UTF-8">
             function main() {
                 // by defualt page will load all fun parties

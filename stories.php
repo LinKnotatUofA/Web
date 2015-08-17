@@ -56,83 +56,68 @@ body {
     
 </head>
 	<body class="metro">
-        <div class="grid">
-            <div id="row0" class="row" >
-                <div class="span4 offset_special">
+        <div class="grid fluid show-grid" align="center">
+            <div id="row0" >
+                <div class="row span4">
                         <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
-            <div id="row1" class="row" >
-                <div class="span_navbar_special">
-                </div>
-                <div class="span11 offset_special">
+            <div id="row1" >
+                
+                <div class="row span12 align="left">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
+            </div>
 
-                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+            <div id="row2" >
+                <div class="row span12" id="content" style="width: 100%; height: auto; background: #C7D28A; padding:20px" />
                     <div class="grid fluid show-grid">
-                    <!--redo story page pinterest/deviant art style-->  
-                    <br></br>            
-                    
+					    <?php  
+					    	$tileArray= array('<div class="tile double bg-pink">',
+					    	'<div class="tile bg-lightseaGreen">', '<div class="tile double bg-yellow">',
+					    	'<div class="tile bg-lime">', '<div class=" tile double bg-amber">',
+					    	'<div class="tile double bg-yellow">', '<div class="tile double bg-darkCyan">','<div class="tile bg-red">',
+					    	'<div class="tile bg-pink">','<div class="tile">', '<div class="tile double bg-green">' );
+					    	
+					    	$query = mysqli_query($mysqli,"SELECT * FROM stories");
+					    		function resultToArray($result) {
+					    			$rows = array();
+					    			while($row = $result->fetch_assoc()) {
+					    				$rows[] = $row;
+					    			}
+					    			return $rows;
+					    		}
+					    	$storylist = resultToArray($query);
+					    	$storylistlen = count($storylist);
+					    	$x=0;
+                            echo"<div class=\"tile-group six\">
+                                    <div class=\"tile-group-title\">Stories</div>";
+					    	while ($x<$storylistlen){
+					    		echo $tileArray[$x];
+                                echo "<a href=single_stories.php?id=";
+                                print_r($storylist[$x]['story_id']);
+                                echo ">"; 
+					    		print_r(strtoupper($storylist[$x]['story_title']));
+                                echo "<br>"; 
+                                print_r($storylist[$x]['story_content']); 
+                                echo "<br>";
+                                echo"</a></div>";
+					    		$x++;
+					    	}
+                            echo"  </div>
+                                 </div>";
+					    	//echo"<br>";
+					    	
+					    ?>
+                       
+            </div>    
 
-					<?php  
-						$tileArray= array('<div class="tile double bg-pink">',
-						'<div class="tile bg-lightseaGreen">', '<div class="tile double bg-yellow">',
-						'<div class="tile bg-lime">', '<div class=" tile double bg-amber">',
-						'<div class="tile double bg-yellow">', '<div class="tile double bg-darkCyan">','<div class="tile bg-red">',
-						'<div class="tile bg-pink">','<div class="tile">', '<div class="tile double bg-green">' );
-						
-						$query = mysqli_query($mysqli,"SELECT * FROM stories");
-							function resultToArray($result) {
-								$rows = array();
-								while($row = $result->fetch_assoc()) {
-									$rows[] = $row;
-								}
-								return $rows;
-							}
-						$storylist = resultToArray($query);
-						$storylistlen = count($storylist);
-						$x=0;
-						while ($x<$storylistlen){
-							echo $tileArray[$x];
-                            echo "<a href=single_stories.php?id=";
-                            print_r($storylist[$x]['story_id']);
-                            echo ">"; 
-							print_r(strtoupper($storylist[$x]['story_title']));
-                            echo "<br>"; 
-                            print_r($storylist[$x]['story_content']); 
-                            echo "<br>";
-                            echo"</a></div>";
-							$x++;
-						}
-						//echo"<br>";
-						
-					?>
-    <div class="tile-group six">
-        <div class="tile-group-title">Group Tiles</div>
-        <div class="tile double ribbed-amber"></div>
-        <div class="tile bg-darkPink "></div>
-        <div class=" tile double bg-indigo"></div>
-        <div class="tile bg-lime"></div>
-        <div class=" tile double bg-amber"></div>
-        <div class="tile double bg-yellow"></div>
-        <div class="tile double bg-darkCyan"></div>
-        <div class="tile bg-red"></div>
-        <div class="tile bg-pink"></div>
-        <div class="tile"></div>
-        <div class="tile double bg-green"></div>
-    </div>
-      
-                    </div>
-            </div><br></br>
-            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px;margin-left:0;">
-                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                <br></br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                <br></br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
-            </div> 
+
+            <div id="row3" align="left" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" >
+                <footer class="bg-dark" data-load="bottom.html"></footer>
+            </div>
           </div> 
-          </div>
-         
+        </div>         
     </body>
 </html>
 

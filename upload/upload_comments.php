@@ -18,24 +18,19 @@ if (mysqli_connect_errno()) {
 
 // checklist of crap we need to upload 
 
-if(isset($_POST['submit'])){
+// if comment came from a story - use post[comment_story]
+// if comment came from an event - use post[comment_event]
 
-    $story_title= @$_POST['story_title'];
-    $story_content = @$_POST['story_content'];
-    $postdate = date('Y-m-d') ;
+if(isset($_POST['comment_story'])){
+
+    $story_comment= @$_POST['comment'];
+    //set timezone to edmonton
+    date_default_timezone_set('Canada/Edmonton');
+    $postdate = date('Y-m-d H:i:s') ;
     $userID= $_SESSION['id'];
-    $ID = 100;
-    //attempt to include a new ID 
-    $query = mysqli_query($mysqli,"SELECT story_id FROM stories WHERE story_id=$ID");
-    
-    $numrows = mysqli_num_rows($query);
-    
-    while($numrows > 0)
-    {
-        $ID = rand(1,10000);
-        $query = mysqli_query($mysqli,"SELECT story_id FROM stories WHERE story_id=$ID");
-        $numrows = mysqli_num_rows($query);
-    }
+    $count = mysqli_query($mysqli,"SELECT COUNT(GID) as total FROM GROUPS");
+    $data=mysqli_fetch_assoc($count); 
+    $ID = $data['total']+1; 
     
 
         

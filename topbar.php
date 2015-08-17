@@ -44,7 +44,7 @@
                         </a>
                         <ul class='dropdown-menu place-right' data-role='dropdown'>
                             <li><a href='#'>Settings</a></li>
-                            <li><a href='#'>Edit Profile</a></li>
+                            <li><a href='edit_user_profile.php'>Edit Profile</a></li>
                             <li><a href='#'>Contacts</a></li>
                             <li><a href='account/logout.php'>Log Out</a></li>
                         </ul>

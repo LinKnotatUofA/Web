@@ -94,25 +94,22 @@ body {
     
 </head>
 	<body class="metro">
-        <div class="grid">
-            <div id="row0" class="row" >
-                <div class="span4 offset_special">
+        <div class="grid fluid show-grid" align="center">
+            <div id="row0" >
+                <div class="span4 ">
                         <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
-            <div id="row1" class="row" >
-                <div class="span_navbar_special">
-                </div>
-                <div class="span11 offset_special">
+            <div id="row1" >
+                <div class="row span12">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
 
-                 <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                 <div class="row span12" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                      <div class="grid fluid show-grid">
-                         <div id="featured_row1" class="row" >
-                             <div class="spanspecial"> 
-                                 </div>
-                             <div id ="post_story_column" class="span4 offset_events">
+                         <div id="featured_row1" class="row">
+                             
+                             <div id ="post_story_column" class="tile-group two">
                                  
                                  <div class="tile triple ">
                                      <div class="tile-content icon button bg-violet" id="story">
@@ -152,15 +149,11 @@ body {
                          
                      </div>
             </div>
-            <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
-                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.<p>
-                <P><a href="mailto:bsquared@gmail.com" class="fg-white">Email Us</a> </P>
-                <p><a href="https://github.com/orgs/BsquaredatUofA/" class="fg-white">Visit Us On GitHub</a></p>
+            <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
+                <footer class="bg-dark" data-load="bottom.html"></footer>
             </div>
         </div>
-        </div>
-        </div>
-        </div>
+
 
         <script  type="text/javascript" charset="UTF-8" >
             $(function () {
