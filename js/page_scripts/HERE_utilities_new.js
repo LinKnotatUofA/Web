@@ -236,7 +236,7 @@ function groupfactory(provided_ui) {
 function setUpClickListener() {
     // Attach an event listener to map display
     // obtain the coordinates and display in an alert box.
-    map.addEventListener('tap', displayreg);
+    map.addEventListener('tap', displayCreateEvent);
 }
 function removeClickListener() {
     // Attach an event listener to map display
@@ -248,7 +248,7 @@ function add(evt) {
             evt.currentPointer.viewportY);
     var objectarray = map.getObjects();
     addMarkerToGroup(objectarray[0], coord,
-  '<div><a>displayreg()</a>' +
+  '<div><a>Placeholder Activity</a>' +
   '</div><div >@ Placeholder Location<br>Placeholder Date @ Placeholder Time</div>');
 }
 
