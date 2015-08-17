@@ -154,8 +154,7 @@ body {
                     <div class="balloon right">
                         <div class="frames">
                             <div id="write" class="frame">
-                                <textarea data-transform="input-control" placeholder="leave a comment">
-                                </textarea>
+                                <p>this is a comment</p>
 
                             </div>
                         </div>
