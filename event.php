@@ -232,7 +232,12 @@ body {
                                      <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
                                      <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div>
                                      <div class="g-plusone" href="uofabsquared.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300"></div>
-                                     
+                                     <div class = "fb-like"
+  data-href = "http://helbreathempire.com/"
+  data-width = "500"
+  data-layout = "standard" data-action = "like"
+  data-show-faces = "true"
+  data-share = "true"> </ div>
                                 </ul>
                             </nav>
                         </div>
