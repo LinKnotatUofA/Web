@@ -127,7 +127,7 @@ body {
                                  
                                  <div class="tile triple">
                                      
-                                     <div class="tile-content icon button bg-yellow" id="event" > <?php //onclick="displayreg()"?> 
+                                     <div class="tile-content icon button bg-yellow" id="event" onclick="displayreg()">
                                          <i class="icon-location"></i>
                                                  
                                  
