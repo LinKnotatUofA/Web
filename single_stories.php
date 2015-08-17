@@ -94,7 +94,7 @@ body {
     
 </head>
 	<body class="metro">
-        <div class="grid">
+        <div class="grid" align="center">
             <div id="row0" class="row" >
                 <div class="span4 offset_special">
                         <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
