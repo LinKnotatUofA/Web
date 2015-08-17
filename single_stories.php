@@ -93,20 +93,18 @@ body {
 </style>
 </head>
 	<body class="metro">
-        <div class="grid" align="center">
+        <div class="grid fluid show-grid" align="center">
             <div id="row0" class="row" >
-                <div class="span4 offset_special">
+                <div class="span4">
                         <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
             <div id="row1" class="row" >
-                <div class="span_navbar_special">
-                </div>
-                <div class="span11 offset_special">
+                <div class="span11">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
 
-                <div class="span11 offset_special" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                <div class="span11" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
                     <!--redo story page pinterest/deviant art style-->
                     <div class="panel" style="width:80% align:middle">
