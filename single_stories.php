@@ -158,7 +158,7 @@ body {
                         </div>
                     </div>
                     <div class="balloon left">
-                        <div class="padding20">
+                        <div class="padding: 20px">
                             Balloon left is for the user's comments.
                         </div>
                     </div>
