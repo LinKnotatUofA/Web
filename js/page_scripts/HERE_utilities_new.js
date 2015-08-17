@@ -248,7 +248,7 @@ function add(evt) {
             evt.currentPointer.viewportY);
     var objectarray = map.getObjects();
     addMarkerToGroup(objectarray[0], coord,
-  '<div><a>Placeholder Activity</a>' +
+  '<div><a>displayreg()</a>' +
   '</div><div >@ Placeholder Location<br>Placeholder Date @ Placeholder Time</div>');
 }
 
