@@ -241,7 +241,7 @@ function setUpClickListener() {
 function removeClickListener() {
     // Attach an event listener to map display
     // obtain the coordinates and display in an alert box.
-    map.removeEventListener('tap',add);
+    map.removeEventListener('tap',displayreg());
 }
 function add(evt) {
     var coord = map.screenToGeo(evt.currentPointer.viewportX,
