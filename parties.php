@@ -181,13 +181,13 @@ body {
 					echo"\r\n";
 					}
 			}
-            //setUpClickListener();
+            
             echo "return false;
         }
      function display_own() {
             if (edit == false) {
     
-                
+                setUpClickListener();
                 edit = true;
             }
             return false;
