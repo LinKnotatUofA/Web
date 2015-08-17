@@ -181,14 +181,14 @@ body {
     </script>";
 ?>
     <script src="js/page_scripts/events/event_script.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-     <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </head>
 	<body class="metro">
 	    <div id="fb-ba30dbdb2d10ef"></div>
@@ -229,9 +229,10 @@ body {
                                             </label>
                                         </div>   
                                     </form>
-                                     <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID" data-layout="button_count"></div>
-                                     <div class="g-plusone" href="uofabsquared.azurewebsite.net/event.php?id=$eventID" data-annotation="inline" data-width="300"></div>
-                                     <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=$eventID" class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
+                                     <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a>
+                                     <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div>
+                                     <div class="g-plusone" href="uofabsquared.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300"></div>
+                                     <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
                                 </ul>
                             </nav>
                         </div>
