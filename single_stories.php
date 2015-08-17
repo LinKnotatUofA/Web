@@ -151,7 +151,7 @@ body {
                     </div>
                     </div>
                     <h2 id="__balloon__">Leave a Comment Bellow!</h2>
-                    <div class="example" style='content:"penis"'>
+                    
                     <div class="balloon left">
                         <div class="padding20">
                             Balloon is represent to create information or dialog UI. You can put inside any of elements.
