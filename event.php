@@ -231,7 +231,7 @@ body {
                                             </label>
                                         </div>   
                                     </form>
-                                     <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br><br>
+                                     <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br>
                                      <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div><br>
                                      <g:plusone  href="uofabsquared.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300" size="tall"></g:plusone>
 
