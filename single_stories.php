@@ -150,7 +150,7 @@ body {
                         
                     </div>
                     </div>
-                    <h2 id="__balloon__">Balloon</h2>
+                    <h2 id="__balloon__">Leave a Comment Bellow!</h2>
                     <div class="example">
                     <div class="balloon left">
                         <div class="padding20">
@@ -170,8 +170,9 @@ body {
                                 <div id="write" class="frame">
                                     <textarea data-transform="input-control" placeholder="leave a comment"></textarea>
                                 </div>
-                                <div id="preview" class="frame">
+                                <!--<div id="preview" class="frame">
                                     This is preview :)
+                                -->
                                 </div>
                             </div>
                         </div>
