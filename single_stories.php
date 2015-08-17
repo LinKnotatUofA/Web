@@ -151,10 +151,9 @@ body {
                     </div>
                     </div>
 
-                    <div class="tile"></div>
+                    <div class="tile"></div><br>
                     <div class="panel-footer">
                     <button class="large" onclick ="opencommentdialog()">Comment </button>
-
 
                     </div>
                     <!--new code below -->      
