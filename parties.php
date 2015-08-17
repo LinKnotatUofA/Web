@@ -233,8 +233,8 @@ body {
                                             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                                                 <rect stroke="white" fill="#ba00ff" x="1" y="1" width="22" height="22" />
                                             </svg></a></li>
-                                        <li><a style="color: white;" onclick="display_own()" id="own" href="#add">+Your Own</a></li>
-                                    </ul>
+                                        <li><a style="color: white;" onclick="document.location.href = 'http://google.com'" id="own" href="#add">+Your Own</a></li> 
+                                    </ul> 
                                 </nav>
                             </div>
 
