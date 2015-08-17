@@ -151,6 +151,7 @@ body {
                     </div>
                     </div>
                     <h2 id="__balloon__">Leave a Comment Bellow!</h2>
+                    <div class="example" style='content:""'>
                     <div class="balloon left">
                         <div class="padding20">
                             Balloon is represent to create information or dialog UI. You can put inside any of elements.
@@ -162,7 +163,7 @@ body {
                             <p class="place-right tertiary-text">Comments are parsed with <a href="https://help.github.com/articles/github-flavored-markdown">GitHub Flavored Markdown</a></p>
                             <ul class="tabs">
                                 <li class="active"><a href="#write">Write</a></li>
-                                <!--<li><a href="#preview">Preview</a></li>-->
+                                <li><a href="#preview">Preview</a></li>
                             </ul>
 
                             <div class="frames">
@@ -170,9 +171,9 @@ body {
                                     <textarea data-transform="input-control" placeholder="leave a comment"></textarea>
                                 </div>
                                 <!--<div id="preview" class="frame">
-                                    This is preview :) </div>
+                                    This is preview :)
                                 -->
-                            
+                                </div>
                             </div>
                         </div>
                     </div>
