@@ -1,76 +1,7 @@
 <?php 
     session_start();
     require "/events/load_events.php";
-    //check session id
-    $id = $_SESSION['id'];
-    if(!$id)
-    {
-        header( "url=/index.php" ); 
-    }
-    //check if info has being changed
-    if(isset($_POST['user_profile_submit']))
-    {
-        $change = "UPDATE user_preferences SET ";
-        $upload = false;
-        if(isset($_POST['firstn']))
-        {
-            $firstn=$_POST['firstn'];
-            if($firstn!="")
-            {
-                $change=$change."firstn = '$firstn',";
-                $upload = true;
-            }
-            
-            
-        }
-        if(isset($_POST['lastn']))
-        {
-            $lastn=$_POST['lastn'];
-            if($lastn!="")
-            {
-                $change=$change."lastn = '$lastn',";
-                $upload = true; 
-            }
-            
-            
-        }
-        if(isset($_POST['background_color']))
-        {
-            $background_color=$_POST['background_color'];
-            if($background_color!="")
-            {
-                $change=$change."prefered_color = '$background_color',";
-                $upload = true;
-            }
-            
-            
-        }
-        if(isset($_POST['birthday']))
-        {
-            $birthday=$_POST['birthday'];
-            if($birthday!="")
-            {
-                $change=$change."birthdays = '$birthday',";
-                $upload = true;
-            }
-            
-        }
-        $change_done = "WHERE user_id = $id";
-        if(upload == true)
-        {
-            $change = $change.$change_done;
-            
-            $mysql_statement = str_replace(',WHERE',' WHERE',$change);
-            $update = mysqli_query($mysqli,$mysql_statement);
-            if ( false===$update ) {
-                printf("error: %s\n", mysqli_error($mysqli));
-               
-            }
-            
-        }
-        
-        //check for
-    }
+    
     ?>
 
 
@@ -135,22 +66,11 @@ body {
                 </div>
             </div>
             <div id="row2" >
-                <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;padding:2.5%;"  />
+                <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;" />
                     <div class="grid fluid show-grid">
-                        <div id="featured_row1" class="row"  align="left">
+                        <div id="featured_row1" class="row" >
 
-                                <p> in the button tag below, add an onclick section and link it to a javascript function that display a dialog asking user to upload picture</p>
-                            <button> Edit user profile picture </button>
-
-                            <form id="userinfo form" method ="post" enctype="multipart/form-data" action = "edit_user_profile.php">  
-                                <p>First Name </p> <input name ="firstn" type="text" />
-                               	<p>Last Name </p> <input name ="lastn" type="text" />
-                                <p>Prefered BackGround </p> <input name="background_color" type="text" />
-                                <p>Birthday</p> <input name ="birthday" type="date" />
-                                <p></p>
-                                <p><input name ="user_profile_submit" type="submit"/> <INPUT Type="button" VALUE="Cancel and go back" onClick="history.go(-1); return true;"></p>
-                            </form>
-
+                            
                         </div>
                     </div>
                </div>  
