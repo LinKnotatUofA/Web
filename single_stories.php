@@ -151,11 +151,19 @@ body {
                     </div>
                     </div>
 
-                    <div class="tile"></div><br>
-                    <div class="panel-footer">
+                    <div class="balloon right">
+                        <div class="frames">
+                            <div id="write" class="frame">
+                                <textarea data-transform="input-control" placeholder="leave a comment">
+                                </textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="panel-footer">
                     <button class="large" onclick ="opencommentdialog()">Comment </button>
 
-                    </div>
+                    </div> -->
                     <!--new code below -->      
                     <?php 
                         date_default_timezone_set('UTC');
