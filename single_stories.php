@@ -27,7 +27,7 @@
 <style type="text/css">
 body {
 	background-color: #3CB6CE;
-    color: #FFFFFF;
+    color: #000000;
 }
 </style>
 
@@ -151,9 +151,9 @@ body {
                     </div>
                     </div>
                     <h2 id="__balloon__">Leave a Comment Bellow!</h2>
-                    <div style="padding:20px; margin: 10px 10px 10px 70px; color: #000000"> 
-                    <div class="balloon right" style="color: #000000">
-                        <div class="padding20">
+                    <div style="padding:20px; margin: 10px 10px 10px 70px"> 
+                    <div class="balloon right">
+                        <div class="padding:20px">
                             balloon right is for other users's comments.
                         </div>
                     </div>
