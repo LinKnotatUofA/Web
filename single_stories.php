@@ -150,15 +150,33 @@ body {
                         
                     </div>
                     </div>
-                    <div class="padding20"></div>
-                    <div class="balloon right">
-                        <div class="frames">
-                            <div id="write" class="frame">
-                                <p>this is a comment</p>
+                    <h2 id="__balloon__">Balloon</h2>
+                    <div class="example">
+                    <div class="balloon left">
+                        <div class="padding20">
+                            Balloon is represent to create information or dialog UI. You can put inside any of elements.
+                        </div>
+                    </div>
 
+                    <div class="balloon right">
+                        <div class="tab-control padding20" data-role="tab-control">
+                            <p class="place-right tertiary-text">Comments are parsed with <a href="https://help.github.com/articles/github-flavored-markdown">GitHub Flavored Markdown</a></p>
+                            <ul class="tabs">
+                                <li class="active"><a href="#write">Write</a></li>
+                                <li><a href="#preview">Preview</a></li>
+                            </ul>
+
+                            <div class="frames">
+                                <div id="write" class="frame">
+                                    <textarea data-transform="input-control" placeholder="leave a comment"></textarea>
+                                </div>
+                                <div id="preview" class="frame">
+                                    This is preview :)
+                                </div>
                             </div>
                         </div>
                     </div>
+
                     <!--<div class="panel-footer">
                     <button class="large" onclick ="opencommentdialog()">Comment </button>
 
