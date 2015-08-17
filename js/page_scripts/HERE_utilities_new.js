@@ -236,12 +236,12 @@ function groupfactory(provided_ui) {
 function setUpClickListener() {
     // Attach an event listener to map display
     // obtain the coordinates and display in an alert box.
-    map.addEventListener('tap', add);
+    map.addEventListener('tap', displayreg);
 }
 function removeClickListener() {
     // Attach an event listener to map display
     // obtain the coordinates and display in an alert box.
-    map.removeEventListener('tap',displayreg());
+    map.removeEventListener('tap',add);
 }
 function add(evt) {
     var coord = map.screenToGeo(evt.currentPointer.viewportX,
