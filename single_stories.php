@@ -151,13 +151,13 @@ body {
                     </div>
                     </div>
                     <h2 id="__balloon__">Leave a Comment Bellow!</h2>
-                    
-                    <div class="balloon left" style="padding: 20px">
+                    <div style="padding:20px"> 
+                    <div class="balloon left">
                         <div class="padding20">
                             Balloon is represent to create information or dialog UI. You can put inside any of elements.
                         </div>
                     </div>
-
+                    </div>
                     <div class="balloon right">
                         <div class="tab-control padding20" data-role="tab-control">
                             <p class="place-right tertiary-text">Comments are parsed with <a href="https://help.github.com/articles/github-flavored-markdown">GitHub Flavored Markdown</a></p>
