@@ -119,6 +119,8 @@ body {
                         
                     </div>
                     </div>
+
+                    <div class="tile"></div>
                     <div class="panel-footer">
                     <button class="large" onclick ="opencommentdialog()">Comment </button>
 
