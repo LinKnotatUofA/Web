@@ -100,11 +100,11 @@ body {
                 </div>
             </div>
             <div id="row1" class="row" >
-                <div class="span11">
+                <div class="span12">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
 
-                <div class="span11" id="content" style="width: 100%; height: auto; background: #C7D28A" />
+                <div class="span12" id="content" style="width: 100%; height: auto; background: #C7D28A" />
                     <div class="grid fluid show-grid">
                     <!--redo story page pinterest/deviant art style-->
                     <div class="panel" style="width:80% align:middle">
