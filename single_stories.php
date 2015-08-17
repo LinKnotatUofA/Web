@@ -150,7 +150,7 @@ body {
                         
                     </div>
                     </div>
-
+                    <div class="padding20"></div>
                     <div class="balloon right">
                         <div class="frames">
                             <div id="write" class="frame">
