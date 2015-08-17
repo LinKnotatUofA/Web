@@ -94,12 +94,12 @@ body {
 </head>
 	<body class="metro">
         <div class="grid fluid show-grid" align="center">
-            <div id="row0" class="row" >
+            <div id="row0">
                 <div class="span4">
                         <a href="index.php"><img src="Assets/logo.png" alt="U of A B² - Connecting you with a _?"></a>
                 </div>
             </div>
-            <div id="row1" class="row" >
+            <div id="row1" >
                 <div class="span12">
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
