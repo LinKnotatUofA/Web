@@ -252,3 +252,24 @@ function add(evt) {
   '</div><div >@ Placeholder Location<br>Placeholder Date @ Placeholder Time</div>');
 }
 
+function groupfactory(provided_ui) {
+
+    var group = new H.map.Group();
+    group.addEventListener('tap', function (evt) {
+        // event target is the marker itself, group is a parent event target
+        // for all objects that it contains
+        var bubble = new H.ui.InfoBubble(evt.target.getPosition(), {
+            // read custom data
+            content: evt.target.getData()
+        });
+        // show info bubble
+        provided_ui.addBubble(bubble);
+    }, false);
+
+    return group;
+
+}
+function moveMapToUofA(map) {
+    map.setCenter({ lat: 53.5244, lng: -113.5244 });
+    map.setZoom(15);
+}

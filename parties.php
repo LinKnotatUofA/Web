@@ -45,7 +45,7 @@ body {
     <script src="js/jquery/jquery.mousewheel.js"></script>
     <script src="js/prettify/prettify.js"></script>
     <script src="js/holder/holder.js"></script>
-    <script src="js/page_scripts/HERE_utilities_new.js"></script>
+    <script src="js/page_scripts/HERE_utilities.js"></script>
 	<script src="js/page_scripts/create_event_js.js"></script>
 
     <!-- Metro UI CSS JavaScript plugins -->
