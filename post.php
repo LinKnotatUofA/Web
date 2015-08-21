@@ -176,17 +176,18 @@ body {
                        icon: '<img src="Assets/default_user.png">',
                        title: 'Draggable window',
                        width: 'auto',
-                       padding: 10,
                        content: 'This Window is draggable by caption.',
                        onShow: function () {
-                           $("#datepicker").datepicker();
+                           
                            var strVar="";
+                           strVar += "<div style=\"padding:20px; margin: 10px 10px 10px 10px\"> ";
                                 strVar += "<form id=\"form_stories\" method =\"post\" action=\"events\/upload_stories.php\">  ";
                                 strVar += "    <p>Please enter a title<\/p> <p><input name =\"story_title\" type=\"text\" \/><\/p> ";
-                                strVar += "    <div class=\"input-control textarea\"\/><textarea name=\"story_content\" cols=\"40\" rows=\"5\" \/>What you wanna write about?<\/textarea><\/div> ";
-                                strVar += "    <p><input name =\"submit\" type=\"submit\"\/> <\/p>";
+                                strVar += "    <div class=\"input-control textarea\"\/><textarea name=\"story_content\" cols=\"40\" rows=\"5\" placeholder =\"What do you want to write about?\"\/>&nbsp;&nbsp;&nbsp;<\/textarea><\/div> ";
+                                strVar += "    <br><\/br><p><input name =\"submit\" type=\"submit\"\/> <\/p>";
                                 strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
                                 strVar += "<\/form>";
+                                strVar += "<\/div>"
                                 strVar += "";
                            
 

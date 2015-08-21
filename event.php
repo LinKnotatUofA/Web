@@ -241,11 +241,16 @@ body {
                          <div class= "span5" id ="content">
                              <div id ="info" class = "tile-group two">
                              <div class="tile-group-title">Info</div>
-                                 <div class="tile bg-darkPink">
+                                 <div class="tile bg-darkCobalt">
+                                     <div class="tile-content icon" align="top">
+                                     
+                                        <i class = "icon-user"></i>   
+
+                                     </div>
                                      <div class="tile-status">
                                          <div class="brand bg-black">
                                              
-                                             <span class="name fg-white"><img src='Assets/default_user.png'/><br></br>Created By:
+                                             <span class="name fg-white">Created By:
                                              <?php 
                                              $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
                                              $authid = $singleventproperty[0]['authID'];
@@ -276,10 +281,11 @@ body {
                                          </div>
                                      </div>
                                  </div>
-                                 <div class="tile bg-darkPink fg-white"> 
-                                      <button class="shortcut" onclick="people()"> 
-                                                   <i class = "icon-cog">Attendees</i>
-                                      </button>
+                                 <div class="tile bg-darkPink fg-white" onclick="people()"> 
+                                    <div class = "tile-content icon">  
+                                        <i class = "icon-accessibility"></i>
+                                    </div>
+                                    <div class="tile-status" align="left"><span class="label">Attendees</span></div>
                                  </div>
                              </div>
                          </div>

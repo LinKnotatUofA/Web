@@ -147,25 +147,27 @@ body {
                         
                     </div>
                     </div>
-                    <h2 id="__balloon__">Leave a Comment Bellow!</h2>
+                    
                     <div style="padding:20px; margin: 10px 70px 10px 70px"> 
-                    <div class="balloon right">
-                        <div style="padding:20px">
-                            balloon right is for other users's comments.
+                        <h2 id="__balloon__">Leave a Comment Bellow!</h2>
+                        <div class="balloon right">
+                            <div style="padding:20px">
+                                balloon right is for other users's comments.
+                            </div>
                         </div>
-                    </div>
-                    <div class="balloon left">
-                        <div style="padding: 20px">
-                            Balloon left is for the user's comments.
+                        <div class="balloon left">
+                            <div style="padding: 20px">
+                                Balloon left is for the user's comments.
+                            </div>
                         </div>
-                    </div>
+                        <button class="large" onclick ="opencommentdialog()">Comment </button>
                     </div>
                     
 
-                    <!--<div class="panel-footer">
-                    <button class="large" onclick ="opencommentdialog()">Comment </button>
+                    
+                    
 
-                    </div> -->
+                    </div>
                     <!--new code below -->      
                     <?php 
                         date_default_timezone_set('UTC');

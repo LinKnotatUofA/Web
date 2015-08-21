@@ -105,6 +105,7 @@ body {
                                 <?php 
                                           $len = count($eventlist);
                                           //grab the promo pic of the latest 3 events
+                                          //sort the list of (anything really) events from the latest to earliest, then print the first three
                                            echo"<div class= 'tile triple double-vertical'>
                                               <div class='carousel' id='carousel2'>
                                                       <div class='slide'>";

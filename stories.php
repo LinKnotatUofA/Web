@@ -94,13 +94,25 @@ body {
                                     <div class=\"tile-group-title\">Stories</div>";
 					    	while ($x<$storylistlen){
 					    		echo $tileArray[$x];
+                               
                                 echo "<a href=single_stories.php?id=";
                                 print_r($storylist[$x]['story_id']);
                                 echo ">"; 
-					    		print_r(strtoupper($storylist[$x]['story_title']));
-                                echo "<br>"; 
-                                print_r($storylist[$x]['story_content']); 
-                                echo "<br>";
+                                 echo "
+                                        <div class=\"tile-content\">
+                    <div class=\"text-left padding10 ntp\">
+                        <p class=\" fg-white no-margin\"><strong>";
+                        print_r(strtoupper($storylist[$x]['story_title']));
+                        echo"</strong></p>
+                        <p class=\" fg-white\">";
+                         print_r($storylist[$x]['story_content']); 
+                        echo"</p>
+                    </div>
+                </div>
+
+
+                                        ";
+					    		
                                 echo"</a></div>";
 					    		$x++;
 					    	}
