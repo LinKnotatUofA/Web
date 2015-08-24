@@ -143,7 +143,7 @@ body {
                                 <h2 class="subheader fg-white place-left">Featured & Latest Stories </h2>
                                 <?php 
                                 
-                                    $storycount=count($storylist);
+                                    $storycount=sizeof($storylist);
                                     
                                         $x=1;
                                         while($x <= $storycount)

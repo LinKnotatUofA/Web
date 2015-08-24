@@ -21,26 +21,29 @@ if (mysqli_connect_errno()) {
 // if comment came from a story - use post[comment_story]
 // if comment came from an event - use post[comment_event]
 
-if(isset($_POST['comment_story'])){
+if(isset($_POST['comments'])){
 
     $story_comment= @$_POST['comment'];
+    $story_id = @$_POST['content_id'];
     //set timezone to edmonton
     date_default_timezone_set('Canada/Edmonton');
     $postdate = date('Y-m-d H:i:s') ;
     $userID= $_SESSION['id'];
-    $count = mysqli_query($mysqli,"SELECT COUNT(GID) as total FROM GROUPS");
+    $count = mysqli_query($mysqli,"SELECT COUNT(c_id) as total FROM comment");
     $data=mysqli_fetch_assoc($count); 
     $ID = $data['total']+1; 
     
 
         
-     //all stories have a default rating of 3 ramen-sauce ridden keyboards out of 5   
-    $insert=mysqli_query($mysqli,"INSERT INTO stories VALUES ('$ID','$story_title','$userID','$story_content','3','$postdate')");
-    echo "post was successful";
+    $insert=mysqli_query($mysqli,"INSERT INTO comment VALUES ('$ID','$userID','$postdate','$story_comment','$story_id')");
     if ( false===$insert ) {
         printf("error: %s\n", mysqli_error($mysqli));
     }
-    header( "refresh:1; url=/post.php" ); 
+    else
+    {
+        header( "refresh:1; url=/single_stories.php?id=$story_id" ); 
+    }
+    
 
 
     }

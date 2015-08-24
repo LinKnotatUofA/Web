@@ -31,6 +31,14 @@ function getstoryinfo($sID)
     $singlestoryproperty = resultToArray($singlestoryquery);
     return $singlestoryproperty;
 }
+function getcommentinfo($cID)
+{
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    $commentquery = mysqli_query($mysqli,"SELECT * FROM comment WHERE c_story_id = '$cID'");
+    $commentproperty = resultToArray($commentquery);
+    return $commentproperty;
+
+}
 
 //print_r($eventlist[0]['EVENTID']);
 

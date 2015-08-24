@@ -9,6 +9,7 @@
     }
     //grab content from database using id
     $storystuff = getstoryinfo($storyid);
+    $commentstuff = getcommentinfo($storyid)
     //WIN
     
     ?>
@@ -55,35 +56,40 @@
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
     <script>
-        function opencommentdialog()
-        {
-            
-            $.Dialog({
-            shadow: true,
-            overlay: false,
-            icon: '<span class="icon-pencil"></span>',
-            title: 'Search For Groups',
-            width: 500,
-            padding: 10,
-            onShow: function () {
-                $("#datepicker").datepicker();
+        function dialogcontent(story_id) {
                 var strVar="";
                      strVar += "<form id=\"comment_stories\" method =\"post\" action=\"upload\/upload_comments.php\">  ";
                      strVar += "    <p>What do you think?<\/p> <p><input name =\"comment\" type=\"text\" \/><\/p> ";
-                     strVar += "    <input type=\"hidden\" name=\"content_id\" value=\"1234\"> ";
+                     strVar += "    <input type=\"hidden\" name=\"content_id\" value=";
+                     strVar += "\""+story_id+"\"";
+                     strVar += ">";
                      //hardcoded shit, this needs to be converted to php
                      strVar += "    <input type=\"hidden\" name=\"istype\" value=\"stories\"> ";
                      strVar += "    <p><input name =\"comments\" type=\"submit\"\/> <\/p>";
                      strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
                      strVar += "<\/form>";
                      strVar += "";
-                $.Dialog.content(strVar);
-                $.Metro.initInputs();
+                return strVar;
             }
+        function opencommentdialog(story_id)
+        {
+            var upload_id = story_id;
+           
+            $.Dialog({
+            shadow: true,
+            overlay: false,
+            icon: '<span class="icon-pencil"></span>',
+            title: 'Write a comment',
+            width: 500,
+            padding: 10,
+            onShow: function()
+            { $.Dialog.content( dialogcontent(story_id));}
+                   
          });
     
         
         }
+        
     </script>
     <style type="text/css">
 body {
@@ -149,18 +155,43 @@ body {
                     </div>
                     
                     <div style="padding:20px; margin: 10px 70px 10px 70px"> 
-                        <h2 id="__balloon__">Leave a Comment Bellow!</h2>
-                        <div class="balloon right">
-                            <div style="padding:20px">
-                                balloon right is for other users's comments.
-                            </div>
-                        </div>
-                        <div class="balloon left">
-                            <div style="padding: 20px">
-                                Balloon left is for the user's comments.
-                            </div>
-                        </div>
-                        <button class="large" onclick ="opencommentdialog()">Comment </button>
+                        
+
+
+                        <?php 
+                        $num = sizeof($commentstuff);
+                        
+                        if($num<1)
+                        {
+                            echo"<h2 id='ballon'>No Comment so far, be the first to post!</h2>";
+                           
+                        }
+                        else
+                        {
+                            echo"<h2 id='balloon'>Leave a Comment Bellow!</h2>";
+                            $x = 0;
+                            while($x<$num)
+                            {
+                                echo"<div>";
+                                    print_r(printusername($commentstuff[$x]['c_author']));
+                                    echo"<br><br>";
+                                        echo"
+                                        <div class=\"balloon bottom\">
+                                            <div style=\"padding: 20px\">";
+                                            print_r($commentstuff[$x]['c_content']);
+                                            echo"</div>
+                                        </div>";
+                                echo"</div>";
+                                $x++;
+                            }
+                        }
+
+
+
+                        ?>
+                        
+                        
+                        <button class="large" onclick ="opencommentdialog(<?php echo "$storyid";?>)">Comment </button>
                     </div>
                     
 
