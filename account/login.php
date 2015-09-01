@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "/account/db.php";
+
 
 $username = $_POST['login'];
 $password = $_POST['password'];
@@ -9,7 +9,7 @@ $password = $_POST['password'];
 if($username&&$password)
 {
     
-  require "/account/db.php";
+   $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
    
    $query = mysqli_query($mysqli,"SELECT * FROM user WHERE username='$username'");
    $numrows = mysqli_num_rows($query);
