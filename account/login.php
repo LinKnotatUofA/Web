@@ -9,7 +9,7 @@ $password = $_POST['password'];
 if($username&&$password)
 {
     
-  
+  require "/account/db.php";
    
    $query = mysqli_query($mysqli,"SELECT * FROM user WHERE username='$username'");
    $numrows = mysqli_num_rows($query);
