@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require "/events/load_events.php";
+    require "/account/db.php";
     //grab session id from url
     global $storyid;
     if (isset($_GET["id"]))
