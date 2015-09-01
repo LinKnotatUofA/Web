@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    require "/account/db.php";
     require "/events/load_events.php";
     //1.we will need to grab the event ID
     global $eventID;
@@ -21,7 +22,6 @@ else
 {
     $join = null;
 }
-$mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
 $user = $_SESSION['username'];
 $query = mysqli_query($mysqli,"SELECT id FROM user WHERE username='$user'");
 $row = mysqli_fetch_assoc($query);
@@ -153,7 +153,6 @@ body {
                         content: '',
                         onShow: function(_dialog){
                            var strVar='';";
-                        $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
                         $query = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE EVENTID = '$eventID'");
                         $attendeeslist = resultToArray($query);
                         $length = count($attendeeslist);
@@ -252,7 +251,6 @@ body {
                                              
                                              <span class="name fg-white">Created By:
                                              <?php 
-                                             $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
                                              $authid = $singleventproperty[0]['authID'];
                                              //grab the latest 4 events from database
                                              $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");

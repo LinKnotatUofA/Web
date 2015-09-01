@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    require "/account/db.php";
 	/*$user = $_SESSION[	$query = mysqli_query($mysqli,"SELECT * FROM  WHERE username='$user'");
 	$row = mysqli_fetch_assoc($query);
 	$id = $row['id'];*/

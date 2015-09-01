@@ -9,10 +9,11 @@ $username = @$_POST['user_name'];
 $password = @$_POST['password'];
 $repeatpassword = @$_POST['repeatpassword'];
 $submit = @$_POST['submit'];
-$encpassword = md5($password);
+$encpassword = $password;
+//use md5($password) for encryption later
 $ID = 100;
 
-$mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+require "/account/db.php";
 
 //attempt to include a new ID 
 $query = mysqli_query($mysqli,"SELECT ID FROM user WHERE ID=$ID");
@@ -28,8 +29,6 @@ while($numrows > 0)
 
 
 
-
-$mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
 
 /* check connection */
 if (mysqli_connect_errno()) {

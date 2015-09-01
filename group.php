@@ -6,6 +6,7 @@
 // 4.figure out who's in what group
 // proposed table: group member id || user id || group id
     session_start();
+    require "/account/db.php";
     
     ?>
 
@@ -116,7 +117,7 @@ body {
                         
                         
                             //if user already in a group , display that group on the groups page
-                            $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+                            
                             $id = $_SESSION['id'];
                         
                         

@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require "/account/db.php";
 
 $username = $_POST['login'];
 $password = $_POST['password'];
@@ -8,7 +9,7 @@ $password = $_POST['password'];
 if($username&&$password)
 {
     
-   $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com:3306", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+  
    
    $query = mysqli_query($mysqli,"SELECT * FROM user WHERE username='$username'");
    $numrows = mysqli_num_rows($query);
@@ -26,7 +27,7 @@ if($username&&$password)
        {
            
            echo "Login successful,heading back to homepage";
-           header( "refresh:5; url=/index.php" ); 
+           header( "refresh:1; url=/index.php" ); 
 
            $_SESSION['username']=$dbusername;
            $_SESSION['id'] = $dbuserid;

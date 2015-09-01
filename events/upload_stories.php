@@ -5,9 +5,7 @@
 <?php
 
 session_start();
-
-
-$mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+require "/account/db.php";
 
 
 if (mysqli_connect_errno()) {
