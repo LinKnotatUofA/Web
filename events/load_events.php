@@ -18,6 +18,7 @@ $storylist = resultToarray($Story_query);
 
 function geteventinfo($eID)
 {
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
     $singleventquery = mysqli_query($mysqli,"SELECT * FROM event WHERE EVENTID = '$eID'");
     $singleventproperty = resultToArray($singleventquery);
     return $singleventproperty;
@@ -25,12 +26,14 @@ function geteventinfo($eID)
 //these two gotta be merged during code cleanup
 function getstoryinfo($sID)
 {
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
     $singlestoryquery = mysqli_query($mysqli,"SELECT * FROM stories WHERE story_id = '$sID'");
     $singlestoryproperty = resultToArray($singlestoryquery);
     return $singlestoryproperty;
 }
 function getcommentinfo($cID)
 {
+    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
     $commentquery = mysqli_query($mysqli,"SELECT * FROM comment WHERE c_story_id = '$cID'");
     $commentproperty = resultToArray($commentquery);
     return $commentproperty;
