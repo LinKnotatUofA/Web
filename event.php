@@ -10,7 +10,9 @@
     }
     //2.query our database for that event -
     $singleventproperty = geteventinfo($eventID);
+    $dayofweek = geteventday($eventID);
     
+    $dayarray = array("Sunday","Monday","Tuesday","Wednesday","Thusday","Friday","Saturday");
     
     ?>
  <?php 
@@ -230,8 +232,8 @@ body {
                                             </label>
                                         </div>   
                                     </form>
-                                     <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br>
-                                     <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div><br>
+                                     <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br><br>
+                                     <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div><br><br>
                                      <g:plusone  href="uofabsquared.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300" size="standard"></g:plusone>
 
                                 </ul>
@@ -263,8 +265,9 @@ body {
                                  <div class="tile bg-amber">
                                      <div class="tile-content">
                                              <div class="text-left padding5 ntp">
+                                                 <p class="fg-white"><?php echo $dayarray[$dayofweek-1]; ?></p>
                                                  <p class="fg-white no-margin"><?php print_r($singleventproperty[0]['TIME']); ?></p>
-                                                 <p class="fg-white">Sunday</p>
+                                                 
                                              </div>
                                          </div>
                                  </div>

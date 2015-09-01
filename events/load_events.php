@@ -23,6 +23,13 @@ function geteventinfo($eID)
     $singleventproperty = resultToArray($singleventquery);
     return $singleventproperty;
 }
+function geteventday($eID)
+{
+    $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+    $singleventquery = mysqli_query($mysqli,"SELECT DAYOFWEEK(TIME) AS DAY FROM event WHERE EVENTID = '$eID'");
+    $singleventproperty = resultToArray($singleventquery);
+    return $singleventproperty[0]['DAY'];
+}
 //these two gotta be merged during code cleanup
 function getstoryinfo($sID)
 {
