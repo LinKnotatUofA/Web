@@ -165,8 +165,7 @@ body {
 
                                 <p> in the button tag below, add an onclick section and link it to a javascript function that display a dialog asking user to upload picture</p>
                           
-                            <button id="createFlatWindow"> Edit user profile picture 
-
+                            <button class="button" id="createFlatWindow">Create Flat Window
                             </button>
 
                             <form id="userinfo form" method ="post" enctype="multipart/form-data" action = "edit_user_profile.php">  
