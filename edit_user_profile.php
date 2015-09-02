@@ -9,6 +9,77 @@
         header( "url=/index.php" ); 
     }
     //check if info has being changed
+	
+	if(isset($_POST['submit'])){
+
+    $img = $_FILES['image']['tmp_name'];
+    $userID= $_SESSION['id'];
+ 
+    //attempt to include a new ID 
+
+    if (!file_exists($img))
+    {
+        echo "we don have an image";
+        $insert=mysqli_query($mysqli,"UPDATE bsquared.user SET user_profile_pic=NULL WHERE user.id = $userID");
+    }
+    else if (file_exists($img))
+    {
+        echo "we have an image";
+        $image = addslashes(file_get_contents($img));
+        $source = imagecreatefromjpeg($img);
+        
+        $size = 150; // new image width for thumbnail
+        $size2 = 600; // new image width for regular size
+            
+        $width = imagesx($source);
+        $height = imagesy($source);
+        $ratio = $height/$width;
+        
+        if ($width <= $size) {
+            $new_w = $width;
+            $new_h = $height;
+        } else {
+            $new_w = $size;
+            $new_h = abs($new_w * $ratio);
+        }
+        
+        if ($width <= $size2) {
+            $new_w2 = $width;
+            $new_h2 = $height;
+        } else {
+            $new_w2 = $size2;
+            $new_h2 = abs($new_w2 * $ratio);
+        }
+        
+        $new_img = imagecreatetruecolor($new_w,$new_h); //For the thumbnail
+        $new_img2 = imagecreatetruecolor($new_w2,$new_h2);; //For the normal size
+        imagecopyresized($new_img,$source,0,0,0,0,$new_w,$new_h,$width,$height); //new_img is the thumbnail as an image
+        imagecopyresized($new_img2,$source,0,0,0,0,$new_w2,$new_h2,$width,$height); //new_img2 is the normal size as an ima
+        //Convert back to binary to put into blob
+        ob_start();
+        imagejpeg($new_img);
+        $new_image_string = ob_get_contents();
+        ob_end_clean();
+        $thumbnail = addslashes($new_image_string);
+        
+        ob_start();
+        imagejpeg($new_img2);
+        $new_image_string2 = ob_get_contents();
+        ob_end_clean();
+        $normalSize = addslashes($new_image_string2);
+        
+        $insert=mysqli_query($mysqli,"UPDATE bsquared.user SET user_profile_pic='$normalSize' WHERE user.id = $userID ");
+    }
+    
+    if ( false===$insert ) {
+        printf("error: %s\n", mysqli_error($mysqli));
+    }
+    else    
+        echo "registration successful,sending you back to home page";
+    //header( "refresh:3; url=/index.php" ); 
+    
+}
+	
     if(isset($_POST['user_profile_submit']))
     {
         $change = "UPDATE user_preferences SET ";
