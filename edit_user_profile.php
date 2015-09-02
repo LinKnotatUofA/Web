@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require "/events/load_events.php";
+    require "/account/db.php";
     //check session id
     $id = $_SESSION['id'];
     if(!$id)
@@ -72,7 +73,7 @@
       
     }
       //load original User Info
-      $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+      //$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
         $user_preferences_query = mysqli_query($mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'");
         $user_preferences = mysqli_fetch_assoc($user_preferences_query);
        
