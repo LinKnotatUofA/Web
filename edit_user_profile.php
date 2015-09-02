@@ -149,6 +149,8 @@ body {
                                 <p> in the button tag below, add an onclick section and link it to a javascript function that display a dialog asking user to upload picture</p>
                           
                             <button> Edit user profile picture 
+                                <script>
+
                                     $("#createFlatWindow").on('click', function(){
                                         $.Dialog({
                                             overlay: true,
@@ -163,6 +165,7 @@ body {
                                             }
                                         });
                                     }); 
+                                </script>
                             </button>
 
                             <form id="userinfo form" method ="post" enctype="multipart/form-data" action = "edit_user_profile.php">  
