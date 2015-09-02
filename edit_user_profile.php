@@ -69,8 +69,13 @@
             
         }
         
-        //check for
+      
     }
+      //load original User Info
+      $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+        $user_preferences_query = mysqli_query($mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'");
+        $user_preferences = mysqli_fetch_assoc($user_preferences_query);
+       
     ?>
 
 
@@ -120,6 +125,7 @@ body {
 
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
+    <script type="text/javascript" src="js/jscolor.js"></script>
     
 </head>
 	<body class="metro">
@@ -140,13 +146,14 @@ body {
                         <div id="featured_row1" class="row"  align="left">
 
                                 <p> in the button tag below, add an onclick section and link it to a javascript function that display a dialog asking user to upload picture</p>
+                          
                             <button> Edit user profile picture </button>
 
                             <form id="userinfo form" method ="post" enctype="multipart/form-data" action = "edit_user_profile.php">  
-                                <p>First Name </p> <input name ="firstn" type="text" />
-                               	<p>Last Name </p> <input name ="lastn" type="text" />
-                                <p>Prefered BackGround </p> <input name="background_color" type="text" />
-                                <p>Birthday</p> <input name ="birthday" type="date" />
+                                <p>First Name </p> <input name ="firstn" type="text" placeholder="<?php print_r($user_preferences['firstn']); ?>" />
+                               	<p>Last Name </p> <input name ="lastn" type="text" placeholder="<?php print_r($user_preferences['lastn']); ?>"/>
+                                <p>Prefered BackGround </p> <input class="color" name="background_color" type="text" placeholder="<?php print_r($user_preferences['prefered_color']); ?>"/>
+                                <p>Birthday</p> <input name ="birthday" type="date" placeholder="<?php print_r($user_preferences['birthdays']); ?>"/>
                                 <p></p>
                                 <p><input name ="user_profile_submit" type="submit"/> <INPUT Type="button" VALUE="Cancel and go back" onClick="history.go(-1); return true;"></p>
                             </form>

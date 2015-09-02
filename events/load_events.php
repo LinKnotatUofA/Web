@@ -51,7 +51,7 @@ function getcommentinfo($cID)
 
 function printusername($ID)
 {
-    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "c03cc102");
     $query = mysqli_query($mysqli,"SELECT username FROM user WHERE id='$ID'");
     
     $authorname ="";

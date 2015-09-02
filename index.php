@@ -72,35 +72,6 @@ body {
                             <div id ="content_column" class="span6" style="margin-left:4%">
                                 <h2 class="subheader fg-white place-left">Featured & Latest Events</h2>
                                 <!-- wait until rating system, grab events/stories with the highest ratings-->
-                                <div class="tile triple double-vertical">
-                                    <div class="carousel" id="carousel1">
-                                            <div class="slide">
-                                                <img src="Assets/1.png" class="cover1" />
-                                            </div>
-                                
-                                            <div class="slide">
-                                                <img src="Assets/2.png" class="cover1" />
-                                            </div>
-                                
-                                            <div class="slide">
-                                                <img src="Assets/3.png" class="cover1"/>
-                                            </div>
-                                
-                        
-                                    </div>
-                                    <div class="brand bg-black">
-                                        <div class="label fg-white place-right">Featured</div>
-                                
-                                
-                                    </div>
-                                        <script>
-                                            $(function () {
-                                                $("#carousel1").carousel({
-                                                    height: 250
-                                                });
-                                            })
-                                        </script>
-                                </div>
                                 <!--make this shit useful-->
                                 <?php 
                                           $len = count($eventlist);
