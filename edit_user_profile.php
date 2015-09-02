@@ -20,7 +20,7 @@
     if (!file_exists($img))
     {
         echo "we don have an image";
-        $insert=mysqli_query($mysqli,"UPDATE bsquared.user SET user_profile_pic=NULL WHERE user.id = $userID");
+        $insert=mysqli_query($mysqli,"UPDATE user SET user_profile_pic=NULL WHERE user.id = $userID");
     }
     else if (file_exists($img))
     {
@@ -68,7 +68,7 @@
         ob_end_clean();
         $normalSize = addslashes($new_image_string2);
         
-        $insert=mysqli_query($mysqli,"UPDATE bsquared.user SET user_profile_pic='$normalSize' WHERE user.id = $userID ");
+        $insert=mysqli_query($mysqli,"UPDATE user SET user_profile_pic='$normalSize' WHERE user.id = $userID ");
     }
     
     if ( false===$insert ) {
