@@ -67,7 +67,7 @@
         $new_image_string2 = ob_get_contents();
         ob_end_clean();
         $normalSize = addslashes($new_image_string2);
-        
+        echo "$normalSize";
         $insert=mysqli_query($mysqli,"UPDATE user SET user_profile_pic='$normalSize' WHERE user.id = $userID ");
     }
     
