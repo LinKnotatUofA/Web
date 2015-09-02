@@ -165,7 +165,8 @@ body {
                                             onShow: function(_dialog){
                                                 var content = _dialog.children('.content');
                                                 content.html('Set content from event onShow');
-                                            }
+                                            }$.Dialog.content(content);
+
                                         });
                                     }); 
     </script>
