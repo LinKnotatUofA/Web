@@ -172,7 +172,6 @@ strVar += "        <\/p>";
 strVar += "        <p><input name =\"submit\" type=\"submit\"\/> <INPUT Type=\"button\" VALUE=\"Cancel and go back\" onClick=\"history.go(-1); return true;\"><\/p>";
 strVar += "    <\/form>";
 
-                                                content.html('Set content from event onShow');
                                                 $.Dialog.content(strVar);
                                             }
 
