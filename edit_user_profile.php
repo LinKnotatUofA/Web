@@ -127,6 +127,23 @@ body {
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
     <script type="text/javascript" src="js/jscolor.js"></script>
+    <script>
+
+        $("#createFlatWindow").on('click', function(){
+            $.Dialog({
+                                            overlay: true,
+                                            shadow: true,
+                                            flat: true,
+                                            icon: '<img src="images/excel2013icon.png">',
+                                            title: 'Flat window',
+                                            content: '',
+                                            onShow: function(_dialog){
+                                                var content = _dialog.children('.content');
+                                                content.html('Set content from event onShow');
+                                            }
+                                        });
+                                    }); 
+    </script>
     
 </head>
 	<body class="metro">
@@ -148,24 +165,8 @@ body {
 
                                 <p> in the button tag below, add an onclick section and link it to a javascript function that display a dialog asking user to upload picture</p>
                           
-                            <button> Edit user profile picture 
-                                <script>
+                            <button id="createFlatWindow"> Edit user profile picture 
 
-                                    $("#createFlatWindow").on('click', function(){
-                                        $.Dialog({
-                                            overlay: true,
-                                            shadow: true,
-                                            flat: true,
-                                            icon: '<img src="images/excel2013icon.png">',
-                                            title: 'Flat window',
-                                            content: '',
-                                            onShow: function(_dialog){
-                                                var content = _dialog.children('.content');
-                                                content.html('Set content from event onShow');
-                                            }
-                                        });
-                                    }); 
-                                </script>
                             </button>
 
                             <form id="userinfo form" method ="post" enctype="multipart/form-data" action = "edit_user_profile.php">  
