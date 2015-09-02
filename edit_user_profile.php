@@ -163,9 +163,17 @@ body {
                                             title: 'Flat window',
                                             content: '',
                                             onShow: function(_dialog){
-                                                var content = _dialog.children('.content');
+                                                var strVar="";
+strVar += " <form id=\"form1\" method =\"post\" enctype=\"multipart\/form-data\">  ";
+strVar += "        <p>";
+strVar += "            <label>Upload your image<\/label>";
+strVar += "                     <input type=\"file\" name=\"image\"\/>       ";
+strVar += "        <\/p>";
+strVar += "        <p><input name =\"submit\" type=\"submit\"\/> <INPUT Type=\"button\" VALUE=\"Cancel and go back\" onClick=\"history.go(-1); return true;\"><\/p>";
+strVar += "    <\/form>";
+
                                                 content.html('Set content from event onShow');
-                                                $.Dialog.content(content);
+                                                $.Dialog.content(strVar);
                                             }
 
                                         });
