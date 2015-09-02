@@ -127,23 +127,7 @@ body {
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
     <script type="text/javascript" src="js/jscolor.js"></script>
-    <script>
 
-        $("#createFlatWindow").on('click', function(){
-            $.Dialog({
-                                            overlay: true,
-                                            shadow: true,
-                                            flat: true,
-                                            icon: '<img src="images/excel2013icon.png">',
-                                            title: 'Flat window',
-                                            content: '',
-                                            onShow: function(_dialog){
-                                                var content = _dialog.children('.content');
-                                                content.html('Set content from event onShow');
-                                            }
-                                        });
-                                    }); 
-    </script>
     
 </head>
 	<body class="metro">
@@ -167,6 +151,24 @@ body {
                           
                             <button class="button" id="createFlatWindow">Create Flat Window
                             </button>
+
+                                <script>
+
+        $("#createFlatWindow").on('click', function(){
+            $.Dialog({
+                                            overlay: true,
+                                            shadow: true,
+                                            flat: true,
+                                            icon: '<img src="images/excel2013icon.png">',
+                                            title: 'Flat window',
+                                            content: '',
+                                            onShow: function(_dialog){
+                                                var content = _dialog.children('.content');
+                                                content.html('Set content from event onShow');
+                                            }
+                                        });
+                                    }); 
+    </script>
 
                             <form id="userinfo form" method ="post" enctype="multipart/form-data" action = "edit_user_profile.php">  
                                 <p>First Name </p> <input name ="firstn" type="text" placeholder="<?php print_r($user_preferences['firstn']); ?>" />
