@@ -159,7 +159,7 @@ body {
                                             overlay: true,
                                             shadow: true,
                                             flat: true,
-                                            
+                                            icon: '<img src="images/excel2013icon.png">',
                                             title: 'Flat window',
                                             content: '',
                                             onShow: function(_dialog){
