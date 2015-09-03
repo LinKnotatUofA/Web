@@ -34,11 +34,13 @@
             <span class="element-divider"></span>
             <?php
                 session_start();
+                require "/events/load_events.php";
+                require "/account/db.php";
                 if(isset($_SESSION['username'])&&$_SESSION['username']!=null)
                 {
                     
                     echo "<div class='element place-right'>
-                            <a class = \"fg-dark\"> Welcome! ".$_SESSION['username']."&nbsp;&nbsp;</a>
+                            <a class = \"fg-dark\"> Welcome! ".print_name($_SESSION['id'])."&nbsp;&nbsp;</a>
                             <a class='dropdown-toggle' href='#'>
                             <span class='icon-cog'></span>
                         </a>

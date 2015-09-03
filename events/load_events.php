@@ -51,7 +51,7 @@ function getcommentinfo($cID)
 
 function printusername($ID)
 {
-    $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "c03cc102");
+    $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
     $query = mysqli_query($mysqli,"SELECT username FROM user WHERE id='$ID'");
     
     $authorname ="";
@@ -64,6 +64,25 @@ function printusername($ID)
     
 }
 
+function print_name($ID)
+{
+    
+    $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+    $query = mysqli_query($mysqli,"SELECT firstn, lastn as name FROM user_preferences WHERE user_id='$ID'");
+    
+    
+    $name ="";
+    while($row = mysqli_fetch_assoc($query))
+    {
+       $lastn = $row['lastn'];
+    }
+
+    echo "$firstn";echo "$lastn";
+
+
+
+
+}
 ?>
 
 
