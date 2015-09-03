@@ -11,7 +11,8 @@ if($username&&$password)
     
    $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
    
-   $query = mysqli_query($mysqli,"SELECT * FROM user WHERE username='$username'");
+   $query = mysqli_query($mysqli,"SELECT * FROM user, user_preferences WHERE user.id = user_preferences.user_id AND user.username = '$username' ");
+   
    $numrows = mysqli_num_rows($query);
    
    if($numrows != 0)
@@ -21,6 +22,7 @@ if($username&&$password)
            $dbusername = $row['username'];
            $dbpassword = $row['password'];
            $dbuserid = $row['id'];
+           $dbactualname = $row['firstn'].' '.$row['lastn'];
            
        }
        if($username==$dbusername&&$password==$dbpassword)
@@ -31,7 +33,7 @@ if($username&&$password)
 
            $_SESSION['username']=$dbusername;
            $_SESSION['id'] = $dbuserid;
-           
+           $_SESSION['actualname']=$dbactualname;           
        }
        else
            echo" Incorrect password";

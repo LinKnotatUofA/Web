@@ -39,6 +39,7 @@
     <Compile Include="single_stories.php" />
     <Compile Include="stories.php" />
     <Compile Include="bottom.html" />
+    <Compile Include="topbar.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
