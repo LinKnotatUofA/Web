@@ -216,7 +216,7 @@ body {
                                 <ul>
                                     <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
                                     <li class="title" style="color: white;">Options</li>
-                                    <li><a style="color: white;"><?php echo "Event ID:".$eventID;?>
+                                    <li><a style="color: white;"><?php //echo "Event ID:".$eventID;?>
                                         </a></li>
                                     <form action="event.php?id=<?php echo"$eventID"; ?>" method = "POST">                                                             
                                         <div class="input-control switch">

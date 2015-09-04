@@ -2,6 +2,7 @@
     session_start();
     require "/events/load_events.php";
     require "/account/db.php";
+    $imgregsucs = false;
     //check session id
     $id = $_SESSION['id'];
     if(!$id)
@@ -19,12 +20,12 @@
 
     if (!file_exists($img))
     {
-        echo "we don have an image";
-        $insert=mysqli_query($mysqli,"UPDATE user SET user_profile_pic=NULL WHERE user.id = $userID");
+        //echo "we don have an image";
+        $insert=mysqli_query($mysqli,"UPDATE user SET user_profile_pic=NULL WHERE id = '$userID' ");
     }
     else if (file_exists($img))
     {
-        echo "we have an image";
+        //echo "we have an image";
         $image = addslashes(file_get_contents($img));
         $source = imagecreatefromjpeg($img);
         
@@ -67,15 +68,18 @@
         $new_image_string2 = ob_get_contents();
         ob_end_clean();
         $normalSize = addslashes($new_image_string2);
-        echo "$normalSize";
-        $insert=mysqli_query($mysqli,"UPDATE user SET user_profile_pic='$normalSize' WHERE user.id = $userID ");
+        //echo "$normalSize";
+        $insert=mysqli_query($mysqli,"UPDATE user SET user_profile_pic='$thumbnail' WHERE id = '$userID' ");
     }
     
     if ( false===$insert ) {
         printf("error: %s\n", mysqli_error($mysqli));
     }
     else    
-        echo "registration successful,sending you back to home page";
+    {
+        $imgregsucs = true;
+    }
+      
     //header( "refresh:3; url=/index.php" ); 
     
 }
@@ -147,6 +151,8 @@
       //$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
         $user_preferences_query = mysqli_query($mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'");
         $user_preferences = mysqli_fetch_assoc($user_preferences_query);
+        $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$id'");
+        $userpic=mysqli_fetch_assoc($userpic_query);
        
     ?>
 
@@ -194,10 +200,12 @@ body {
     <script type="text/javascript" charset="UTF-8" src="http://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
     <script type="text/javascript" charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script type="text/javascript"  charset="UTF-8"src="http://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript"  charset="UTF-8"src="js/metro/metro-notify.js"></script>
 
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
     <script type="text/javascript" src="js/jscolor.js"></script>
+    <script src="js/imgregsucs.js"></script>
 
     
 </head>
@@ -217,33 +225,56 @@ body {
                 <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;padding:2.5%;"  />
                     <div class="grid fluid show-grid">
                         <div id="featured_row1" class="row"  align="left">
+                            <div class = "tile image-container"> 
+                                <div class="image-container">
+                                    <div class="frame">
+                                           
 
-                                <p> in the button tag below, add an onclick section and link it to a javascript function that display a dialog asking user to upload picture</p>
-                          
-                            <button class="button" id="createFlatWindow">Create Flat Window
-                            </button>
+                                         <?php   
+                                               if($userpic['user_profile_pic'] == null)
+                                               {
+                                                    echo '<span class=\"icon-user\"></span>';
+                                                }
+                                               else
+                                               {
+                                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>';  ?>
+                                                }
+                                               </div>
+                                 
+                                </div>
+                            </div> 
+                            <button class="button" id="userprofile">Upload Profile Picture</button>
+                            <?php 
+                                    if($imgregsucs == true)
+                                    {
+                                            
+                                          echo "<script type=\"text/javascript\">imgregsucs();</script>";
+                                    }
 
+                             ?>
                                 <script>
 
-        $("#createFlatWindow").on('click', function(){
+        $("#userprofile").on('click', function(){
             $.Dialog({
                                             overlay: true,
                                             shadow: true,
                                             flat: true,
-                                            icon: '<img src="images/excel2013icon.png">',
-                                            title: 'Flat window',
+                                            icon: '<span class="icon-rocket"></span>',
+                                            title: 'Upload Profile Picture',
                                             content: '',
                                             onShow: function(_dialog){
                                                 var strVar="";
-strVar += " <form id=\"form1\" method =\"post\" enctype=\"multipart\/form-data\">  ";
-strVar += "        <p>";
-strVar += "            <label>Upload your image<\/label>";
-strVar += "                     <input type=\"file\" name=\"image\"\/>       ";
-strVar += "        <\/p>";
-strVar += "        <p><input name =\"submit\" type=\"submit\"\/> <INPUT Type=\"button\" VALUE=\"Cancel and go back\" onClick=\"history.go(-1); return true;\"><\/p>";
-strVar += "    <\/form>";
-
+                                                strVar += "<div style =\"padding:10px\">";
+                                                strVar += " <form id=\"form1\" method =\"post\" enctype=\"multipart\/form-data\">  ";
+                                                strVar += "        <p>";
+                                                strVar += "            <label>Upload your image<\/label>";
+                                                strVar += "                     <input type=\"file\" name=\"image\"\/>       ";
+                                                strVar += "        <\/p>";
+                                                strVar += "        <p><input name =\"submit\" type=\"submit\"\/> <INPUT Type=\"button\" VALUE=\"Cancel and go back\" onClick=\"history.go(-1); return true;\"><\/p>";
+                                                strVar += "    <\/form>";
+                                                strVar += " <\/div>";
                                                 $.Dialog.content(strVar);
+                                                $.Metro.initInputs();
                                             }
 
                                         });

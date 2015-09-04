@@ -124,7 +124,7 @@ if(isset($_POST['submit'])){
     }
     else    
         echo "registration successful,sending you back to home page";
-    //header( "refresh:3; url=/index.php" ); 
+        header( "refresh:3; url=/index.php" ); 
     
 }
 

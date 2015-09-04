@@ -28,7 +28,6 @@ while($numrows > 0)
 }
 
 
-$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
 
 
 /* check connection */

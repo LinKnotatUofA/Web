@@ -80,17 +80,29 @@ body {
                                            echo"<div class= 'tile triple double-vertical'>
                                               <div class='carousel' id='carousel2'>
                                                       <div class='slide'>";
+                                               echo "<a href=event.php?id=";
+                                               print_r($eventlist[$len-1]['EVENTID'] );
+                                               echo ">";
                                                echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-1]['image'] ).'" class="cover1"/>'; 
+                                               echo "</a>";
                                            echo"
                                            </div>";
                                            echo"
                                            <div class='slide'>";
+                                               echo "<a href=event.php?id=";
+                                               print_r($eventlist[$len-2]['EVENTID'] );
+                                               echo ">";
                                                echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-2]['image'] ).'" class="cover1"/>';
+                                               echo "</a>";
                                            echo"
                                            </div>";
                                            echo"
                                            <div class='slide'>";
+                                            echo "<a href=event.php?id=";
+                                            print_r($eventlist[$len-3]['EVENTID'] );
+                                            echo ">";
                                                echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-3]['image'] ).'" class="cover1"/>';
+                                               echo "</a>";
                                            echo"
                                            </div>
                                            </div>";

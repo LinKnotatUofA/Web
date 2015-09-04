@@ -5,7 +5,7 @@ function login () {
                 shadow: true,
                 overlay: false,
                 draggable: true,
-                icon: '<img src="Assets/default_user.png">',
+                icon: '<span class="icon-user"></span>',
                 title: 'Draggable window',
                 width: 'auto',
                 padding: 10,
