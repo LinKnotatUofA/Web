@@ -1,5 +1,5 @@
 
-Source code for our website: uofabsquared.azurewebsites.net
+Source code for our website: http://uofabsquared.azurewebsites.net
 
 developing with Metro UI css2.0 and ~~Nokia~~ HERE maps api
 
