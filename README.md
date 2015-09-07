@@ -1,7 +1,7 @@
 
 Source code for our website: http://uofabsquared.azurewebsites.net
 
-developing with Metro UI css2.0 and ~~Nokia~~ HERE maps api
+frontend developent with Metro UI css2.0 and ~~Nokia~~ HERE maps api
 
 Metro UI resources:
 http://metroui.org.ua/v2
