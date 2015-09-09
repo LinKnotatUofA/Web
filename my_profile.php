@@ -23,6 +23,13 @@ body {
 
 <?php
 	echo "$id";
+	$user_info = mysqli_query($mysqli,"SELECT firstn, lastn, birthdays FROM user_preferences WHERE id ='$id'");
+	$result =mysqli_fetch_assoc($user_info);
+	printf("Name: %s %s", $result["firstn"], $result["lastn"]);
+	printf("Born on: %s", $result[birthdays]);
+	
+	
+
 
 
 ?>
