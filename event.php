@@ -288,7 +288,17 @@ body {
                                      <div class="tile-content image-container">
                                          <div class="image-container">
                                              <div class="frame">
-                                                 <?php   echo '<img src="data:image/jpeg;base64,'.base64_encode($singleventproperty[0]['thumbnail'] ).'"/>';  ?>
+                                                 <?php   
+                                                    if($userpic['user_profile_pic'] == null)
+                                                    {
+                                                    echo '<span class=\"icon-user\"></span>';
+                                                    }
+                                                else
+                                                    {
+                                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>'; 
+                                                    }
+
+                                                 ?>
                                              </div>
                                          </div>
                                      </div>
