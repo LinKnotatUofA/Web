@@ -144,6 +144,8 @@ body {
     echo"</script>";
 ?>
 <?php
+    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$id'");
+    $userpic=mysqli_fetch_assoc($userpic_query);
     echo"<script  type='text/javascript' charset='UTF-8'>       
         function people() {
             $.Dialog({
@@ -244,8 +246,17 @@ body {
                              <div class="tile-group-title">Info</div>
                                  <div class="tile bg-darkCobalt">
                                      <div class="tile-content image" align="top">
-                                     
-                                        <img src="img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'""> 
+                                         <?php   
+                                               if($userpic['user_profile_pic'] == null)
+                                               {
+                                                    echo '<span class=\"icon-user\"></span>';
+                                                }
+                                               else
+                                               {
+                                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>'; 
+                                                }
+
+                                         ?>
 
                                      </div>
                                      <div class="tile-status">
