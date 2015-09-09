@@ -25,9 +25,10 @@ body {
 </style>
 
 <?php
-	$user_info = mysqli_query($mysqli,"SELECT firstn, lastn, birthdays FROM user_preferences WHERE user_id ='$id'");
+	$user_info = mysqli_query($mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'");
     $info = mysqli_fetch_assoc($user_info);
-    print_r($info['firstn']," " , $info['lastn']);
+    print_r($info['firstn']);
+	print_r ($info['lastn']);
 	echo "<br>";
 	echo "Born on: ";
 	print_r ($info['birthdays');
