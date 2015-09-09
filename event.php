@@ -243,9 +243,9 @@ body {
                              <div id ="info" class = "tile-group two">
                              <div class="tile-group-title">Info</div>
                                  <div class="tile bg-darkCobalt">
-                                     <div class="tile-content icon" align="top">
+                                     <div class="tile-content image" align="top">
                                      
-                                        <i class = "icon-user"></i>   
+                                        <img src="img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'""> 
 
                                      </div>
                                      <div class="tile-status">
