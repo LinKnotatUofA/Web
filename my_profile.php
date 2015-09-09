@@ -1,6 +1,6 @@
 <?php 
     session_start();
-	require "/account/db.php"
+	$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared")
 	$id = $_SESSION['id'];
 	
 ?>
