@@ -1,5 +1,6 @@
 <?php 
     session_start();
+	$id = $_SESSION['id'];
 	
 ?>
 
@@ -19,3 +20,9 @@ body {
     color: #FFFFFF;
 }
 </style>
+
+<?php
+	echo "$id";
+
+
+?>
