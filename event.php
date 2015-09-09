@@ -144,8 +144,7 @@ body {
     echo"</script>";
 ?>
 <?php
-    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$authid'");
-    $userpic=mysqli_fetch_assoc($userpic_query);
+
     echo"<script  type='text/javascript' charset='UTF-8'>       
         function people() {
             $.Dialog({
@@ -268,6 +267,8 @@ body {
                                              $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");
                                              $stuff = resultToArray($query);
                                              print_r($stuff[0]['username']);
+                                                $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$authid'");
+                                                $userpic=mysqli_fetch_assoc($userpic_query);
                                              ?></span>
                                          </div>
                                      </div>
