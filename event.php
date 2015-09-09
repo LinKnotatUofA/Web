@@ -244,9 +244,8 @@ body {
                          <div class= "span5" id ="content">
                              <div id ="info" class = "tile-group two">
                              <div class="tile-group-title">Info</div>
-                                 <div class="tile bg-darkCobalt">
-                                <div class="image-container">
-                                    <div class="frame">
+                                 <div class="tile">
+                                <div class="time-content image">
                                            
 
                                          <?php   
@@ -260,7 +259,6 @@ body {
                                                 }
 
                                          ?>
-                                               </div>
                                  
                             </div> 
                                      <div class="tile-status">
