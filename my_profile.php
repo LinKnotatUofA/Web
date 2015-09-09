@@ -22,7 +22,7 @@ body {
 </style>
 
 <?php
-	echo "$id";
+	//echo "$id";
 	$user_info = mysqli_query($mysqli,"SELECT firstn, lastn, birthdays FROM user_preferences WHERE id ='$id'");
 	$info = resultToArray($user_info);
     print_r($info[0]['firstn']);
