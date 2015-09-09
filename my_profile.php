@@ -1,5 +1,6 @@
 <?php 
     session_start();
+	require "/account/db.php"
 	$id = $_SESSION['id'];
 	
 ?>
@@ -25,7 +26,7 @@ body {
 	echo "$id";
 	$user_info = mysqli_query($mysqli,"SELECT firstn FROM user_preferences WHERE id ='$id'");
 	$info = resultToArray($user_info);
-    print_r($info['firstn']);
+    print_r($info[0]['firstn']);
 	//print_r($info[0]['lastn']);
 	//print_r($info[0]['birthdays']);
 	
