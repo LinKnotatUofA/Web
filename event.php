@@ -245,7 +245,7 @@ body {
                              <div id ="info" class = "tile-group two">
                              <div class="tile-group-title">Info</div>
                                  <div class="tile">
-                                <div class="time-content image">
+                                <div class="tile-content image">
                                            
 
                                          <?php   
