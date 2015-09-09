@@ -245,7 +245,11 @@ body {
                              <div id ="info" class = "tile-group two">
                              <div class="tile-group-title">Info</div>
                                  <div class="tile bg-darkCobalt">
-                                     <div class="tile-content image" align="top">
+                                     <div class = "tile image-container"> 
+                                <div class="image-container">
+                                    <div class="frame">
+                                           
+
                                          <?php   
                                                if($userpic['user_profile_pic'] == null)
                                                {
@@ -257,8 +261,10 @@ body {
                                                 }
 
                                          ?>
-
-                                     </div>
+                                               </div>
+                                 
+                                </div>
+                            </div> 
                                      <div class="tile-status">
                                          <div class="brand bg-black">
                                              
