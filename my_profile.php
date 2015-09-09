@@ -31,7 +31,7 @@ body {
 	print_r ($info['lastn']);
 	echo "<br>";
 	echo "Born on: ";
-	print_r ($info['birthdays');
+	print_r ($info['birthdays']);
 	
 	//print_r($info[0]['lastn']);
 	//print_r($info[0]['birthdays']);
