@@ -244,9 +244,8 @@ body {
                          <div class= "span5" id ="content">
                              <div id ="info" class = "tile-group two">
                              <div class="tile-group-title">Info</div>
-                                <div class="tile-content image">
-                                           
-
+                                 <div class="tile">
+                                    <div class="tile-content image">
                                          <?php   
                                                if($userpic['user_profile_pic'] == null)
                                                {
@@ -258,8 +257,7 @@ body {
                                                 }
 
                                          ?>
-                                 
-                         
+                                    </div> 
                                      <div class="tile-status">
                                          <div class="brand bg-black">
                                              
