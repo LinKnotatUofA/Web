@@ -28,6 +28,7 @@ body {
 	$user_info = mysqli_query($mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'");
     $info = mysqli_fetch_assoc($user_info);
     print_r($info['firstn']);
+	echo " ";
 	print_r ($info['lastn']);
 	echo "<br>";
 	echo "Born on: ";
