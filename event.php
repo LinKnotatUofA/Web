@@ -245,7 +245,6 @@ body {
                              <div id ="info" class = "tile-group two">
                              <div class="tile-group-title">Info</div>
                                  <div class="tile bg-darkCobalt">
-                                     <div class = "tile image-container"> 
                                 <div class="image-container">
                                     <div class="frame">
                                            
@@ -263,7 +262,6 @@ body {
                                          ?>
                                                </div>
                                  
-                                </div>
                             </div> 
                                      <div class="tile-status">
                                          <div class="brand bg-black">
