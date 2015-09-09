@@ -144,7 +144,9 @@ body {
     echo"</script>";
 ?>
 <?php
-
+    $authid = $singleventproperty[0]['authID'];                                              
+    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$authid'");
+    $userpic=mysqli_fetch_assoc($userpic_query);
     echo"<script  type='text/javascript' charset='UTF-8'>       
         function people() {
             $.Dialog({
@@ -262,13 +264,12 @@ body {
                                              
                                              <span class="name fg-white">Created By:
                                              <?php 
-                                             $authid = $singleventproperty[0]['authID'];
+                                             
                                              //grab the latest 4 events from database
                                              $query = mysqli_query($mysqli,"SELECT username FROM user where id='$authid'");
                                              $stuff = resultToArray($query);
                                              print_r($stuff[0]['username']);
-                                                $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$authid'");
-                                                $userpic=mysqli_fetch_assoc($userpic_query);
+
                                              ?></span>
                                          </div>
                                      </div>
@@ -293,7 +294,7 @@ body {
                                                     {
                                                     echo '<span class=\"icon-user\"></span>';
                                                     }
-                                                else
+                                                    else
                                                     {
                                                     echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>'; 
                                                     }
