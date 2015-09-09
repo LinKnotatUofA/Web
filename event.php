@@ -144,7 +144,7 @@ body {
     echo"</script>";
 ?>
 <?php
-    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$id'");
+    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$authid'");
     $userpic=mysqli_fetch_assoc($userpic_query);
     echo"<script  type='text/javascript' charset='UTF-8'>       
         function people() {
