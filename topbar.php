@@ -21,14 +21,14 @@
             <span class="element-divider"></span>
             <a href="about_us.php" class="element"> About Us </a>
             <span class="element-divider"></span>
-            <form>
+            <form method="post" action="search/find.php">
             <div class="element input-element">
-                <form method="post" action="search_backend.php">
+                
                     <div class="input-control text">
-                        <input type="text" placeholder="Search...">
-                        <button class="btn-search"></button>
+                        <input name="searchbar" type="text" placeholder="Search..."/>
+                        <input name="submit" type="submit" class="btn-search"  value ="?"/>
                     </div>
-                </form>
+               
             </div>
             </form>
             <span class="element-divider"></span>
