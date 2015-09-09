@@ -1,7 +1,6 @@
 <?php 
     session_start();
 	$id = $_SESSION['id'];
-	echo "$id";
 	$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared")
 
 	
