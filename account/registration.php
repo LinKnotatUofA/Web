@@ -50,7 +50,7 @@ if($submit){
             if($password==$repeatpassword)
             {
                 
-                if(strlen($username)<50)
+                if(strpos($username,'@ualberta.ca')!== false)
                 {
                     
                     
@@ -73,7 +73,7 @@ if($submit){
                     
                 }
                 else
-                    echo "the maximum length for username is 50";
+                    echo "please make sure u are signing up with a ualberta email address, this service is not open to the general public";
                 
             }
             else
@@ -95,9 +95,9 @@ if($submit){
 
 <body>
     <form id="form1" method ="post">   
-       	<p>Username: <input name ="user_name" type="text" /></p> 
-        <p>Password: <input name ="password" type="password" /></p>
-        <p>Repeat Password: <input name ="repeatpassword" type="password" /></p>
+       	<p>Username: <input name ="Ualberta Email" type="text" /></p> 
+        <p>Password: <input name ="Password" type="password" /></p>
+        <p>Confirm Password: <input name ="repeatpassword" type ="password" /></p>
         <p><input name ="submit" type="submit"/> <INPUT Type="button" VALUE="Cancel and go back" onClick="history.go(-1);return true;"></p>		
     </form>
 </body>
