@@ -96,7 +96,7 @@ if($submit){
 <body>
     <form id="form1" method ="post">   
        	<p>Ualberta Email: <input name ="user_name" type="text" /></p> 
-        <p>Password: <input name ="Password" type="password" /></p>
+        <p>Password: <input name ="password" type="password" /></p>
         <p>Confirm Password: <input name ="repeatpassword" type ="password" /></p>
         <p><input name ="submit" type="submit"/> <INPUT Type="button" VALUE="Cancel and go back" onClick="history.go(-1);return true;"></p>		
     </form>
