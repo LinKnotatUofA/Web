@@ -56,6 +56,9 @@ if($submit){
                     
                     if(strlen($password <50||strlen($password)>5))
                     {
+                        $message = "Hello, if u recieved this message u must be a very deeply involved member for the Bsquared project. Click the meesage below to verify your registration";
+
+                        mail($username, 'Bsquared Registration Verification', $message);
                         
                         $insert=mysqli_query($mysqli,"INSERT INTO user VALUES ('$ID','$username','$encpassword','','false')");
                         $userdetail=mysqli_query($mysqli,"INSERT INTO user_preferences VALUES('$ID,'','','','')");
