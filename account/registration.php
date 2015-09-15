@@ -128,7 +128,7 @@ if($submit){
                         
                         //Set the subject line
                         $mail->Subject = 'PHPMailer GMail SMTP test';
-                        
+                        $mail->Body = "All machine's tests working fine.";
                         //Read an HTML message body from an external file, convert referenced images to embedded,
                         //convert HTML into a basic plain-text alternative body
                         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
