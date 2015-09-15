@@ -59,13 +59,17 @@ if($submit){
                         $message = "Hello, if u recieved this message u must be a very deeply involved member for the Bsquared project. Click the meesage below to verify your registration";
 
                         mail($username, 'Bsquared Registration Verification', $message);
-                        
+                        $date = date("Y-m-d");
                         $insert=mysqli_query($mysqli,"INSERT INTO user VALUES ('$ID','$username','$encpassword','NULL',0,0)");
-                        $userdetail=mysqli_query($mysqli,"INSERT INTO user_preferences VALUES('$ID,'','','','')");
-                       
-                        if ( false===$insert or false===$userdetail ) {
+                         if ( false===$insert) {
                             printf("user account registration error: %s<br>", mysqli_error($mysqli));
-                            printf("user detail registration error: %s<br>", mysqli_error($userdetail));
+                           
+                        }
+                        $userdetail=mysqli_query($mysqli,"INSERT INTO user_preferences VALUES('$ID,'','$date','','')");
+                       
+                        if ( false===$userdetail ) {
+                            printf("user preferences registration error: %s<br>", mysqli_error($mysqli));
+                           
                         }
                         else
                         {
