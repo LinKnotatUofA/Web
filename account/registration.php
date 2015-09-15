@@ -144,7 +144,7 @@ if($submit){
                         $insert=mysqli_query($mysqli,"INSERT INTO varify VALUES ('$linkid','$ID')");
                         $url = "<br><a href=\"uofabsquared.azurewebsites.net/account/varification.php?code=".$linkid.">uofabsquared.azurewebsites.net/account/varification.php?code=".$linkid."</a>";
 
-                        $mail->Body = $message;
+                        $mail->Body = $message.$url;
                         //Replace the plain text body with one created manually
                         $mail->AltBody = 'This is a plain-text message body';
 
