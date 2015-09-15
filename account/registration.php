@@ -130,6 +130,20 @@ if($submit){
                         //Read an HTML message body from an external file, convert referenced images to embedded,
                         //convert HTML into a basic plain-text alternative body
                         //$mail->msgHTML(file_get_contents('reg.html'), dirname(__FILE__));
+
+
+                        // set up varification link to add to message
+                        $linkid= uniqid();//check if id is unique
+                        $check=1;
+                        do{
+                            $linkid= uniqid();
+                            $query = mysqli_query($mysqli,"SELECT Var_Code FROM varify WHERE Var_Code=$linkid");
+                            $check = mysqli_num_rows($query);
+                        }while($check!=0);
+                        
+                        $insert=mysqli_query($mysqli,"INSERT INTO varify VALUES ('$linkid','$ID')");
+                        $url = "<br><a href=\"uofabsquared.azurewebsites.net/account/varification.php?code=".$linkid.">uofabsquared.azurewebsites.net/account/varification.php?code=".$linkid."</a>";
+
                         $mail->Body = $message;
                         //Replace the plain text body with one created manually
                         $mail->AltBody = 'This is a plain-text message body';
