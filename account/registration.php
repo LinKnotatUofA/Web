@@ -58,7 +58,7 @@ if($submit){
                     {
                         $message = "Hello, if u recieved this message u must be a very deeply involved member for the Bsquared project. Click the meesage below to verify your registration";
 
-                        mail($username, 'Bsquared Registration Verification', $message);
+                       
                         $date = date("Y-m-d");
                         $insert=mysqli_query($mysqli,"INSERT INTO user VALUES ('$ID','$username','$encpassword','NULL',0,0)");
                          if ( false===$insert) {
@@ -66,7 +66,7 @@ if($submit){
                            
                         }
                         $userdetail=mysqli_query($mysqli,"INSERT INTO `bsquared`.`user_preferences` (`user_id`, `prefered_color`, `birthdays`, `firstn`, `lastn`) VALUES ('$ID', '#3CB6CE', NULL, NULL, NULL)" );
-                       
+                        
                         if ( false===$userdetail ) {
                             printf("user preferences registration error: %s<br>", mysqli_error($mysqli));
                            
@@ -75,7 +75,14 @@ if($submit){
                         {
                             echo "registration successful";
                         }
-                        
+                         if(@mail($username, 'Bsquared Registration Verification', $message))
+                         {
+                            echo"mail sent successfully";
+                         }
+                         else
+                         {
+                            echo"mail not delivered";
+                         }
                         
                     }
                     else
