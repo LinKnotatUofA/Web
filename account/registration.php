@@ -65,7 +65,7 @@ if($submit){
                             printf("user account registration error: %s<br>", mysqli_error($mysqli));
                            
                         }
-                        $userdetail=mysqli_query($mysqli,"INSERT INTO user_preferences VALUES('$ID,'#3CB6CE','$date','default','user')");
+                        $userdetail=mysqli_query($mysqli,"INSERT INTO `bsquared`.`user_preferences` (`user_id`, `prefered_color`, `birthdays`, `firstn`, `lastn`) VALUES ('$ID', '#3CB6CE', NULL, NULL, NULL)" );
                        
                         if ( false===$userdetail ) {
                             printf("user preferences registration error: %s<br>", mysqli_error($mysqli));
