@@ -60,7 +60,7 @@ if($submit){
 
                         mail($username, 'Bsquared Registration Verification', $message);
                         
-                        $insert=mysqli_query($mysqli,"INSERT INTO user VALUES ('$ID','$username','$encpassword','','false','false')");
+                        $insert=mysqli_query($mysqli,"INSERT INTO user VALUES ('$ID','$username','$encpassword','NULL',0,0)");
                         $userdetail=mysqli_query($mysqli,"INSERT INTO user_preferences VALUES('$ID,'','','','')");
                        
                         if ( false===$insert ) {
