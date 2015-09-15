@@ -62,10 +62,11 @@ if($submit){
                         
                         $insert=mysqli_query($mysqli,"INSERT INTO user VALUES ('$ID','$username','$encpassword','','false','false')");
                         $userdetail=mysqli_query($mysqli,"INSERT INTO user_preferences VALUES('$ID,'','','','')");
-                        echo "registration successful";
+                       
                         if ( false===$insert ) {
                             printf("error: %s\n", mysqli_error($mysqli));
                         }
+                         echo "registration successful";
                         
                         
                         
