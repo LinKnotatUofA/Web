@@ -4,6 +4,9 @@
 
 <?php
 //Create a new PHPMailer instance
+require("/phpmailer/class.phpmailer.php");
+$mail = new PHPMailer();
+
 
 $username = @$_POST['user_name'];
 $password = @$_POST['password'];
