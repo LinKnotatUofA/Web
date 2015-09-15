@@ -3,9 +3,6 @@
 <head>
 
 <?php
-require "/phpmailer/class.phpmailer.php";
-require "/phpmailer/class.smtp.php";
-require "/phpmailer/class.pop3.php";
 //Create a new PHPMailer instance
 
 $username = @$_POST['user_name'];
