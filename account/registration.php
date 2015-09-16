@@ -137,11 +137,16 @@ if($submit){
                         $check=1;
                         do{
                             $linkid= uniqid();
-                            $query = mysqli_query($mysqli,"SELECT Var_Code FROM varify WHERE Var_Code=$linkid");
+                            $query = mysqli_query($mysqli,"SELECT Var_Code FROM varify WHERE Var_Code='$linkid'");
                             $check = mysqli_num_rows($query);
                         }while($check!=0);
                         
                         $insert=mysqli_query($mysqli,"INSERT INTO varify VALUES ('$linkid','$ID')");
+                        if ( false===$update ) {
+                            printf("error: %s\n", mysqli_error($mysqli));
+                            //die();
+                        }
+                        else
                         $url = "uofabsquared.azurewebsites.net/account/varification.php?code=".$linkid;
 
                         $mail->Body = $message.$url;

@@ -7,7 +7,7 @@ if (isset($_GET["code"]))
     $varificationcode = $_GET["code"];
     //find the row in varify 
      
-    $find =  mysqli_query($mysqli, "SELECT User_ID FROM verify WHERE ");
+    $find =  mysqli_query($mysqli, "SELECT User_ID FROM verify WHERE Var_Code ='$varificationcode'");
     if ( false===$insert ) {
         printf("error: %s\n", mysqli_error($mysqli));
     }
