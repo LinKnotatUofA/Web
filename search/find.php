@@ -17,12 +17,8 @@ if(isset($_POST['submit']))
         $searchbar = $_POST['searchbar'];
         $query = "SELECT firstn, lastn
                                  FROM
-                                 (SELECT *,
-                                 (   (3*(MATCH(`firstn`) AGAINST ('".$searchbar."'))) +
-                                     (3*(MATCH(`lastn`) AGAINST ('".$searchbar."'))) )  AS score
-                                     FROM user_preferences
-                                     WHERE ( (`lastn` LIKE '".$searchbar."') OR (`firstn` LIKE '".$searchbar."' ) ) ) AS TMP
-                                            ";
+                                 user_preferences
+                                 WHERE ( (`lastn` LIKE '".$searchbar."') OR (`firstn` LIKE '".$searchbar."' ) )";                                            ";
 
                  
  

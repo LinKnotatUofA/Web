@@ -88,17 +88,9 @@ body {
 	                        //print_r($info[0]['lastn']);
 	                        //print_r($info[0]['birthdays']);
 	
-	
-
-
-
 ?>
 
-
-
-
-                    </p>              
-                    
+                    </p>                                 
                     </div>
             </div>
             <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
