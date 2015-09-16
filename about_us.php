@@ -75,8 +75,7 @@ body {
             <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
                 <footer class="bg-dark" data-load="bottom.html"></footer>
             </div>
-        </div>
-    </div>     
+        </div>    
     </body>
 </html>
 
