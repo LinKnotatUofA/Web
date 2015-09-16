@@ -16,7 +16,7 @@ if (isset($_GET["code"]))
     
     //verify the user associated with id
     
-    $update = mysqli_query($mysqli,"UPDATE user SET 'verified' = '1' WHERE id = '$userid'");
+    $update = mysqli_query($mysqli,"UPDATE user SET verified = '1' WHERE id = '$userid'");
     
     
     if ( false===$update ) {
