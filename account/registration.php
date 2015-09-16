@@ -96,7 +96,7 @@ if($submit){
                     
                     if(strlen($password <50||strlen($password)>5))
                     {
-                        $message = "Hello, if u recieved this message u must be a very deeply involved member for the Bsquared project. Click the meesage below to verify your registration.";
+                        $message = "Hello, if u recieved this message u must be a very deeply involved member for the Bsquared project. Click the meesage below to verify your registration.   ";
 
                        
                         $date = date("Y-m-d");
@@ -147,7 +147,7 @@ if($submit){
                             //die();
                         }
                         else
-                        $url = "   www.uofabsquared.azurewebsites.net/account/varification.php?code=".$linkid;
+                        $url = "uofabsquared.azurewebsites.net/account/varification.php?code=".$linkid;
 
                         $mail->Body = $message.$url;
                         //Replace the plain text body with one created manually
