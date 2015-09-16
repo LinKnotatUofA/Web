@@ -4,6 +4,7 @@
 	$dates =  mysqli_query($mysqli, "SELECT TIME FROM event");
 	$date_array = mysqli_fetch_array($dates);
 	$length =  mysqli_fetch_lengths($dates);
+	printf("Len = $length");
 	for ($i=0; $i < $length; $i++){
 		printf("$date_array[$i]");
 		printf("<br>");
