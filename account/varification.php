@@ -9,7 +9,7 @@ if (isset($_GET["code"]))
      
     $find =  mysqli_query($mysqli, "SELECT User_Id FROM varify WHERE Var_Code ='$varificationcode'");
 	printf("$find");
-    if ( false===$find ) {        //false === $insert
+    if ( false===$insert ) {        //false === $insert
         printf("error: %s\n", mysqli_error($mysqli));
     }
     $row = mysqli_fetch_assoc($find);
