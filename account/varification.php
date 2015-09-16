@@ -17,10 +17,12 @@ if (isset($_GET["code"]))
     //verify the user associated with id
     
     $update = mysqli_query($mysqli,"UPDATE user SET verified = '1' WHERE id = '$userid'");
+    $delete = mysqli_query($mysqli,"DELETE from verify WHERE Var_Code ='$varificationcode'");
     
     
     if ( false===$update ) {
         printf("error: %s\n", mysqli_error($mysqli));
+        
     }
     else
     {
