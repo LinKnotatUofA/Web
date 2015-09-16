@@ -142,7 +142,7 @@ if($submit){
                         }while($check!=0);
                         
                         $insert=mysqli_query($mysqli,"INSERT INTO varify VALUES ('$linkid','$ID')");
-                        if ( false===$update ) {
+                        if ( false===$insert ) {
                             printf("error: %s\n", mysqli_error($mysqli));
                             //die();
                         }
