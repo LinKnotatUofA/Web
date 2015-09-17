@@ -14,6 +14,7 @@
     
     $dayarray = array("Sunday","Monday","Tuesday","Wednesday","Thusday","Friday","Saturday");
     
+
     ?>
  <?php 
 if(isset($_POST['join']))
@@ -131,8 +132,8 @@ body {
                 routeRequestParams = {
                   mode: 'shortest;pedestrian',
                   representation: 'display',
-                  waypoint0: '";print_r($singleventproperty[0]['LAT']);echo",";print_r($singleventproperty[0]['LONGt']);echo"',
-                  waypoint1: ''+x+','+y,  
+                  waypoint1: '";print_r($singleventproperty[0]['LAT']);echo",";print_r($singleventproperty[0]['LONGt']);echo"',
+                  waypoint0: ''+x+','+y,  
                   routeattributes: 'waypoints,summary,shape,legs',
                   maneuverattributes: 'direction,action'
                 }
@@ -187,7 +188,7 @@ body {
     <script src="js/page_scripts/events/event_script.js"></script>
       <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-<div id="fb-root"></div>
+
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -211,7 +212,7 @@ body {
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
             </div>
-
+            <div id="fb-root"></div>
                 <div id="row2">
                     <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;" />
                         <div class="span3" align="left">
@@ -219,22 +220,57 @@ body {
                                 <ul>
                                     <li><a href="index.php"><i class="icon-arrow-left-3 fg-white"></i></a></li>
                                     <li class="title" style="color: white;">Options</li>
-                                    <li><a style="color: white;"><?php //echo "Event ID:".$eventID;?>
+                                    <li><a style="color: white;">
                                         </a></li>
-                                    <form action="event.php?id=<?php echo"$eventID"; ?>" method = "POST">                                                             
-                                        <div class="input-control switch">
-                                            <label><a style="color: white;">Join</a>
-                                                <input type="checkbox" name="join" onclick="submit()" id="joinswitch" <?php //we gotta check from our database if user already joined this event
-                                                                                                                         $status = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE userID = '$id' AND EVENTID = $eventID");
-                                                                                                                         $numrows = mysqli_num_rows($status);
-                                                                                                                         if($numrows>0)
-                                                                                                                         {
-                                                                                                                            echo "checked";
-                                                                                                                         }?>/>
-                                                <span class="check"></span>
-                                            </label>
-                                        </div>   
-                                    </form>
+
+                                    <?php
+                                      
+                                        if(isset($_SESSION['id']))
+                                        {
+                                            if(isset($_SESSION['verified']))
+                                            {
+                                                $verified = $_SESSION['verified'];
+                                                if($verified == true)
+                                                {
+                                                
+                                                
+                                                    echo "<form action=\"event.php?id=<?php echo".$eventID."; ?>\" method = \"POST\">                                                             
+                                                        <div class=\"input-control switch\">
+                                                            <label><a style=\"color: white;\">Join</a>
+                                                                <input type=\"checkbox\" name=\"join\" onclick=\"submit()\" id=\"joinswitch\" ";
+                                                                //we gotta check from our database if user already joined this event
+                                                                $status = mysqli_query($mysqli,"SELECT userID FROM attendees WHERE userID = '$id' AND EVENTID = $eventID");
+                                                                $numrows = mysqli_num_rows($status);
+                                                                if($numrows>0)
+                                                                {
+                                                                   echo "checked";
+                                                                }
+                                                                echo "/>";
+                                                               echo" <span class=\"check\"></span>
+                                                            </label>
+                                                        </div>   
+                                                    </form>";
+                                                }
+                                            
+                                            }
+                                            else
+                                            {
+                                                echo "Please verify your account, we've should of sent u an email";
+                                            }
+                                            
+                                        }    
+                                        else{
+                                            echo "Please sign to join event";
+                                        }
+
+
+
+
+
+
+
+
+?>
                                      <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br><br>
                                      <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div><br><br>
                                      <g:plusone  href="uofabsquared.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300" size="standard"></g:plusone>

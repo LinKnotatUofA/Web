@@ -23,6 +23,7 @@ if($username&&$password)
            $dbpassword = $row['password'];
            $dbuserid = $row['id'];
            $dbactualname = $row['firstn'].' '.$row['lastn'];
+           $dbuserprivledge = $row['verified'];
            
        }
        if($username==$dbusername&&$password==$dbpassword)
@@ -34,6 +35,7 @@ if($username&&$password)
            $_SESSION['username']=$dbusername;
            $_SESSION['id'] = $dbuserid;
            $_SESSION['actualname']=$dbactualname;           
+           $_SESSION['verified']=$dbuserprivledge;
        }
        else
            echo" Incorrect password";
