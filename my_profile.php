@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
     session_start();
 	$id = $_SESSION['id'];
 	$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared")
@@ -76,14 +76,30 @@ body {
                     
                     <p>
                         <?php
+                        
 	                        $user_info = mysqli_query($mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'");
                             $info = mysqli_fetch_assoc($user_info);
-                            print_r($info['firstn']);
-	                        echo " ";
-	                        print_r ($info['lastn']);
-	                        echo "<br>";
-	                        echo "Born on: ";
-	                        print_r ($info['birthdays']);
+                            echo " <a class=\"tile bg-violet\" data-click=\"transform\">
+                <div class=\"tile-content\">
+                    <div class=\"text-left padding10 ntp\">
+                        <h1 class=\"fg-white no-margin\">";print_r($info['firstn']);echo"</h1>
+                        <p class=\"fg-white\">"; print_r ($info['lastn']); echo"</p>
+                    </div>
+                </div>
+            </a>";
+                            
+	                       
+	                        
+                            echo " <a class=\"tile bg-orange\" data-click=\"transform\">
+                                            <div class=\"tile-content\">
+                                                <div class=\"text-left padding10 ntp\">
+                                                    <h1 class=\"fg-white no-margin\">";echo "Birthday: ";echo"</h1>
+                                                    <p class=\"fg-white\">";print_r ($info['birthdays']); echo"</p>
+                                                </div>
+                                            </div>
+                                        </a>";
+	                        
+	                        
 	                        
 	                        //print_r($info[0]['lastn']);
 	                        //print_r($info[0]['birthdays']);
