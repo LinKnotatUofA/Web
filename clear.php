@@ -4,10 +4,11 @@
 	$dates =  mysqli_query($mysqli, "SELECT TIME FROM event");
 	$date_array = mysqli_fetch_assoc($dates);
 	$length =  mysqli_fetch_lengths($dates);
-	echo "yes";
 	printf("Len = $length ");
+	echo "yes";
+
 	for ($i=0; $i < $length; $i++){
-		printf("$date_array[$i]");
+		printf("$date_array[$i][0]");
 		printf("<br>");
 	}
 	
