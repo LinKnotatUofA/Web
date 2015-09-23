@@ -3,12 +3,12 @@
 	
 	$dates =  mysqli_query($mysqli, "SELECT TIME FROM event");
 
-	$date_array = mysqli_fetch_assoc($dates);
+	$date_array = mysqli_fetch_row($dates);
 	$length =  mysqli_num_rows($dates);
 	printf("Len = $length ");
 
 	for ($i=0; $i < $length; $i++){
-		print_r("$date_array[$i]['TIME']");
+		print_r("$date_array[$i]");
 		echo "<br>";
 	}
 	
