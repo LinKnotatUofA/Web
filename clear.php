@@ -2,15 +2,16 @@
 	$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
 	
 	$dates =  mysqli_query($mysqli, "SELECT TIME FROM event");
+	echo "yes";
+
 	$date_array = mysqli_fetch_assoc($dates);
 	$length =  mysqli_num_rows($dates);
 	printf("Len = $length ");
-	echo "yes";
 
-	for ($i=0; $i < $length; $i++){
+	/*for ($i=0; $i < $length; $i++){
 		printf("$date_array[$i]);
 		printf("<br>");
-	}
+	}*/
 	
 	mysqli_close($mysqli);
 
