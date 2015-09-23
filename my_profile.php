@@ -89,16 +89,15 @@ body {
             </a>";
                             
 	                       
-	                        
+
                             echo " <a class=\"tile bg-orange\" data-click=\"transform\">
                                             <div class=\"tile-content\">
                                                 <div class=\"text-left padding10 ntp\">
-                                                    <h1 class=\"fg-white no-margin\">";echo "Birthday: ";echo"</h1>
+                                                    <h2 class=\"fg-white no-margin\">";echo "Birthday: ";echo"</h2>
                                                     <p class=\"fg-white\">";print_r ($info['birthdays']); echo"</p>
                                                 </div>
                                             </div>
                                         </a>";
-	                        
 	                        
 	                        
 	                        //print_r($info[0]['lastn']);
