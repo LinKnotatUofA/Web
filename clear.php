@@ -7,7 +7,7 @@
 	$len = mysqli_num_rows($date_array);
 	$length =  mysqli_num_rows($dates);
 	printf("Len = $length ");
-	echo "$len";
+	echo "len is =$len";
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		echo "$i";
