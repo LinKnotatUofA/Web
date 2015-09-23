@@ -9,7 +9,7 @@
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		echo "$i";
-		print_r("$date_array[$i]['TIME']");
+		print_r($date_array[$i]['TIME']);
 		echo "<br>";
 	}
 	
