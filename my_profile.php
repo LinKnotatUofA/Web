@@ -74,7 +74,7 @@ body {
                 <div class="row span12" id="content" style="width: 100%; height: auto; background-image: url("/assets/transparent-background.png") style="padding:40px"/>
                     <div class="grid fluid show-grid">
                     
-                    <p>
+            
                         <?php
                         
 	                        $user_info = mysqli_query($mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'");
@@ -97,8 +97,7 @@ body {
 	                        //print_r($info[0]['birthdays']);
 	
 ?>
-
-                    </p>                                 
+                                
                     </div>
             </div>
             <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
