@@ -171,7 +171,7 @@ body {
                                 echo"<div>";
                                 $authr = $commentstuff[$x];
                                 print_r(printusername($authr['c_author']));
-                                    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$authr['authID'");
+                                    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='authr['userID']'");
                                     $userpic=mysqli_fetch_assoc($userpic_query);
                                     if($userpic['user_profile_pic'] == null)
                                     {
