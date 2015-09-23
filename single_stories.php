@@ -169,9 +169,9 @@ body {
                             while($x<$num)
                             {
                                 echo"<div>";
-                                $authr = $commentstuff[$x];
-                                print_r(printusername($authr['c_author']));
-                                    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$authr['c_author']'");
+                                $nameID = $commentstuff[$x]['c_author'];
+                                    print_r(printusername($commentstuff[$x]['c_author']));
+                                    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$nameID'");
                                     $userpic=mysqli_fetch_assoc($userpic_query);
                                     if($userpic['user_profile_pic'] == null)
                                     {
