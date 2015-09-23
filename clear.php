@@ -8,7 +8,7 @@
 	echo "yes";
 
 	for ($i=0; $i < $length; $i++){
-		printf("$date_array[$i][0]");
+		printf("$date_array[$i]");
 		printf("<br>");
 	}
 	
