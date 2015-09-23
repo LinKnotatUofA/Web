@@ -7,7 +7,7 @@
 session_start();
 
 
-require "/account/db.php";
+require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
 
 
 if (mysqli_connect_errno()) {
@@ -24,24 +24,41 @@ if (mysqli_connect_errno()) {
 if(isset($_POST['comments'])){
 
     $story_comment= @$_POST['comment'];
-    $story_id = @$_POST['content_id'];
+    $content = @$_POST['content_id'];
     //set timezone to edmonton
     date_default_timezone_set('Canada/Edmonton');
-    $postdate = date('Y-m-d H:i:s') ;
+    $postdate = date('Y-m-d') ;
     $userID= $_SESSION['id'];
     $count = mysqli_query($mysqli,"SELECT COUNT(c_id) as total FROM comment");
     $data=mysqli_fetch_assoc($count); 
     $ID = $data['total']+1; 
-    
+    $type = @$_POST['istype'];
+    $event_id = '`c_event_id`';
+    $story_id = '`c_story_id`';
+    $url = '';
+    $text = '`c_id`, `c_author`, `c_date`, `c_content`,';
+    if($type == 'stories')
+    {
+        $text = $text.$story_id;
+       
+        $url = "single_stories.php?id=";
+    }
+    else if($type == 'events')
+    {
+        $text = $text.$event_id;
+        $url = "event.php?id=";
+    }
+    $command = "INSERT INTO comment ($text) VALUES ('$ID','$userID','$postdate','$story_comment','$content')";
+    //echo $command;
+    //"INSERT INTO `bsquared`.`comment` (`c_id`, `c_author`, `c_date`, `c_content`, `c_story_id`, `c_event_id`) VALUES (\'342324\', \'5640\', \'2015-08-24\', \'this sucks balls\', NULL, \'100\');";
 
-        
-    $insert=mysqli_query($mysqli,"INSERT INTO comment VALUES ('$ID','$userID','$postdate','$story_comment','$story_id')");
+    $insert=mysqli_query($mysqli,$command);
     if ( false===$insert ) {
         printf("error: %s\n", mysqli_error($mysqli));
     }
     else
     {
-        header( "refresh:1; url=/single_stories.php?id=$story_id" ); 
+        header( "refresh:1; url=/$url$content" ); 
     }
     
 

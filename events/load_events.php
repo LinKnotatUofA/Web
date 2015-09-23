@@ -47,6 +47,14 @@ function getcommentinfo($cID)
 
 }
 
+function getcommentinfoevent($cID)
+{
+    $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+    $commentquery = mysqli_query($mysqli,"SELECT * FROM comment WHERE c_event_id = '$cID'");
+    $commentproperty = resultToArray($commentquery);
+    return $commentproperty;
+}
+
 //print_r($eventlist[0]['EVENTID']);
 
 function printusername($ID)

@@ -83,7 +83,7 @@ body {
                 <div class=\"tile-content\">
                     <div class=\"text-left padding10 ntp\">
                         <h1 class=\"fg-white no-margin\">";print_r($info['firstn']);echo"</h1>
-                        <p class=\"fg-white\">"; print_r ($info['lastn']); echo"</p>
+                        <p class=\"fg-white\">"; print_r($info['lastn']); echo"</p>
                     </div>
                 </div>
             </a>";

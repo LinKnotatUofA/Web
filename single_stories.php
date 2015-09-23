@@ -72,26 +72,10 @@
                      strVar += "";
                 return strVar;
             }
-        function opencommentdialog(story_id)
-        {
-            var upload_id = story_id;
-           
-            $.Dialog({
-            shadow: true,
-            overlay: false,
-            icon: '<span class="icon-pencil"></span>',
-            title: 'Write a comment',
-            width: 500,
-            padding: 10,
-            onShow: function()
-            { $.Dialog.content( dialogcontent(story_id));}
-                   
-         });
-    
-        
-        }
+       
         
     </script>
+    <script src="js/comment.js"></script>
     <style type="text/css">
 body {
 	background-color: #3CB6CE;
@@ -120,7 +104,7 @@ body {
                     </div>
                     <div class="panel-content bg-white fg-dark">
                         <span class="text"> 
-                            <!--start putting shit u just grabbed gere-->
+                            <!--start putting shit u just grabbed here-->
                             <?php
                             echo"Written by:";
                             echo"<br>";

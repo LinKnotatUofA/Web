@@ -11,9 +11,9 @@
     //2.query our database for that event -
     $singleventproperty = geteventinfo($eventID);
     $dayofweek = geteventday($eventID);
-    
+
     $dayarray = array("Sunday","Monday","Tuesday","Wednesday","Thusday","Friday","Saturday");
-    
+    $commentstuff = getcommentinfoevent($eventID);
 
     ?>
  <?php 
@@ -56,7 +56,7 @@ else
 <style type="text/css">
 body {
 	background-color: #3CB6CE;
-    color: #FFFFFF;
+    color: #000000;
 }
 </style>
 
@@ -98,6 +98,27 @@ body {
     </script>
 
     <!-- Load script specific for index page-->
+
+    <script>
+        function dialogcontent(event_id) {
+            var strVar="";
+            strVar += "<form id=\"comment_stories\" method =\"post\" action=\"upload\/upload_comments.php\">  ";
+            strVar += "    <p>What do you think?<\/p> <p><input name =\"comment\" type=\"text\" \/><\/p> ";
+            strVar += "    <input type=\"hidden\" name=\"content_id\" value=";
+            strVar += "\""+event_id+"\"";
+            strVar += ">";
+            //hardcoded shit, this needs to be converted to php
+            strVar += "    <input type=\"hidden\" name=\"istype\" value=\"events\"> ";
+            strVar += "    <p><input name =\"comments\" type=\"submit\"\/> <\/p>";
+            strVar += "    <p><button class=\"button\" type=\"button\" onclick=\"$.Dialog.close()\">Cancel<\/button><\/p>";
+            strVar += "<\/form>";
+            strVar += "";
+            return strVar;
+        }
+        </script>
+    <script src="js/comment.js"></script>
+       
+        
    
     <?php
         echo
@@ -341,6 +362,48 @@ body {
                          <div class="span4" id="map" style="width: 100%; height: 400px; background: grey" />   
                 </div>
                 </div>
+                <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;" >
+                    <div style="padding:20px; margin: 10px 70px 10px 70px"> 
+                        
+                    
+                    
+                        <?php 
+                        $num = sizeof($commentstuff);
+                        
+                        if($num<1)
+                        {
+                            echo"<h2 id='ballon'>No Comment so far, be the first to post!</h2>";
+                           
+                        }
+                        else
+                        {
+                            echo"<h2 id='balloon'>Leave a Comment Bellow!</h2>";
+                            $x = 0;
+                            while($x<$num)
+                            {
+                                echo"<div>";
+                                    print_r(printusername($commentstuff[$x]['c_author']));
+                                    echo"<br><br>";
+                                        echo"
+                                        <div class=\"balloon bottom\">
+                                            <div style=\"padding: 20px\">";
+                                            print_r($commentstuff[$x]['c_content']);
+                                            echo"</div>
+                                        </div>";
+                                echo"</div>";
+                                $x++;
+                            }
+                        }
+                    
+                    
+                    
+                        ?>
+                        
+                        
+                        <button class="large" onclick ="opencommentdialog(<?php echo "$eventID";?>)">Comment </button>
+                    </div>
+
+                    </div>
 
                 <div class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
                     <footer class="bg-dark" data-load="bottom.html"></footer>
