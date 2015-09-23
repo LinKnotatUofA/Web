@@ -8,8 +8,8 @@
 	printf("Len = $length ");
 
 	for ($i=0; $i < $length; $i++){
-		printf("$date_array[$i]);
-		printf("<br>");
+		print_r("$date_array[$i]");
+		echo "<br>";
 	}
 	
 	mysqli_close($mysqli);
