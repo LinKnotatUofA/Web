@@ -71,7 +71,7 @@ body {
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
 
-                <div class="row span12" id="content" style="width: 100%; height: auto; background: #C7D28A" style="padding:40px"/>
+                <div class="row span12" id="content" style="width: 100%; height: auto; background-image: url("/assets/transparent-background.png") style="padding:40px"/>
                     <div class="grid fluid show-grid">
                     
                     <p>
