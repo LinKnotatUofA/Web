@@ -169,7 +169,18 @@ body {
                             while($x<$num)
                             {
                                 echo"<div>";
-                                    print_r(printusername($commentstuff[$x]['c_author']));
+                                $authr = $commentstuff[$x];
+                                print_r(printusername($authr['c_author']));
+                                    $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$authr['authID'");
+                                    $userpic=mysqli_fetch_assoc($userpic_query);
+                                    if($userpic['user_profile_pic'] == null)
+                                    {
+                                        echo '<span class=\"icon-user\"></span>';
+                                    }
+                                    else
+                                    {
+                                        echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>'; 
+                                    }
                                     echo"<br><br>";
                                         echo"
                                         <div class=\"balloon bottom\">
