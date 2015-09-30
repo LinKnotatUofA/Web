@@ -10,13 +10,13 @@
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		$checkdate = $date_array[$i]['TIME'];
-		if ($checkdate < $today){
+		if ($checkdate > $today){
 			
-			echo "$checkdate is older than $today";
+			echo "$checkdate is newer than $today";
 			echo "<br>";
 		}
 		else
-			echo"$checkdate it is newer than $today";
+			echo"$checkdate it is older than $today";
 			echo "<br>";
 	}
 	
