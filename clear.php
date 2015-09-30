@@ -6,13 +6,14 @@
 	$dates =  mysqli_query($mysqli, "SELECT TIME FROM event");
 	$date_array = resultToArray($dates);
 	$length =  mysqli_num_rows($dates);
-	printf("Len = $length ");
+	
+	$today
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
-		echo "$i";
 		print_r($date_array[$i]['TIME']);
 		echo "<br>";
 	}
+	
 	
 	mysqli_close($mysqli);
 
