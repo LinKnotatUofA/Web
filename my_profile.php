@@ -89,7 +89,7 @@ body {
                 </div>
             </a>"; 
 	                       
-                         echo " <a class=\"tile bg-orange\" data-click=\"transform\">
+                         echo " <a class=\"tile double bg-orange\" data-click=\"transform\">
                                             <div class=\"tile-content\">
                                                 <div class=\"text-left padding10 ntp\">
                                                     <h2 class=\"fg-white no-margin\">";echo "Birthday: ";echo"</h2>
@@ -105,6 +105,10 @@ body {
 	
 ?>         
                     </div>
+					<br>
+					<br>
+					<br>
+					<br>
 					<br>
 				<div class="tile double">
 					<div class="tile-content image-set">
