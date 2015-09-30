@@ -105,8 +105,8 @@ body {
 	
 ?>         
                     </div>
+					<br>
 				<div class="tile double">
-				<br>
 					<div class="tile-content image-set">
 						<!--<img src="images/1.jpg"> 
 						<img src="images/2.jpg">
