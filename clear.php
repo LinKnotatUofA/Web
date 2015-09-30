@@ -7,7 +7,7 @@
 	$date_array = resultToArray($dates);
 	$length =  mysqli_num_rows($dates);
 	$today = date("y-m-d");
-	echo"today is $today;
+	echo"today is $today";
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		$checkdate = $date_array[$i]['TIME'];
