@@ -92,8 +92,8 @@ body {
                          echo " <a class=\"tile double bg-orange\" data-click=\"transform\">
                                             <div class=\"tile-content\">
                                                 <div class=\"text-left padding10 ntp\">
-                                                    <h2 class=\"fg-white no-margin\">";print_r($info['firstn']);print_r($info['lastn']);echo"<br>";echo "Birthday: ";echo"<br>";echo"</h2>
-                                                    <p class=\"fg-white\">";print_r ($info['birthdays']); echo "<br>";echo "Study:";echo"</p>
+                                                    <h2 class=\"fg-white no-margin\">";print_r($info['firstn']);print_r($info['lastn']);echo"<br>";echo"<br>";echo"</h2>
+                                                    <p class=\"fg-white\">";echo "Birthday: ";print_r ($info['birthdays']); echo "<br>";echo "Study:";echo"</p>
                                                 </div>
                                             </div>
                                         </a>";
