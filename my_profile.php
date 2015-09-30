@@ -103,9 +103,18 @@ body {
 	                        //print_r($info[0]['lastn']);
 	                        //print_r($info[0]['birthdays']);
 	
-?>
-                                
+?>         
                     </div>
+				<div class="tile double">
+					<div class="tile-content image-set">
+						<!--<img src="images/1.jpg"> 
+						<img src="images/2.jpg">
+						<img src="images/3.jpg">
+						<img src="images/4.jpg">
+						<img src="images/5.jpg"> -->
+					</div>
+				</div>
+				
             </div>
             <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
                 <footer class="bg-dark" data-load="bottom.html"></footer>
