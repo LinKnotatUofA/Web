@@ -9,12 +9,14 @@
 	$today = date("y-m-d");
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
-		if ($date_array[$i]['TIME'] < $today)
-			print_r($date_array[$i]['TIME']);
+		$checkdate = $date_array[$i]['TIME'];
+		if ($checkdate < $today){
+			print_r($checkdate);
 			echo "it is less";
 			echo "<br>";
+		}
 		else
-			print_r($date_array[$i]['TIME']);
+			print_r($checkdate);
 			echo"it is after";
 			echo "<br>";
 	}
