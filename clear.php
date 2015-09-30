@@ -10,14 +10,7 @@
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		$checkdate = $date_array[$i]['TIME'];
-		if ($checkdate > $today){
-			
-			echo "$checkdate is newer than $today";
-			echo "<br>";
-		}
-		else
-			echo"$checkdate it is older than $today";
-			echo "<br>";
+		$delDate =  mysqli_query($mysqli, "DELETE FROM event WHERE TIME < $today");
 	}
 	
 	
