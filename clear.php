@@ -7,11 +7,11 @@
 	$date_array = resultToArray($dates);
 	$length =  mysqli_num_rows($dates);
 	
-	$today
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		print_r($date_array[$i]['TIME']);
 		echo "<br>";
+		echo "yes";
 	}
 	
 	
