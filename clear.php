@@ -6,12 +6,17 @@
 	$dates =  mysqli_query($mysqli, "SELECT TIME FROM event");
 	$date_array = resultToArray($dates);
 	$length =  mysqli_num_rows($dates);
-	
+	$today = date("y-m-d");
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
-		print_r($date_array[$i]['TIME']);
-		echo "<br>";
-		echo "yes";
+		if ($date_array[$i]['TIME'] < $today)
+			print_r($date_array[$i]['TIME']);
+			echo "it is less";
+			echo "<br>";
+		else
+			print_r($date_array[$i]['TIME']);
+			echo"it is after";
+			echo "<br>";
 	}
 	
 	
