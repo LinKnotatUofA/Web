@@ -7,18 +7,16 @@
 	$date_array = resultToArray($dates);
 	$length =  mysqli_num_rows($dates);
 	$today = date("y-m-d");
-	echo"today is $today";
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		$checkdate = $date_array[$i]['TIME'];
 		if ($checkdate < $today){
-			print_r($checkdate);
-			echo "it is less";
+			
+			echo "$checkdate is older than $today";
 			echo "<br>";
 		}
 		else
-			print_r($checkdate);
-			echo"it is after";
+			echo"$checkdate it is newer than $today";
 			echo "<br>";
 	}
 	
