@@ -92,7 +92,7 @@ body {
                          echo " <a class=\"tile double bg-orange\" data-click=\"transform\">
                                             <div class=\"tile-content\">
                                                 <div class=\"text-left padding10 ntp\">
-                                                    <h2 class=\"fg-white no-margin\">";print_r($info['firstn']);print_r($info['lastn']);echo"<br>";echo"<br>";echo"</h2>
+                                                    <h2 class=\"fg-white no-margin\">";print_r($info['firstn']);print_r($info['lastn']);echo"<br>";echo"</h2>
                                                     <p class=\"fg-white\">";echo "Birthday: ";print_r ($info['birthdays']); echo "<br>";echo "Study:";echo"</p>
                                                 </div>
                                             </div>
@@ -110,6 +110,16 @@ body {
 					<br>
 					<br>
 					<br>
+					<br>
+				<div class="tile double">
+					<div class="tile-content image-set">
+						<!--<img src="images/1.jpg"> 
+						<img src="images/2.jpg">
+						<img src="images/3.jpg">
+						<img src="images/4.jpg">
+						<img src="images/5.jpg"> -->
+					</div>
+				</div>
 				<div class="tile double">
 					<div class="tile-content image-set">
 						<!--<img src="images/1.jpg"> 
