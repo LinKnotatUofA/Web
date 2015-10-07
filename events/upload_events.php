@@ -7,7 +7,7 @@
 session_start();
 
 
-$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
 
 
 if (mysqli_connect_errno()) {

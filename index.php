@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    require "/events/load_events.php";
-    
+    require $_SERVER['DOCUMENT_ROOT']."/events/load_events.php";
+    //require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
     ?>
 
 
@@ -66,7 +66,7 @@ body {
                 </div>
             </div>
             <div id="row2" >
-                <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;" />
+                <div class="row span12" align="center" id="content" style="width: auto; height: auto; background: #C7D28A;" >
                     <div class="grid fluid show-grid">
                         <div id="featured_row1" class="row" >
                             <div id ="content_column" class="span6" style="margin-left:4%">
@@ -79,7 +79,7 @@ body {
                                           //sort the list of (anything really) events from the latest to earliest, then print the first three
                                            echo"<div class= 'tile triple double-vertical'>
                                               <div class='carousel' id='carousel2'>
-                                                      <div class='slide'>";
+                                          <div class='slide'>";
                                                echo "<a href=event.php?id=";
                                                print_r($eventlist[$len-1]['EVENTID'] );
                                                echo ">";
@@ -133,7 +133,7 @@ body {
                                         {
                                           echo"<div class='tile triple'>
                                                    <div class ='tile-content'>
-                                                       <h3 class='text-left padding20'><a class=\"readable-text fg-dark\" href="; print_r("\"single_stories.php?id=");print_r($storylist[$storycount-$x]['story_id']);print_r("\""); echo">"; echo"<blockquote class=\"place-left\">";echo "\"";print_r($storylist[$storycount-$x]['story_content']);echo "\"<br><small><cite>";print_r($storylist[$storycount-$x]['story_title']);echo"</cite>"; echo" by "; printusername($storylist[$storycount-$x]['story_author']); echo", circa "; print_r($storylist[$storycount-$x]['DATE']); echo"</small></blockquote></a></h3>
+                                                       <h3 class='text-left padding20'><a class=\"readable-text fg-dark\" href="; print_r("\"single_stories.php?id=");print_r($storylist[$storycount-$x]['story_id']);print_r("\""); echo">"; echo"<blockquote class=\"place-left\">";echo "\"";print_r($storylist[$storycount-$x]['story_content']);echo "\"<br><small><cite>";print_r($storylist[$storycount-$x]['story_title']);echo"</cite>"; echo" by "; print_r(getinfo($storylist[$storycount-$x]['story_author'],$mysqli,"SELECT * FROM user WHERE id = ")[0]['username']); echo", circa "; print_r($storylist[$storycount-$x]['DATE']); echo"</small></blockquote></a></h3>
                                                    </div>
                                                </div>";
                                             $x++;
@@ -151,7 +151,5 @@ body {
             <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
                 <footer class="bg-dark" data-load="bottom.html"></footer>
             </div>
-        </div>        
-        </div>
     </body>
 </html>

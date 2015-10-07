@@ -1,6 +1,7 @@
 <?php 
     session_start();
-    require "/account/db.php";
+    require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
+    require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
 	/*$user = $_SESSION[	$query = mysqli_query($mysqli,"SELECT * FROM  WHERE username='$user'");
 	$row = mysqli_fetch_assoc($query);
 	$id = $row['id'];*/
@@ -80,13 +81,6 @@ body {
 					    	'<div class="tile bg-pink">','<div class="tile">', '<div class="tile double bg-green">' );
 					    	
 					    	$query = mysqli_query($mysqli,"SELECT * FROM stories");
-					    		function resultToArray($result) {
-					    			$rows = array();
-					    			while($row = $result->fetch_assoc()) {
-					    				$rows[] = $row;
-					    			}
-					    			return $rows;
-					    		}
 					    	$storylist = resultToArray($query);
 					    	$storylistlen = count($storylist);
 					    	$x=0;

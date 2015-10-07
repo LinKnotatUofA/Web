@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    require "/events/load_events.php";
-    require "/account/db.php";
+    require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
+    require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
     //grab session id from url
     global $storyid;
     if (isset($_GET["id"]))
@@ -9,11 +9,11 @@
         $storyid = $_GET["id"];
     }
     //grab content from database using id
-    $storystuff = getstoryinfo($storyid);
-    $commentstuff = getcommentinfo($storyid)
+    $storystuff = getinfo($storyid,$mysqli,"SELECT * FROM stories WHERE story_id = '$ID'");
+    $commentstuff = getinfo($storyid,$mysqli,"SELECT * FROM comment WHERE c_story_id = '$ID'")
     //WIN
     
-    ?>
+?>
 
 
 <!doctype html>
@@ -22,8 +22,8 @@
 <meta charset="utf-8">
 <title>Building Bridges @ UofA - Home</title>
 <link rel="shortcut icon" href="Assets/favicon.ico" />
-<meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" name
-<meta />="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
+<meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" />
+<meta name ="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <link href="css/metro-bootstrap.css" rel="stylesheet" type="text/css">
 
@@ -170,7 +170,7 @@ body {
                             {
                                 echo"<div>";
                                 $nameID = $commentstuff[$x]['c_author'];
-                                    print_r(printusername($commentstuff[$x]['c_author']));
+                                print_r(getinfo($commentstuff[$x]['c_author'],$mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'")['username']);
                                     $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$nameID'");
                                     $userpic=mysqli_fetch_assoc($userpic_query);
                                     if($userpic['user_profile_pic'] == null)

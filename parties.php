@@ -5,8 +5,7 @@
     //retrieve *all events* from database
     //grab geo coordinates
     //write javascript to display events through HERE maps
-    require("events/load_events.php");
-    
+    require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
     
     
 

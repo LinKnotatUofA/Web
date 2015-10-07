@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    require "/account/db.php";
-    require "/events/load_events.php";
+    require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
+    require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
     //1.we will need to grab the event ID
     global $eventID;
     if (isset($_GET["id"]))
@@ -9,11 +9,12 @@
         $eventID = $_GET["id"];
     }
     //2.query our database for that event -
-    $singleventproperty = geteventinfo($eventID);
-    $dayofweek = geteventday($eventID);
+    $singleventproperty = getinfo($eventID,$mysqli,"SELECT * FROM event WHERE EVENTID =");
+    //echo count($singleventproperty).'<br>';
+    $dayofweek = getinfo($eventID,$mysqli,"SELECT DAYOFWEEK(TIME) AS DAY FROM event WHERE EVENTID = ")['DAY'];
 
     $dayarray = array("Sunday","Monday","Tuesday","Wednesday","Thusday","Friday","Saturday");
-    $commentstuff = getcommentinfoevent($eventID);
+    $commentstuff = getinfo($eventID,$mysqli,"SELECT * FROM comment WHERE c_event_id = ");
 
     ?>
  <?php 
@@ -382,7 +383,7 @@ body {
                             while($x<$num)
                             {
                                 echo"<div>";
-                                    print_r(printusername($commentstuff[$x]['c_author']));
+                                print_r(getinfo($commentstuff[$x]['c_author'],$mysqli,"SELECT * FROM user_preferences WHERE user_id =")['username']);
                                     echo"<br><br>";
                                         echo"
                                         <div class=\"balloon bottom\">
@@ -521,46 +522,8 @@ body {
         
         
         </script>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        <script  type="text/javascript" charset="UTF-8" >
-            $(function () {
-                $("#login").on('click', function () {
-                    $.Dialog({
-                        shadow: true,
-                        overlay: false,
-                        draggable: true,
-                        icon: '<img src="Assets/default_user.png">',
-                        title: 'Draggable window',
-                        width: 'auto',
-                        padding: 10,
-                        content: 'This Window is draggable by caption.',
-                        onShow: function () {
-                            var content = '<form id="login-form-1" action="account/login.php/" method ="POST">' +
-                                    '<p>Login</p>' +
-                                    '<div class="input-control text"><input type="text" name="login"><button class="btn-clear"></button></div>' +
-                                    '<p>Password</p>' +
-                                    '<div class="input-control password"><input type="password" name="password"><button class="btn-reveal"></button></div>' +
-                                    '<div class="input-control checkbox"><p>Remember Me <input type="checkbox" name="c1" checked/><span class="check"></span></p></div>' +
-                                    '<div class="form-actions">' +
-                                    '<button class="button primary">Login to...</button>&nbsp;' +
-                                    '<button class="button warning" type="button"><a href="account/registration.php">Register</a></button>&nbsp;' +
-                                    '<button class="button" type="button" onclick="$.Dialog.close()">Cancel</button> ' +
-                                    '</div>' +
-                                    '</form>';
-
-                            $.Dialog.title("User login");
-                            $.Dialog.content(content);
-                        }
-
-                    });
-                });
-
-                
-            });
-            
+	    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       
-        </script>
-        
         
         
              

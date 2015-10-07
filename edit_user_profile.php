@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    require "/events/load_events.php";
-    require "/account/db.php";
+    require $_SERVER['DOCUMENT_ROOT']."/events/load_events.php";
+    require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
     $imgregsucs = false;
     //check session id
     $id = $_SESSION['id'];
