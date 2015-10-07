@@ -10,8 +10,8 @@
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		$checkdate = $date_array[$i]['TIME'];
-		//print_r("$checkdate");
-		echo "rupehra";
+		print_r("$checkdate");
+		//echo "rupehra";
 		//$delDate =  mysqli_query($mysqli, "DELETE FROM event WHERE TIME < $today");
 	}
 	
