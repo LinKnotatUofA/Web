@@ -19,6 +19,9 @@
 		}
 		else{
 			$delDate =  mysqli_query($mysqli, "DELETE FROM event WHERE TIME < $today");
+			if (false === $delDate){
+				printf("Error: %s\n", mysqli_error($delDate));
+			}
 		}
 	}
 	
