@@ -8,11 +8,14 @@
 	$length =  mysqli_num_rows($dates);
 	$today = date("y-m-d");
 	echo "Today is: $today";
+	$todayDateStr = strtotime($today);
 	echo "<br>";
 	for ($i=0; $i < $length; $i++){
 		$checkdate = $date_array[$i]['TIME'];
-		if ($checkdate > $today){
+		$checkDateStr = strtotime($checkdate);
+		if ($checkDateStr > $todayDateStr){
 			print_r("$checkdate");
+			print_r("$checkDateStr");
 			echo "<br>";
 		}
 		//echo "rupehra";
