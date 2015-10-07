@@ -15,11 +15,11 @@
 		$checkDateStr = strtotime($checkdate);
 		if ($checkDateStr > $todayDateStr){
 			print_r("$checkdate");
-			print_r("$checkDateStr");
 			echo "<br>";
 		}
-		//echo "rupehra";
-		//$delDate =  mysqli_query($mysqli, "DELETE FROM event WHERE TIME < $today");
+		else{
+			$delDate =  mysqli_query($mysqli, "DELETE FROM event WHERE TIME < $today");
+		}
 	}
 	
 	
