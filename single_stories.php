@@ -9,8 +9,8 @@
         $storyid = $_GET["id"];
     }
     //grab content from database using id
-    $storystuff = getinfo($storyid,$mysqli,"SELECT * FROM stories WHERE story_id = '$ID'");
-    $commentstuff = getinfo($storyid,$mysqli,"SELECT * FROM comment WHERE c_story_id = '$ID'")
+    $storystuff = getinfo($storyid,$mysqli,"SELECT * FROM stories WHERE story_id =");
+    $commentstuff = getinfo($storyid,$mysqli,"SELECT * FROM comment WHERE c_story_id =")
     //WIN
     
 ?>
@@ -104,6 +104,8 @@ body {
                     </div>
                     <div class="panel-content bg-white fg-dark">
                         <span class="text"> 
+                           
+
                             <!--start putting shit u just grabbed here-->
                             <?php
                             echo"Written by:";
@@ -111,19 +113,33 @@ body {
                             $nameID = $storystuff[0]['story_author'];
                             $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$nameID'");
                             $userpic=mysqli_fetch_assoc($userpic_query);
+                            $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$nameID'");
+                            $name = resultToArray($namedata);
+                            echo" <div class=\"tile\" >";
+                            
+                           
                             if($userpic['user_profile_pic'] == null)
                             {
-                                echo '<span class=\"icon-user\"></span>';
+                                echo"<div class=\"tile-content image\">
+                                        <span class=\"icon-user\"></span>
+                                    </div>";
+     
                             }
                             else
                             {
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>'; 
+                                echo"<div class=\"tile-content image\">";
+                                echo'   <img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>';        
+                                echo"</div>";
+                               
                             }
-
-                            $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$nameID'");
-                            $name = resultToArray($namedata);
+                            echo " <div class=\"brand bg-dark opacity\">
+                                <span class=\"text\">";
                             print_r($name[0]['username']);
-                            echo"<br>";
+                            echo"</span>
+                            </div>
+                        </div>";
+
+
                             echo"On:";
                             echo"<br>";
                             print_r($storystuff[0]['DATE']);
@@ -170,18 +186,36 @@ body {
                             {
                                 echo"<div>";
                                 $nameID = $commentstuff[$x]['c_author'];
-                                print_r(getinfo($commentstuff[$x]['c_author'],$mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'")['username']);
+                                $commentauthor = getinfo($commentstuff[$x]['c_author'],$mysqli,"SELECT username FROM user WHERE id =")[0]['username'];
                                     $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$nameID'");
                                     $userpic=mysqli_fetch_assoc($userpic_query);
+
+                                    echo"<div class=\"tile \">";
+                                       
+                                    
+
                                     if($userpic['user_profile_pic'] == null)
                                     {
-                                        echo '<span class=\"icon-user\"></span>';
+                                        echo"<div class=\"tile-content image\">
+                                            <span class=\"icon-user\"></span>
+                                        </div>";
+   
                                     }
                                     else
                                     {
-                                        echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>'; 
+                                         echo"<div class=\"tile-content image\">";
+                                         echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>';  
+                                         echo"</div>";
+                                        
                                     }
-                                    echo"<br><br>";
+                                    echo"  <div class=\"brand bg-dark opacity\">
+                                            <span class=\"text\">";
+                                    echo $commentauthor;
+                                    echo"   </span>
+                                        </div>
+                                    </div>";
+                                   
+                                    echo"<br><br><br><br><br><br><br>";
                                         echo"
                                         <div class=\"balloon bottom\">
                                             <div style=\"padding: 20px\">";
