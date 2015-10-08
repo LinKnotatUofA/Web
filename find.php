@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-require $_SERVER['DOCUMENT_ROOT']."/events/load_events.php";
+//require $_SERVER['DOCUMENT_ROOT']."/events/load_events.php";
 require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
-
+require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
 //require "/account/db.php";
 
 
@@ -145,25 +145,35 @@ body {
                           <?php 
 
                           
-            
+                            
         
                           echo "<div class=\"tile-group one\">
-                                    <div class=\"tile-group-title\">";  echo count($ppl_result); echo"</div>";
+                                    <div class=\"tile-group-title\">"; echo"Found "; echo count($ppl_result); echo" user(s)."; echo"</div>";
 
                          
                           for($i = 0; $i<count($ppl_result); $i++)
                           {
-
+                              $userbasicinfo = getinfo($ppl_result[$i],$mysqli,"SELECT * FROM user WHERE id =");
+                              $useradvancedinfo = getinfo($ppl_result[$i],$mysqli,"SELECT * FROM user_preferences WHERE user_id =");
+                              $username = $userbasicinfo[0]['username'];
+                              $userpic = $userbasicinfo[0]['user_profile_pic'];
+                              $userfname = $useradvancedinfo[0]['firstn'];
+                              $userlname = $useradvancedinfo[0]['lastn'];
                               echo"
                                     <a class=\"tile bg-amber\" data-click=\"transform\">
                                         <div class=\"tile-content\">
                                             <div class=\"text-left padding10 ntp\">
-                                                <h1 class=\"fg-white no-margin\">"; echo"</h1>
-                                                <p class=\"fg-white\">"; echo"</p>
+                                                <h2 class=\"fg-white no-margin\">";print_r($userfname); echo"</h2>
+                                                <h3 class=\"fg-white no-margin\">";print_r($userlname); echo"</h3> 
                                             </div>
-                                        </div>
-                                    </a>";
-                              print_r($ppl_result[$i]);
+                                        </div>";
+                                         echo"  <div class=\"brand bg-dark opacity\">
+                                            <span class=\"text\"><p class=\"fg-white\">";
+                                     echo $username;
+                                     echo"   </p></span>
+                                        </div>";
+                                    echo"</a>";
+                             
                               echo"<br>";
                           
                           }
