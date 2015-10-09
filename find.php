@@ -144,13 +144,13 @@ body {
                     
                           <?php 
 
-                          
+                          echo"<div align=\"center\">";
                             
         
                           echo "<div class=\"tile-group one\">
-                                    <div class=\"tile-group-title\">"; echo"Found "; echo count($ppl_result); echo" user(s)."; echo"</div>";
+                                    <div class=\"tile-group-title\">"; echo"We found "; echo count($ppl_result); echo" user(s)."; echo"</div>";
 
-                         
+                          echo "<br>";
                           for($i = 0; $i<count($ppl_result); $i++)
                           {
                               $userbasicinfo = getinfo($ppl_result[$i],$mysqli,"SELECT * FROM user WHERE id =");
@@ -180,21 +180,29 @@ body {
                           echo "</div> ";
 
 
-
-                          echo count($gp_result).'<br>';
+                          echo "<div class=\"tile-group one\">
+                                    <div class=\"tile-group-title\">"; echo"We found "; echo count($gp_result); echo" group(s)."; echo"</div>";
+                          echo "<br>";
+                          //echo count($gp_result).'<br>';
                           for($i=0; $i<count($gp_result);$i++)
                           {
                               print_r($gp_result[$i]);
                               echo"<br>";
                           }
-                          echo count($etresult).'<br>';
+                          echo "</div> ";
+                          echo "<div class=\"tile-group one\">
+                                    <div class=\"tile-group-title\">"; echo"We found "; echo count($etresult); echo" party(s)."; echo"</div>";
+                          
+                          //echo count($etresult).'<br>';
+                          echo "<br>";
                           for($i=0; $i<count($etresult);$i++)
                           {
                               print_r($etresult[$i]);
                               echo"<br>";
                           }
+                          echo "</div> ";
 
-
+                          echo "</div>";
                     ?>
 
                               
