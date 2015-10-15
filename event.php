@@ -448,7 +448,7 @@ body {
         });
 
              var markerz = new H.map.Marker({lat:42.35805, lng:-71.0636});
-        navigator.geolocation.getCurrentPosition(function(pos){
+        navigator.geolocation.watchPosition(function(pos){
             var crd = pos.coords;
            markerz = new H.map.Marker({lat:crd.latitude, lng:crd.longitude}); 
         });

@@ -148,7 +148,7 @@ if(isset($_POST['submit'])){
         <p>Is it for fun or academic? <input name ="type" type="text" /></p> 
        	<p>Describe what you're gonna do: <input name ="description" type="text" /></p> 
         <p>At what time: <input name ="date" type="date" /></p>
-        <p>lat: <input name ="lat" type="number" step="any" id="la" disabled/> long:<input name ="long" type="number" step="any" id="lo" disabled/></p>
+        <p>lat: <input name ="lat" type="number" step="any" id="la" /> long:<input name ="long" type="number" step="any" id="lo" /></p>
         <p>
             <label>Upload your image</label>
                      <input type="file" name="image"/>       

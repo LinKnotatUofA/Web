@@ -180,29 +180,67 @@ body {
                           echo "</div> ";
 
 
+
+
                           echo "<div class=\"tile-group one\">
-                                    <div class=\"tile-group-title\">"; echo"We found "; echo count($gp_result); echo" group(s)."; echo"</div>";
-                          echo "<br>";
-                          //echo count($gp_result).'<br>';
-                          for($i=0; $i<count($gp_result);$i++)
-                          {
-                              print_r($gp_result[$i]);
-                              echo"<br>";
-                          }
-                          echo "</div> ";
-                          echo "<div class=\"tile-group one\">
-                                    <div class=\"tile-group-title\">"; echo"We found "; echo count($etresult); echo" party(s)."; echo"</div>";
-                          
-                          //echo count($etresult).'<br>';
-                          echo "<br>";
+                                    <div class=\"tile-group-title\">"; echo"We found "; echo count($gpresult); echo" party(s)."; echo"</div>";
+
+                                    $groupbasicinfo = getinfo($gp_result[$i],$mysqli,"SELECT * FROM groups WHERE id =");
+                                    $groupid = $groupbasicinfo[0]['GID'];
+                                    $groupname = $groupbasicinfo[0]['GNAME'];
+                                    $groupdescription = $groupbasicinfo[0]['GDESCRIPTION'];
+                                    $groupmembercount = getinfo($groupid,$mysqli,"SELECT COUNT(userID) as gmCOUNT FROM group_members WHERE GID =")[0]['gmCOUNT'];
+
+                                    echo "<br>";
+                                    //echo count($gp_result).'<br>';
+                                    for($i=0; $i<count($gp_result);$i++)
+                                    {
+                                        echo"
+                                              <a class=\"tile bg-darkIndigo\" data-click=\"transform\">
+                                                  <div class=\"tile-content\">
+                                                      <div class=\"text-left padding10 ntp\">
+                                                          <h2 class=\"fg-white no-margin\">";print_r($groupname); echo"</h2>
+                                                          <h3 class=\"fg-white no-margin\">";print_r($groupdescription); echo"</h3>
+                                                      </div>
+                                                  </div>";
+                                                   echo"  <div class=\"brand bg-dark opacity\">
+                                                      <span class=\"text\"><p class=\"fg-white\">";
+                                               echo $groupmembercount;
+                                               echo"member(s)   </p></span>
+                                                  </div>";
+                                              echo"</a>";
+                                        echo"<br>";
+                                    }
+                                    echo "</div> ";
+                                    //echo count($etresult).'<br>';
+                                    echo "<br>";
+
+                           echo "<div class=\"tile-group one\">
+                                     <div class=\"tile-group-title\">"; echo"We found "; echo count($etresult); echo" group(s)."; echo"</div>";
+                           echo "<br>";
+                           $eventinfo = getinfo($etresult[$i],$mysqli,"SELECT * FROM events WHERE id =");
+                           $eventid = $eventinfo[0]['EVENTID'];
+                           $eventdescription = $eventinfo[0]['DESCRIPTION'];
+                           $attendence = getinfo($eventid,$mysqli,"SELECT COUNT(userID) as attendeesCount FROM attendees WHERE EVENTID =")[0]['attendeesCount'];
                           for($i=0; $i<count($etresult);$i++)
                           {
-                              print_r($etresult[$i]);
+                              echo"
+                                    <a class=\"tile bg-amber\" data-click=\"transform\">
+                                        <div class=\"tile-content\">
+                                            <div class=\"text-left padding10 ntp\">
+                                                <h2 class=\"fg-white no-margin\">";print_r($eventdescription); echo"</h2>
+                                                <h3 class=\"fg-white no-margin\">";print_r($userlname); echo"</h3>
+                                            </div>
+                                        </div>";
+                                         echo"  <div class=\"brand bg-dark opacity\">
+                                            <span class=\"text\"><p class=\"fg-white\">";
+                                     echo $attendence;
+                                     echo"person going   </p></span>
+                                        </div>";
+                                    echo"</a>";
                               echo"<br>";
                           }
-                          echo "</div> ";
-
-                          echo "</div>";
+                          echo "</div></div></div> ";
                     ?>
 
                               
