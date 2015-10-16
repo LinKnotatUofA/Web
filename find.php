@@ -90,7 +90,7 @@ if(isset($_POST['submit']))
 <link href="css/metro-bootstrap.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 body {
-	background-color: #3CB6CE;
+	background-color: #ffa500;
     color: #FFFFFF;
 }
 </style>

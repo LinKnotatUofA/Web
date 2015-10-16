@@ -78,7 +78,7 @@
     <script src="js/comment.js"></script>
     <style type="text/css">
 body {
-	background-color: #3CB6CE;
+	background-color: #ffa500;
     color: #000000;
 }
 </style>
