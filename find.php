@@ -182,7 +182,7 @@ body {
 
 
 
-                          echo "<div class=\"tile-group one\">
+                         /* echo "<div class=\"tile-group one\">
                                     <div class=\"tile-group-title\">"; echo"We found "; echo count($gpresult); echo" party(s)."; echo"</div>";
 
                                     $groupbasicinfo = getinfo($gp_result[$i],$mysqli,"SELECT * FROM groups WHERE id =");
@@ -240,7 +240,8 @@ body {
                                     echo"</a>";
                               echo"<br>";
                           }
-                          echo "</div></div></div> ";
+                          echo "</div></div></div> ";*/
+                          echo "</div> ";
                     ?>
 
                               
