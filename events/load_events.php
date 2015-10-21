@@ -1,6 +1,6 @@
 <?php
     
-session_start();
+//session_start();
 require "/account/db.php";
 
 //grab the latest 4 events from database
