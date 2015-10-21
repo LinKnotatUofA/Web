@@ -2,6 +2,7 @@
     session_start();
     require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
     require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
+    require $_SERVER['DOCUMENT_ROOT']."/picture_function.php";
     //grab session id from url
     global $storyid;
     if (isset($_GET["id"]))
@@ -128,7 +129,7 @@ body {
                             else
                             {
                                 echo"<div class=\"tile-content image\">";
-                                echo'   <img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>';        
+                                echo'   <img src="data:image/jpeg;base64,'.base64_encode(load_picture($mysqli, $nameID) ).'"/>';        
                                 echo"</div>";
                                
                             }
@@ -138,8 +139,6 @@ body {
                             echo"</span>
                             </div>
                         </div>";
-
-
                             echo"On:";
                             echo"<br>";
                             print_r($storystuff[0]['DATE']);
@@ -171,6 +170,7 @@ body {
 
 
                         <?php 
+                        $nameID = $storystuff[0]['story_author'];
                         $num = sizeof($commentstuff);
                         
                         if($num<1)
@@ -189,11 +189,9 @@ body {
                                 $commentauthor = getinfo($commentstuff[$x]['c_author'],$mysqli,"SELECT username FROM user WHERE id =")[0]['username'];
                                     $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$nameID'");
                                     $userpic=mysqli_fetch_assoc($userpic_query);
-
                                     echo"<div class=\"tile \">";
                                        
                                     
-
                                     if($userpic['user_profile_pic'] == null)
                                     {
                                         echo"<div class=\"tile-content image\">
@@ -204,7 +202,7 @@ body {
                                     else
                                     {
                                          echo"<div class=\"tile-content image\">";
-                                         echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>';  
+                                         echo '<img src="data:image/jpeg;base64,'.base64_encode(load_picture($mysqli, $nameID) ).'"/>';  
                                          echo"</div>";
                                         
                                     }
@@ -226,9 +224,6 @@ body {
                                 $x++;
                             }
                         }
-
-
-
                         ?>
                         
                         
