@@ -19,6 +19,7 @@
 body {
 	background-color: #ffa500;
     color: #FFFFFF;
+    overflow: auto;
 }
 </style>
 
@@ -133,7 +134,7 @@ body {
                                         {
                                           echo"<div class='tile triple'>
                                                    <div class ='tile-content'>
-                                                       <h3 class='text-left padding20'><a class=\"readable-text fg-dark\" href="; print_r("\"single_stories.php?id=");print_r($storylist[$storycount-$x]['story_id']);print_r("\""); echo">"; echo"<blockquote class=\"place-left\">";echo "\"";print_r($storylist[$storycount-$x]['story_content']);echo "\"<br><small><cite>";print_r($storylist[$storycount-$x]['story_title']);echo"</cite>"; echo" by "; print_r(getinfo($storylist[$storycount-$x]['story_author'],$mysqli,"SELECT * FROM user WHERE id = ")[0]['username']); echo", circa "; print_r($storylist[$storycount-$x]['DATE']); echo"</small></blockquote></a></h3>
+                                                       <h3 class='text-left padding20'><a class=\"readable-text fg-dark\" href="; print_r("\"single_stories.php?id=");print_r($storylist[$storycount-$x]['story_id']);print_r("\""); echo">"; echo"<blockquote class=\"place-left\" style=\"overflow: auto\">";echo "\"";print_r(substr($storylist[$storycount-$x]['story_content'],0,30)."...");echo "\"<br><small><cite>";print_r($storylist[$storycount-$x]['story_title']);echo"</cite>"; echo" by "; print_r(getinfo($storylist[$storycount-$x]['story_author'],$mysqli,"SELECT * FROM user WHERE id = ")[0]['username']); echo", on "; print_r($storylist[$storycount-$x]['DATE']); echo"</small></blockquote></a></h3>
                                                    </div>
                                                </div>";
                                             $x++;
