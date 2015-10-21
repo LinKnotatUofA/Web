@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    require "/events/load_events.php";
-    require "/account/db.php";
+    require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
+    require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
     //grab session id from url
     global $storyid;
     if (isset($_GET["id"]))
@@ -9,21 +9,21 @@
         $storyid = $_GET["id"];
     }
     //grab content from database using id
-    $storystuff = getstoryinfo($storyid);
-    $commentstuff = getcommentinfo($storyid)
+    $storystuff = getinfo($storyid,$mysqli,"SELECT * FROM stories WHERE story_id =");
+    $commentstuff = getinfo($storyid,$mysqli,"SELECT * FROM comment WHERE c_story_id =")
     //WIN
     
-    ?>
+?>
 
 
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Building Bridges @ UofA - Home</title>
+<title>LinKnot @ UofA - Home</title>
 <link rel="shortcut icon" href="Assets/favicon.ico" />
-<meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" name
-<meta />="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
+<meta name="keywords" content="LinKnot,uofa,u of a,university,of,alberta" />
+<meta name ="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <link href="css/metro-bootstrap.css" rel="stylesheet" type="text/css">
 
@@ -78,7 +78,7 @@
     <script src="js/comment.js"></script>
     <style type="text/css">
 body {
-	background-color: #3CB6CE;
+	background-color: #ffa500;
     color: #000000;
 }
 </style>
@@ -104,6 +104,8 @@ body {
                     </div>
                     <div class="panel-content bg-white fg-dark">
                         <span class="text"> 
+                           
+
                             <!--start putting shit u just grabbed here-->
                             <?php
                             echo"Written by:";
@@ -111,19 +113,33 @@ body {
                             $nameID = $storystuff[0]['story_author'];
                             $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$nameID'");
                             $userpic=mysqli_fetch_assoc($userpic_query);
+                            $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$nameID'");
+                            $name = resultToArray($namedata);
+                            echo" <div class=\"tile\" >";
+                            
+                           
                             if($userpic['user_profile_pic'] == null)
                             {
-                                echo '<span class=\"icon-user\"></span>';
+                                echo"<div class=\"tile-content image\">
+                                        <span class=\"icon-user\"></span>
+                                    </div>";
+     
                             }
                             else
                             {
-                                echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>'; 
+                                echo"<div class=\"tile-content image\">";
+                                echo'   <img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>';        
+                                echo"</div>";
+                               
                             }
-
-                            $namedata = mysqli_query($mysqli,"SELECT username FROM user WHERE id = '$nameID'");
-                            $name = resultToArray($namedata);
+                            echo " <div class=\"brand bg-dark opacity\">
+                                <span class=\"text\">";
                             print_r($name[0]['username']);
-                            echo"<br>";
+                            echo"</span>
+                            </div>
+                        </div>";
+
+
                             echo"On:";
                             echo"<br>";
                             print_r($storystuff[0]['DATE']);
@@ -170,18 +186,36 @@ body {
                             {
                                 echo"<div>";
                                 $nameID = $commentstuff[$x]['c_author'];
-                                    print_r(printusername($commentstuff[$x]['c_author']));
+                                $commentauthor = getinfo($commentstuff[$x]['c_author'],$mysqli,"SELECT username FROM user WHERE id =")[0]['username'];
                                     $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$nameID'");
                                     $userpic=mysqli_fetch_assoc($userpic_query);
+
+                                    echo"<div class=\"tile \">";
+                                       
+                                    
+
                                     if($userpic['user_profile_pic'] == null)
                                     {
-                                        echo '<span class=\"icon-user\"></span>';
+                                        echo"<div class=\"tile-content image\">
+                                            <span class=\"icon-user\"></span>
+                                        </div>";
+   
                                     }
                                     else
                                     {
-                                        echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>'; 
+                                         echo"<div class=\"tile-content image\">";
+                                         echo '<img src="data:image/jpeg;base64,'.base64_encode($userpic['user_profile_pic'] ).'"/>';  
+                                         echo"</div>";
+                                        
                                     }
-                                    echo"<br><br>";
+                                    echo"  <div class=\"brand bg-dark opacity\">
+                                            <span class=\"text\">";
+                                    echo $commentauthor;
+                                    echo"   </span>
+                                        </div>
+                                    </div>";
+                                   
+                                    echo"<br><br><br><br><br><br><br>";
                                         echo"
                                         <div class=\"balloon bottom\">
                                             <div style=\"padding: 20px\">";

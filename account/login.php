@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
 
 $username = $_POST['login'];
 $password = $_POST['password'];
@@ -9,7 +9,6 @@ $password = $_POST['password'];
 if($username&&$password)
 {
     
-   $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
    
    $query = mysqli_query($mysqli,"SELECT * FROM user, user_preferences WHERE user.id = user_preferences.user_id AND user.username = '$username' ");
    

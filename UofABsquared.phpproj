@@ -26,22 +26,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="about_us.php" />
+    <Compile Include="clear.php" />
+    <Compile Include="edit_user_profile.php" />
     <Compile Include="event.php" />
+    <Compile Include="find.php" />
     <Compile Include="form.php" />
     <Compile Include="group.php" />
     <Compile Include="group_create.php" />
     <Compile Include="imaging.php" />
     <Compile Include="index.php" />
     <Compile Include="insert_info.php" />
+    <Compile Include="load\load.php" />
+    <Compile Include="myphpinfo.php" />
+    <Compile Include="my_profile.php" />
     <Compile Include="nightlife.php" />
     <Compile Include="parties.php" />
     <Compile Include="post.php" />
+    <Compile Include="profile.php" />
+    <Compile Include="results.php" />
     <Compile Include="single_stories.php" />
     <Compile Include="stories.php" />
-    <Compile Include="bottom.html" />
     <Compile Include="topbar.php" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="load\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\DEVSENSE\PHP Tools\VS$(VisualStudioVersion)\Devsense.PHP.MsWebApplication.targets" />

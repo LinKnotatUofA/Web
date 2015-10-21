@@ -5,7 +5,7 @@
 <?php
 
 session_start();
-require "/account/db.php";
+require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
 
 
 if (mysqli_connect_errno()) {

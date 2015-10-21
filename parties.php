@@ -5,8 +5,7 @@
     //retrieve *all events* from database
     //grab geo coordinates
     //write javascript to display events through HERE maps
-    require("events/load_events.php");
-    
+    require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
     
     
 
@@ -20,15 +19,15 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Building Bridges @ UofA - Parties</title>
+<title>LinKnot @ UofA - Parties</title>
 <link rel="shortcut icon" href="Assets/favicon.ico" />
-<meta name="keywords" content="building bridges,b squared,b^2,uofa,u of a,university,of,alberta" />
+<meta name="keywords" content="LinKnot,uofa,u of a,university,of,alberta" />
 <meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <link href="css/metro-bootstrap.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 body {
-	background-color: #3CB6CE;
+	background-color: #ffa500;
     color: #FFFFFF;
 }
 </style>

@@ -147,7 +147,7 @@ if($submit){
                             //die();
                         }
                         else
-                        $url = "uofabsquared.azurewebsites.net/account/varification.php?code=".$linkid;
+                        $url = "linknot.azurewebsites.net/account/varification.php?code=".$linkid;
 
                         $mail->Body = $message.$url;
                         //Replace the plain text body with one created manually

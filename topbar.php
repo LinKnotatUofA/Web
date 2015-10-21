@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <script src="js/login.js"></script>
+    <script src="/js/login.js"></script>
 </head>
 <body>
     <nav class="navigation-bar light">
@@ -21,7 +21,7 @@
             <span class="element-divider"></span>
             <a href="about_us.php" class="element"> About Us </a>
             <span class="element-divider"></span>
-            <form method="post" action="search/find.php">
+            <form method="post" action="find.php">
             <div class="element input-element">
                 
                     <div class="input-control text">
