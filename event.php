@@ -256,7 +256,7 @@ body {
                                                 {
                                                 
                                                 
-                                                    echo "<form action=\"event.php?id=<?php echo".$eventID."; ?>\" method = \"POST\">                                                             
+                                                    echo "<form action=\"event.php?id=".$eventID."\" method = \"POST\">                                                             
                                                         <div class=\"input-control switch\">
                                                             <label><a style=\"color: white;\">Join</a>
                                                                 <input type=\"checkbox\" name=\"join\" onclick=\"submit()\" id=\"joinswitch\" ";
@@ -295,7 +295,7 @@ body {
 ?>
                                      <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br><br>
                                      <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div><br><br>
-                                     <g:plusone  href="linknot.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300" size="standard"></g:plusone>
+                                     <g:plusone  href="uofabsquared.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300" size="standard"></g:plusone>
 
                                 </ul>
                             </nav>
