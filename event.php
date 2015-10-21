@@ -256,7 +256,7 @@ body {
                                                 {
                                                 
                                                 
-                                                    echo "<form action=\"event.php?id=".$eventID." method = \"POST\">                                                             
+                                                    echo "<form action=\"event.php?id=".$eventID."\" method = \"POST\">                                                             
                                                         <div class=\"input-control switch\">
                                                             <label><a style=\"color: white;\">Join</a>
                                                                 <input type=\"checkbox\" name=\"join\" onclick=\"submit()\" id=\"joinswitch\" ";
