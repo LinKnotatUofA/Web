@@ -44,6 +44,7 @@
     <Compile Include="post.php" />
     <Compile Include="profile.php" />
     <Compile Include="results.php" />
+    <Compile Include="picture_function.php" />
     <Compile Include="single_stories.php" />
     <Compile Include="stories.php" />
     <Compile Include="topbar.php" />
