@@ -2,6 +2,7 @@
     session_start();
     require $_SERVER['DOCUMENT_ROOT']."/events/load_events.php";
     //require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
+
     ?>
 
 

@@ -1,6 +1,6 @@
 <?php
     
-session_start();
+//session_start();
 require $_SERVER['DOCUMENT_ROOT']."/account/db.php";
 require $_SERVER['DOCUMENT_ROOT']."/load/load.php";
 //grab the latest 4 events from database
