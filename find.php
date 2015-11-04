@@ -85,7 +85,7 @@ if(isset($_POST['submit']))
 <title>LinKnot @ UofA - Search</title>
 <link rel="shortcut icon" href="Assets/favicon.ico" />
 <meta name="keywords" content="LinKnot,uofa,u of a,university,of,alberta" />
-<meta name="description" content="B squared is a service provided by the University of Alberta Bridge Builder team to connect new/isolated students with each other." />
+<meta name="description" content="LinKnot is a service provided by Team LinKnot to connect new/isolated students with each other." />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <link href="css/metro-bootstrap.css" rel="stylesheet" type="text/css">
 <style type="text/css">
