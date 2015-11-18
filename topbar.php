@@ -44,7 +44,7 @@
                             <span class='icon-cog'></span>
                         </a>
                         <ul class='dropdown-menu place-right' data-role='dropdown'>
-                            <li><a href='my_profile.php'>My Profile</a></li>
+                            <li><a href='my_profile.php'>UDC.php</a></li>
                             <li><a href='edit_user_profile.php'>Edit Profile</a></li>
                             <li><a href='#'>Contacts</a></li>
                             <li><a href='account/logout.php'>Log Out</a></li>
