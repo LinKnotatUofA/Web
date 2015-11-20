@@ -3,7 +3,6 @@
     
     ?>
 
-
 <!doctype html>
 <html>
 <head>
@@ -19,6 +18,7 @@ body {
 	background-color: #ffa500;
     color: #FFFFFF;
 }
+#circle-container{width:100px;height:100px}.quarter{width:50px;height:50px}.top-left{border-top-left-radius:50px;background:#09f;float:left}.top-right{border-top-right-radius:50px;background:#666;float:right}.bottom-left{border-bottom-left-radius:50px;background:#aaa;float:left}.bottom-right{border-bottom-right-radius:50px;background:#333;float:right}
 </style>
 
 	<link href="css/metro-bootstrap.css" rel="stylesheet">
@@ -68,20 +68,19 @@ body {
 
                 <div class="row span12" id="content" style="width: 100%; height: 100%; background: #C7D28A" style="padding:40px"/>
                     <div class="grid fluid show-grid">
-                    
 
                  <!-- jian put your circles here !-->
-               <div style="background:#98bf21;height:50px;width:50px;position:absolute;"></div>
-                <script> 
-                $(document).ready(function(){
-                    $("button").click(function(){
-                    $("div").animate({left: '250px'});
-                    });
-                });
-                </script> 
-                <button>Start Animation</button>
-                
+                 <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
 
+                  <script> 
+                      $(document).ready(function(){
+                      $("button").click(function(){
+                      $("circle-container").animate({left: '250px'});
+                        });
+                    });
+                    </script> 
+                    <button>Start Animation</button>
+                </div>
 
 
 
