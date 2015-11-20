@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
     session_start();
     
     ?>
@@ -50,6 +50,7 @@ body {
 
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
+     
     
 </head>
 	<body class="metro">
@@ -65,11 +66,25 @@ body {
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
 
-                <div class="row span12" id="content" style="width: 100%; height: auto; background: #C7D28A" style="padding:40px"/>
+                <div class="row span12" id="content" style="width: 100%; height: 100%; background: #C7D28A" style="padding:40px"/>
                     <div class="grid fluid show-grid">
                     
+
                  <!-- jian put your circles here !-->
-               
+               <div style="background:#98bf21;height:50px;width:50px;position:absolute;"></div>
+                <script> 
+                $(document).ready(function(){
+                    $("button").click(function(){
+                    $("div").animate({left: '250px'});
+                    });
+                });
+                </script> 
+                <button>Start Animation</button>
+                
+
+
+
+
                     
                     </div>
             </div>
@@ -77,7 +92,13 @@ body {
                 <footer class="bg-dark" data-load="bottom.html"></footer>
             </div>
         </div>    
+
+       
+
     </body>
+
+  
+
 </html>
 
  

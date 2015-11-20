@@ -48,6 +48,7 @@
     <Compile Include="single_stories.php" />
     <Compile Include="stories.php" />
     <Compile Include="topbar.php" />
+    <Compile Include="UDC.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="load\" />
