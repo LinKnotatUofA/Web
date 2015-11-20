@@ -3,7 +3,6 @@
     
     ?>
 
-
 <!doctype html>
 <html>
 <head>
@@ -19,6 +18,7 @@ body {
 	background-color: #ffa500;
     color: #FFFFFF;
 }
+#circle-container{width:100px;height:100px}.quarter{width:50px;height:50px}.top-left{border-top-left-radius:50px;background:#09f;float:left}.top-right{border-top-right-radius:50px;background:#666;float:right}.bottom-left{border-bottom-left-radius:50px;background:#aaa;float:left}.bottom-right{border-bottom-right-radius:50px;background:#333;float:right}
 </style>
 
 	<link href="css/metro-bootstrap.css" rel="stylesheet">
@@ -67,9 +67,10 @@ body {
 
                 <div class="row span12" id="content" style="width: 100%; height: auto; background: #C7D28A" style="padding:40px"/>
                     <div class="grid fluid show-grid">
-                    
                  <!-- jian put your circles here !-->
-               
+               <div id="circle-container"><div class="quarter top-left"></div><div class="quarter top-right"></div><div class="quarter bottom-left"></div><div class="quarter bottom-right"></div></div>
+
+
                     
                     </div>
             </div>
