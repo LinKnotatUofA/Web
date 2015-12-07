@@ -51,15 +51,15 @@ body {
     <!-- Load script specific for index page-->
     <script src="js/page_scripts/index/index_script.js"></script>
     <script> 
-$(document).ready(function(){
-    $("#animbutton").click(function(){
-        $("#anim").animate({
-            left: '250px',
-            height: '+=150px',
-            width: '+=150px'
+    $(document).ready(function(){
+        $("#animbutton").click(function(){
+            $("#anim").animate({
+                left: '250px',
+                height: '+=150px',
+                width: '+=150px'
+            });
         });
     });
-});
 </script> 
     
 </head>
@@ -76,17 +76,15 @@ $(document).ready(function(){
                     <header class="bg-dark" data-load="topbar.php"></header>
                 </div>
 
-                <div class="row span12" id="content" style="width: 100%; height: au; background: #C7D28A" style="padding:40px"/>
+                <div class="row span12" id="content" style="width: 100%; height: 100%; background: #C7D28A" style="padding:40px"/>
                     <div class="grid fluid show-grid">
-                    
-                 <!-- jian put your circles here !-->
-                 <div id="anim"style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
-
-            
-                     <button id="animbutton">Start Animation</button> 
-                    
+                        <button id="animbutton" >Start Animation</button>
+                        <!-- This is the square!-->
+                        <div id="anim"style="background:#98bf21;height:100px;width:100px;position:center;"></div>
+                </div>
              
-            </div>
+
+            </div> 
             <div id = "row3" class="row span12 tertiary-text bg-dark fg-white" style="padding: 20px" align ="left" >
                 <footer class="bg-dark" data-load="bottom.html"></footer>
             </div>
