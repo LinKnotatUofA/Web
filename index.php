@@ -85,7 +85,7 @@ body {
                                                echo "<a href=event.php?id=";
                                                print_r($eventlist[$len-1]['EVENTID'] );
                                                echo ">";
-                                               echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-1]['image'] ).'" class="cover1"/>'; 
+                                               echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-1]['thumbnail'] ).'" class="cover1"/>'; 
                                                echo "</a>";
                                            echo"
                                            </div>";
@@ -94,7 +94,7 @@ body {
                                                echo "<a href=event.php?id=";
                                                print_r($eventlist[$len-2]['EVENTID'] );
                                                echo ">";
-                                               echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-2]['image'] ).'" class="cover1"/>';
+                                               echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-2]['thumbnail'] ).'" class="cover1"/>';
                                                echo "</a>";
                                            echo"
                                            </div>";
@@ -103,7 +103,7 @@ body {
                                             echo "<a href=event.php?id=";
                                             print_r($eventlist[$len-3]['EVENTID'] );
                                             echo ">";
-                                               echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-3]['image'] ).'" class="cover1"/>';
+                                               echo '<img src="data:image/jpeg;base64,'.base64_encode($eventlist[$len-3]['thumbnail'] ).'" class="cover1"/>';
                                                echo "</a>";
                                            echo"
                                            </div>
@@ -111,13 +111,17 @@ body {
                                  ?>
                                    
                                
-                                   <div class="brand bg-black">
-                                       <div class="label fg-white place-right">Recent</div>
+                                   <div style="height:auto" class="brand bg-black">
+                                       <div class="label fg-white place-right" style="font-size:25px">Recent</div>
                                    </div>
                                    <script>
                                        $(function (){
                                                $("#carousel2").carousel({
-                                                   height: 250
+                                                   height: 250,
+                                                   markers: {
+                                                        type: "square"
+                                                   }
+
                                                });
                                            })
                                        </script>

@@ -118,8 +118,50 @@ body {
         }
         </script>
     <script src="js/comment.js"></script>
-       
-        
+    <?php
+     echo "<script  type=\"text/javascript\" charset=\"UTF-8\" >
+ 
+               
+               function update_event() {
+                   $.Dialog({
+                       shadow: true,
+                       overlay: false,
+                       draggable: true,
+                       icon: '<img src=\"Assets/default_user.png\">',
+                       title: 'Draggable window',
+                       width: 'auto',
+                       content: 'This Window is draggable by caption.',
+                       onShow: function (_dialog) {
+                           
+                            var strVar='';";
+
+                              echo"  
+                                strVar += \"<form id='form_update_event' method ='post' action='events\/upload_events.php'  enctype='multipart\/form-data'>  \";
+                                strVar += \"<p>Is it for fun or academic? <input name ='type' type='text' value ='";echo $singleventproperty[0]['TYPE']; echo"'/></p>  \";
+       	                        strVar += \"<p>Describe what you're gonna do: <input name ='description' value ='";echo $singleventproperty[0]['DESCRIPTION'];echo"' type='text' /></p>  \";
+                                strVar += \"<p>At what time: <input name ='date' type='date' value='";echo $singleventproperty[0]['postdate']; echo"'/></p> \";
+                                strVar += \"    <input type='hidden' name='updateid' value='";echo $eventID;echo" '> \";
+                                strVar += \"   <p> \";
+                                strVar += \"      <label>Upload your image</label> \";
+                                strVar += \"              <input type='file' name='image'/>        \";
+                                strVar += \" </p> \";
+                                strVar += \"  <p><input name ='submit' type='submit'/> <INPUT Type='button' VALUE='Cancel and go back' onClick='history.go(-1); return true;'></p> \";
+                                strVar += \"<\/form>\";";
+                                
+
+                            echo"
+                           $.Dialog.title(\"Update Event\");
+                           $.Dialog.content(strVar);
+                           $.Metro.initInputs();
+                       }
+
+                   });
+               }
+
+               
+
+        </script>";
+        ?>
    
     <?php
         echo
@@ -343,7 +385,7 @@ body {
                                  </div>
                             
                              
-                                 <div class="tile bg-red">
+                                 <div  class="tile bg-red"  onclick="update_event()">
                                      <div class="tile-content image-container">
                                          <div class="image-container">
                                              <div class="frame">
