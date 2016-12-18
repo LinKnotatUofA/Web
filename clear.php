@@ -1,7 +1,7 @@
 <?php 
 	require "/account/db.php";
     require "/events/load_events.php";
-	$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+	$mysqli = new mysqli("ca-cdbr-azure-central-a.cloudapp.net", "b9ae261f027fe3", "cbb2cfa0", "linknotdata");
 	
 	$dates =  mysqli_query($mysqli, "SELECT TIME FROM event");
 	$date_array = resultToArray($dates);

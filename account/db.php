@@ -1,8 +1,8 @@
 <?php
 
-$mysql_hostname = "us-cdbr-azure-west-c.cloudapp.net";
-$mysql_username = "bea1032a957a19";
-$mysql_password = "c03cc102";
+$mysql_hostname = "ca-cdbr-azure-central-a.cloudapp.net";
+$mysql_username = "b9ae261f027fe3";
+$mysql_password = "cbb2cfa0";
 $mysql_database = "bsquared";
 $mysqli = new mysqli ($mysql_hostname,$mysql_username,$mysql_password,$mysql_database);
 

@@ -53,7 +53,7 @@ $encpassword = $password;
 //use md5($password) for encryption later
 $ID = 100;
 
- $mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+ $mysqli = new mysqli("ca-cdbr-azure-central-a.cloudapp.net", "b9ae261f027fe3", "cbb2cfa0", "linknotdata");
 
 //attempt to include a new ID 
 $query = mysqli_query($mysqli,"SELECT ID FROM user WHERE ID=$ID");
@@ -68,7 +68,7 @@ while($numrows > 0)
 }
 
 
-$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+$mysqli = new mysqli("ca-cdbr-azure-central-a.cloudapp.net", "b9ae261f027fe3", "cbb2cfa0", "linknotdata");
 
 
 /* check connection */

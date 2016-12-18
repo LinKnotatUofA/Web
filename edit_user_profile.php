@@ -148,7 +148,7 @@
       
     }
       //load original User Info
-      //$mysqli = new mysqli("us-cdbr-azure-west-c.cloudapp.net", "bea1032a957a19", "c03cc102", "bsquared");
+      //$mysqli = new mysqli("ca-cdbr-azure-central-a.cloudapp.net", "b9ae261f027fe3", "cbb2cfa0", "linknotdata");
         $user_preferences_query = mysqli_query($mysqli,"SELECT * FROM user_preferences WHERE user_id ='$id'");
         $user_preferences = mysqli_fetch_assoc($user_preferences_query);
         $userpic_query = mysqli_query($mysqli,"SELECT user_profile_pic FROM user WHERE id ='$id'");
