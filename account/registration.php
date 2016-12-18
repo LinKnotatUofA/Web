@@ -37,10 +37,10 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "Uabsquared@gmail.com";
+$mail->Username = "Ua@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "bsquared";
+$mail->Password = "";
 
 
 
@@ -96,7 +96,7 @@ if($submit){
                     
                     if(strlen($password <50||strlen($password)>5))
                     {
-                        $message = "Hello, if u recieved this message u must be a very deeply involved member for the Bsquared project. Click the meesage below to verify your registration.   ";
+                        $message = "Hello, if u recieved this message u must be a very deeply involved member for the  project. Click the meesage below to verify your registration.   ";
 
                        
                         $date = date("Y-m-d");
@@ -105,7 +105,7 @@ if($submit){
                             printf("user account registration error: %s<br>", mysqli_error($mysqli));
                            
                         }
-                        $userdetail=mysqli_query($mysqli,"INSERT INTO `bsquared`.`user_preferences` (`user_id`, `prefered_color`, `birthdays`, `firstn`, `lastn`) VALUES ('$ID', '#3CB6CE', NULL, NULL, NULL)" );
+                        $userdetail=mysqli_query($mysqli,"INSERT INTO ``.`user_preferences` (`user_id`, `prefered_color`, `birthdays`, `firstn`, `lastn`) VALUES ('$ID', '#3CB6CE', NULL, NULL, NULL)" );
                         
                         if ( false===$userdetail ) {
                             printf("user preferences registration error: %s<br>", mysqli_error($mysqli));
@@ -116,7 +116,7 @@ if($submit){
                             echo "registration successful";
                         }
                         //Set who the message is to be sent from
-                        $mail->setFrom('uabsquared@gmail.com', 'Ualberta Bsquared');
+                        $mail->setFrom('ua@gmail.com', 'Ualberta ');
 
                         //Set an alternative reply-to address
                         //$mail->addReplyTo('replyto@example.com', 'First Last');
@@ -125,7 +125,7 @@ if($submit){
                         $mail->addAddress($username, '');
 
                         //Set the subject line
-                        $mail->Subject = 'Bsquared Registration Confirmination';
+                        $mail->Subject = ' Registration Confirmination';
 
                         //Read an HTML message body from an external file, convert referenced images to embedded,
                         //convert HTML into a basic plain-text alternative body
@@ -165,7 +165,7 @@ if($submit){
                       
 
                         
-                        /*if(@mail($username, 'Bsquared', $message))
+                        /*if(@mail($username, '', $message))
                         {
                            echo"mail sent successfully";
                         }

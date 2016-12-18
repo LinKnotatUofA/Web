@@ -335,9 +335,9 @@ body {
 
 
 ?>
-                                     <a href="http://twitter.com/share?url=http://us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br><br>
-                                     <div class="fb-share-button" data-href="us-cdbr-azure-northcentral-a.cleardb.com/event.php?id=".$eventID data-layout="button_count"></div><br><br>
-                                     <g:plusone  href="uofabsquared.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300" size="standard"></g:plusone>
+                                     <a href="http://twitter.com/share?url=http://ca-cdbr-azure-central-a.cloudapp.net/event.php?id=".$eventID class="twitter-follow-button" data-show-count="false">Follow @twitter</a><br><br>
+                                     <div class="fb-share-button" data-href="ca-cdbr-azure-central-a.cloudapp.net/event.php?id=".$eventID data-layout="button_count"></div><br><br>
+                                     <g:plusone  href="uofa.azurewebsite.net/event.php?id=".$eventID data-annotation="inline" data-width="300" size="standard"></g:plusone>
 
                                 </ul>
                             </nav>

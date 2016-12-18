@@ -50,7 +50,7 @@ if(isset($_POST['comments'])){
     }
     $command = "INSERT INTO comment ($text) VALUES ('$ID','$userID','$postdate','$story_comment','$content')";
     //echo $command;
-    //"INSERT INTO `bsquared`.`comment` (`c_id`, `c_author`, `c_date`, `c_content`, `c_story_id`, `c_event_id`) VALUES (\'342324\', \'5640\', \'2015-08-24\', \'this sucks balls\', NULL, \'100\');";
+    //"INSERT INTO ``.`comment` (`c_id`, `c_author`, `c_date`, `c_content`, `c_story_id`, `c_event_id`) VALUES (\'342324\', \'5640\', \'2015-08-24\', \'this sucks balls\', NULL, \'100\');";
 
     $insert=mysqli_query($mysqli,$command);
     if ( false===$insert ) {

@@ -1,7 +1,7 @@
 <?php 
     session_start();
 	$id = $_SESSION['id'];
-	$mysqli = new mysqli("ca-cdbr-azure-central-a.cloudapp.net", "b9ae261f027fe3", "cbb2cfa0", "bsquared")
+	$mysqli = new mysqli("ca-cdbr-azure-central-a.cloudapp.net", "b9ae261f027fe3", "cbb2cfa0", "")
 
 	
 	

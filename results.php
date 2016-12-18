@@ -10,7 +10,7 @@
         $input = $_POST['input'];
 
     }
-    $mysqli = new mysqli("us-cdbr-azure-northcentral-a.cleardb.com", "ba30dbdb2d10ef", "272e799b", "bsquared_user");
+    $mysqli = new mysqli("ca-cdbr-azure-central-a.cloudapp.net", "b9ae261f027fe3", "cbb2cfa0", "_user");
     // user
     $searchuserstatement="Select username, id from user where username like %$input%";
     $searchgroupstatement="Select GID from groups where GTAG like %$input% or GNAME like %$input% or GDESCRIPTION LIKE %INPUT%";
@@ -154,9 +154,9 @@ body {
                     </div>
             </div>
             <div class="span11 offset_special tertiary-text bg-dark fg-white" style="padding: 20px">
-                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of Bsquared.
-                <br><br> <a href="mailto:UABsquared@gmail.com" class="fg-yellow">Email </a> Us
-                <br><br> Visit Us On <a href="https://github.com/orgs/BsquaredatUofA/" class="fg-yellow">GitHub</a>
+                Developed using <a href="http://metroui.org.ua/" class="fg-yellow">Metro UI CSS Template</a> and <a href="http://developer.here.com/api-explorer" class="fg-yellow">Nokia Here Maps</a> by Tech Branch of .
+                <br><br> <a href="mailto:UA@gmail.com" class="fg-yellow">Email </a> Us
+                <br><br> Visit Us On <a href="https://github.com/orgs/atUofA/" class="fg-yellow">GitHub</a>
                 </div>
                 </div>
                 </div>
